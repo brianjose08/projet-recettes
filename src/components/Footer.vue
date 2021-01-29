@@ -14,10 +14,10 @@ export default {
 
 <style scoped>
 #footer {
-  position: fixed;
-  bottom: 0;
+  position: absolute;
   width: 100%;
   /* Height of the footer*/
+  padding-bottom: 136px;
   background: grey;
 }
 </style>

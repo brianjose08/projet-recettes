@@ -55,7 +55,7 @@ export default {
 }
 .contenu{
   margin: auto;
-  width: 50%;
+  width: 60%;
   padding: 10px;
 }
 .titre{
@@ -76,6 +76,6 @@ export default {
       font-weight: 500;
       text-align: left;
       opacity: 0.8;
-      padding: 1px;
+      padding: 25px;
 }
 </style>

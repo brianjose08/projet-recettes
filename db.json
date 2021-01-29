@@ -1,0 +1,112 @@
+{
+    "utilisateurs":[
+        {
+            "idUtilisateur": 1,
+            "username":"brian",
+            "password":"123",
+            "email":"email@hotmail.com",
+            "recette":[
+                {
+                    
+                }
+            ]
+        }
+    ],
+
+    "recettes":[
+        {
+            "idRecette": 1,
+            "titre":"Silver Dollar Buttermilk-Pecan Pancakes with Bourbon Molasses Butter and Maple Syrup",
+            "prix":163.15,
+            "image":"https://spoonacular.com/recipeImages/324694-556x370.jpeg",
+            "pretEnMinutes": 55,
+            "calorie":2000,
+            "etapes":[
+                {
+                    "numero":1,
+                    "etape":"Preheat the oven to 200 degrees F."
+                },
+                {
+                    "numero":2,
+                    "etape":"Whisk together the flour, pecans, granulated sugar, light brown sugar, baking powder, baking soda, and salt in a medium bowl."
+                },
+                {
+                    "numero":3,
+                    "etape":"Whisk together the eggs, buttermilk, butter and vanilla extract and vanilla bean in a small bowl."
+                },
+                {
+                    "numero":4,
+                    "etape":"Add the egg mixture to the dry mixture and gently mix to combine. Do not overmix."
+                },
+                {
+                    "numero":5,
+                    "etape":"Let the batter sit at room temperature for at least 15 minutes and up to 30 minutes before using."
+                },
+                {
+                    "numero":6,
+                    "etape":"Heat a cast iron or nonstick griddle pan over medium heat and brush with melted butter. Once the butter begins to sizzle, use 2 tablespoons of the batter for each pancake and cook until the bubbles appear on the surface and the bottom is golden brown, about 2 minutes, flip over and cook until the bottom is golden brown, 1 to 2 minutes longer."
+                },
+                {
+                    "numero":7,
+                    "etape":"Transfer the pancakes to a platter and keep warm in a 200 degree F oven."
+                },
+                {
+                    "numero":8,
+                    "etape":"Serve 6 pancakes per person, top each with some of the bourbon butter."
+                },
+                {
+                    "numero":9,
+                    "etape":"Drizzle with warm maple syrup and dust with confectioners' sugar."
+                },
+                {
+                    "numero":10,
+                    "etape":"Garnish with fresh mint sprigs and more toasted pecans, if desired."
+                }
+            ],
+            "ingredients":[
+                {
+                    "idIngredient": 1,
+                    "nom":"baking powder",
+                    "unite":"1 teaspoon"
+                },
+                {
+                    "idIngredient": 2,
+                    "nom":"baking soda",
+                    "unite":"1/2 teaspoon"
+                },
+                {
+                    "idIngredient": 3,
+                    "nom":"bourbon",
+                    "unite":"1/2 cup"
+                },
+                {
+                    "idIngredient": 4,
+                    "nom":"buttermilk",
+                    "unite":"1 1/2 cups, plus 3 tablespoons"
+                }
+            ]
+        }
+    ],
+    "ingredients":[
+        {
+            "idIngredient": 1,
+            "nom":"baking powder",
+            "unite":"1 teaspoon"
+        },
+        {
+            "idIngredient": 2,
+            "nom":"baking soda",
+            "unite":"1/2 teaspoon"
+        },
+        {
+            "idIngredient": 3,
+            "nom":"bourbon",
+            "unite":"1/2 cup"
+        },
+        {
+            "idIngredient": 4,
+            "nom":"buttermilk",
+            "unite":"1 1/2 cups, plus 3 tablespoons"
+        }
+    ]
+}
