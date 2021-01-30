@@ -5,8 +5,6 @@
       <div class="contenu">
       <div class="titre">
                 <h1>What To Eat?</h1>
-      </div>
-      <div class="description">
         <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac tempor orci.
 Aenean libero sem, egestas eget malesuada ut, pretium ac quam. Nunc in nulla urna.
@@ -56,26 +54,38 @@ export default {
 .contenu{
   margin: auto;
   width: 60%;
-  padding: 10px;
+  padding-top: 100px;
+  padding-bottom: 20px;
 }
 .titre{
-    background-color: black;
+    background-color: rgb(21, 28, 63);
+    opacity: 0.9;
+    border-radius: 10%;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+}
+
+.titre h1{
       text-decoration: none;
       color: rgb(255, 255, 255);
-      font-size: 60px;
-      font-weight: 900;
+      font-size: 150px;
+      font-weight: 1200;
       font-style: italic;
       text-align: center;
-      opacity: 0.8;
+      font-family: 'Brush Script MT', cursive;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: rgb(0, 0, 0);
 }
-.description{
-    background-color: black;
+.titre p{
       text-decoration: none;
       color: rgb(255, 255, 255);
-      font-size: 35px;
+      font-size: 34px;
       font-weight: 500;
       text-align: left;
-      opacity: 0.8;
-      padding: 25px;
+      padding-right: 30px;
+      padding-bottom: 30px;
+      padding-left: 30px;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: rgb(0, 0, 0);
 }
 </style>

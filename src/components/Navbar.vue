@@ -2,11 +2,32 @@
             <nav>
                <div class="menu">
                   <ul>
-                     <li><a href="#">| HOME |</a></li>
-                     <li><a href="#">| RECIPES |</a></li>
-                     <li><a href="#">| PERSONAL SPACE |</a></li>
-                     <li><a href="#" class="signup">| SIGN UP |</a></li>
-                     <li><a href="#">| LOGIN |</a></li>
+                  <li>
+                        <a>
+                           <router-link to="/">| HOME |</router-link>
+                        </a>
+                  </li>
+                  <li>
+                        <a>
+                           <router-link to="/recipes">| RECIPES |</router-link>
+                        </a>
+                  </li>
+                  <li>
+                        <a>
+                           <router-link to="/personalspace">| PERSONAL SPACE |</router-link>
+                        </a>
+                  </li>
+                  <li>
+                        <a>
+                           <router-link to="/signup">| SIGN UP |</router-link>
+                        </a>
+                  </li>
+                  <li>
+                        <a>
+                           <router-link to="/login">| LOGIN |</router-link>
+                        </a>
+                  </li>
+
                   </ul>
                </div>
             </nav>
