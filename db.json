@@ -5,7 +5,7 @@
             "username":"brian",
             "password":"123",
             "email":"email@hotmail.com",
-            "recette":[
+            "recettes":[
                 {
                     
                 }
@@ -85,28 +85,109 @@
                     "unite":"1 1/2 cups, plus 3 tablespoons"
                 }
             ]
+        },
+        {
+            "idRecette": 2,
+            "titre":"Simple Baked Chicken Breasts",
+            "prix":110.57,
+            "image":"https://spoonacular.com/recipeImages/720000-556x370.jpg",
+            "pretEnMinutes": 40,
+            "calorie":1510,
+            "etapes":[
+                {
+                    "numero":1,
+                    "etape":"Preheat convection oven to 400 degrees F (200 degrees C)."
+                },
+                {
+                    "numero":2,
+                    "etape":"Rub chicken breasts with olive oil and sprinkle both sides with salt and Creole seasoning."
+                },
+                {
+                    "numero":3,
+                    "etape":"Place chicken in a broiler pan."
+                },
+                {
+                    "numero":4,
+                    "etape":"Bake in the preheated oven for 10 minutes. Flip chicken and cook until no longer pink in the center and the juices run clear, about 15 minutes more. An instant-read thermometer inserted into the center should read at least 165 degrees F (74 degrees C)."
+                },
+                {
+                    "numero":5,
+                    "etape":"Remove chicken from pan."
+                },
+                {
+                    "numero":6,
+                    "etape":"Pour water into the pan, while scraping the browned bits of food off of the bottom of the pan with a wooden spoon."
+                },
+                {
+                    "numero":7,
+                    "etape":"Add more water if needed to dislodge the browned bits; serve alongside chicken."
+                }
+            ],
+            "ingredients":[
+                {
+                    "idIngredient": 5,
+                    "nom":"coarse sea salt",
+                    "unite":"1 tablespoon"
+                },
+                {
+                    "idIngredient": 6,
+                    "nom":"creole seasoning",
+                    "unite":"1 pinch"
+                },
+                {
+                    "idIngredient": 7,
+                    "nom":"olive oil",
+                    "unite":"2 tablespoons"
+                },
+                {
+                    "idIngredient": 8,
+                    "nom":"skinless boneless chicken breast halves",
+                    "unite":"4 skinless, boneless chicken breast halves"
+                },
+                {
+                    "idIngredient": 9,
+                    "nom":"water",
+                    "unite":"1 tablespoon"
+                }
+            ]
         }
     ],
     "ingredients":[
         {
             "idIngredient": 1,
-            "nom":"baking powder",
-            "unite":"1 teaspoon"
+            "nom":"baking powder"
         },
         {
             "idIngredient": 2,
-            "nom":"baking soda",
-            "unite":"1/2 teaspoon"
+            "nom":"baking soda"
         },
         {
             "idIngredient": 3,
-            "nom":"bourbon",
-            "unite":"1/2 cup"
+            "nom":"bourbon"
         },
         {
             "idIngredient": 4,
-            "nom":"buttermilk",
-            "unite":"1 1/2 cups, plus 3 tablespoons"
+            "nom":"buttermilk"
+        },
+        {
+            "idIngredient": 5,
+            "nom":"coarse sea salt"
+        },
+        {
+            "idIngredient": 6,
+            "nom":"creole seasoning"
+        },
+        {
+            "idIngredient": 7,
+            "nom":"olive oil"
+        },
+        {
+            "idIngredient": 8,
+            "nom":"skinless boneless chicken breast halves"
+        },
+        {
+            "idIngredient": 9,
+            "nom":"water"
         }
     ]
 }
