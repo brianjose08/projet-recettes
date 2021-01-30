@@ -65,24 +65,28 @@
             ],
             "ingredients":[
                 {
-                    "idIngredient": 1,
-                    "nom":"baking powder",
+                    "idIngredient": "O001",
                     "unite":"1 teaspoon"
                 },
                 {
-                    "idIngredient": 2,
-                    "nom":"baking soda",
+                    "idIngredient": "O002",
                     "unite":"1/2 teaspoon"
                 },
                 {
-                    "idIngredient": 3,
-                    "nom":"bourbon",
+                    "idIngredient": "O003",
                     "unite":"1/2 cup"
                 },
                 {
-                    "idIngredient": 4,
-                    "nom":"buttermilk",
-                    "unite":"1 1/2 cups, plus 3 tablespoons"
+                    "idIngredient": "O009",
+                    "unite":"1 egg"
+                },
+                {
+                    "idIngredient": "O010",
+                    "unite":"1 1/2 cups"
+                },
+                {
+                    "idIngredient": "S006",
+                    "unite":"1/4 cup"
                 }
             ]
         },
@@ -125,69 +129,187 @@
             ],
             "ingredients":[
                 {
-                    "idIngredient": 5,
-                    "nom":"coarse sea salt",
+                    "idIngredient": "S001",
                     "unite":"1 tablespoon"
                 },
                 {
-                    "idIngredient": 6,
-                    "nom":"creole seasoning",
+                    "idIngredient": "S003",
                     "unite":"1 pinch"
                 },
                 {
-                    "idIngredient": 7,
-                    "nom":"olive oil",
+                    "idIngredient": "S005",
                     "unite":"2 tablespoons"
                 },
                 {
-                    "idIngredient": 8,
-                    "nom":"skinless boneless chicken breast halves",
-                    "unite":"4 skinless, boneless chicken breast halves"
+                    "idIngredient": "M005",
+                    "unite":"4 chicken breast"
                 },
                 {
-                    "idIngredient": 9,
-                    "nom":"water",
+                    "idIngredient": "O005",
                     "unite":"1 tablespoon"
+                }
+            ]
+        },
+        {
+            "idRecette": 3,
+            "title": "Roma Tomato Bruschetta",
+            "prix": 189.3,
+            "image": "https://spoonacular.com/recipeImages/658753-556x370.jpg",
+            "pretEnMinutes": 45,
+            "calorie":1510,
+            "etapes":[
+                {
+                    "numero":1,
+                    "etape":"Slice the bread on a bias about 1/2 inch thick. We need about 10-12 slices.Take 2 tablespoons of extra virgin olive oil and add salt and pepper (about 1/3 teaspoon each - as per taste)."
+                },
+                {
+                    "numero":2,
+                    "etape":"Brush this on both sides of the bread."
+                },
+                {
+                    "numero":3,
+                    "etape":"Place these slices on a sheet pan and bake for about 3-4 minutes in a 400 degree preheated oven till golden brown. Once one side is done, turn over the crostini to the other side to crisp that as well.When the crostini are hot out the oven, rub a garlic clove on them.Chop the tomatoes.Chiffonade the basil and add to the tomatoes."
+                },
+                {
+                    "numero":4,
+                    "etape":"Add salt, pepper, olive oil and balsamic vinegar and let it rest for a few minutes.Put a generous amount of tomato on the crostini and serve."
+                }
+            ],
+            "ingredients":[
+                {
+                    "idIngredient": "S001",
+                    "unite":"1 tablespoon"
+                },
+                {
+                    "idIngredient": "S002",
+                    "unite":"1 tablespoon"
+                },
+                {
+                    "idIngredient": "O006",
+                    "unite":"1 loaf"
+                },
+                {
+                    "idIngredient": "S005",
+                    "unite":"4 tablespoons"
+                },
+                {
+                    "idIngredient": "V001",
+                    "unite":"4 tomatoes"
+                },
+                {
+                    "idIngredient": "V002",
+                    "unite":"1 clove"
+                },
+                {
+                    "idIngredient": "V003",
+                    "nom":"basil",
+                    "unite":"10 leaves"
+                },
+                {
+                    "idIngredient": "S004",
+                    "unite":"1 tablespoon"
+                }
+            ]
+        },
+        {
+            "idRecette": 3,
+            "title": "Turkey Tomato Cheese Pizza",
+            "prix": 241.43,
+            "image": "https://spoonacular.com/recipeImages/658753-556x370.jpg",
+            "pretEnMinutes": 15,
+            "calorie":1510,
+            "etapes":[
+                {
+                    "numero":1,
+                    "etape": "Heat up your grill to 450 degrees.Start off with your whole wheat crust and spread the tomato sauce evenly over the top."
+                },
+                {
+                    "numero":2,
+                    "etape": "Add a little cheese, bell pepper, onion, turkey and create a layer.Top with another layer of cheese, turkey, tomato, bell pepper, onion."
+                },
+                {
+                    "numero":3,
+                    "etape": "Add another layer of cheese, and then sprinkle with pepper."
+                },
+                {
+                    "numero":4,
+                    "etape": "Place the pizza on a ceramic grill plate and place into the grill.Grill for 6-10 minutes, or until cooked as desired.Slice, and serve immediately."
+                }
+            ],
+            "ingredients":[
+                {
+                    "idIngredient": "V004",
+                    "unite":"1 tablespoon"
+                },
+                {
+                    "idIngredient": "V005",
+                    "unite":"1 loaf"
+                },
+                {
+                    "idIngredient": "O007",
+                    "unite":"1 whole"
+                },
+                {
+                    "idIngredient": "V001",
+                    "unite":"4 tomatoes"
+                },
+                {
+                    "idIngredient": "O008",
+                    "unite":"1 clove"
+                },
+                {
+                    "idIngredient": "M006",
+                    "unite":"10 leaves"
+                },
+                {
+                    "idIngredient": "V006",
+                    "unite":"few slices"
                 }
             ]
         }
     ],
-    "ingredients":[
-        {
-            "idIngredient": 1,
-            "nom":"baking powder"
-        },
-        {
-            "idIngredient": 2,
-            "nom":"baking soda"
-        },
-        {
-            "idIngredient": 3,
-            "nom":"bourbon"
-        },
-        {
-            "idIngredient": 4,
-            "nom":"buttermilk"
-        },
-        {
-            "idIngredient": 5,
-            "nom":"coarse sea salt"
-        },
-        {
-            "idIngredient": 6,
-            "nom":"creole seasoning"
-        },
-        {
-            "idIngredient": 7,
-            "nom":"olive oil"
-        },
-        {
-            "idIngredient": 8,
-            "nom":"skinless boneless chicken breast halves"
-        },
-        {
-            "idIngredient": 9,
-            "nom":"water"
-        }
-    ]
+    "ingredients": {
+        "Meat":[
+            {"idIngredient": "M001", "nom":"beef"},
+            {"idIngredient": "M002", "nom":"chicken"},
+            {"idIngredient": "M003", "nom":"lamb"},
+            {"idIngredient": "M004", "nom":"pork"},
+            {"idIngredient": "M005", "nom":"chicken breast"},
+            {"idIngredient": "M006", "nom":"turkey"}      
+        ],
+        "Vegetable":[
+            {"idIngredient": "V001", "nom":"tomato"},
+            {"idIngredient": "V002", "nom":"garlic"},
+            {"idIngredient": "V003", "nom":"basil"},
+            {"idIngredient": "V004", "nom":"green pepper"},
+            {"idIngredient": "V005", "nom":"parsley"},
+            {"idIngredient": "V006", "nom":"onion"}
+        ],
+        "Fruits":[
+            {"idIngredient": "F001", "nom":"strawberry"},
+            {"idIngredient": "F002", "nom":"banana"},
+            {"idIngredient": "F003", "nom":"apple"},
+            {"idIngredient": "F004", "nom":"orange"}
+        ],
+        "Seasoning":[
+            {"idIngredient": "S001", "nom":"salt"},
+            {"idIngredient": "S002", "nom":"pepper"},
+            {"idIngredient": "S003", "nom":"creole seasoning"},
+            {"idIngredient": "S004", "nom":"vinegar"},
+            {"idIngredient": "S005", "nom":"olive oil"},
+            {"idIngredient": "S006", "nom":"sugar"}
+        ],
+        "Others":[
+            {"idIngredient": "O001", "nom":"baking powder"},
+            {"idIngredient": "O002", "nom":"baking soda"},
+            {"idIngredient": "O003", "nom":"bourbon"},
+            {"idIngredient": "O004", "nom":"buttermilk"},
+            {"idIngredient": "O005", "nom":"water"},
+            {"idIngredient": "O006", "nom":"bread"},
+            {"idIngredient": "O007", "nom":"pie crust"},
+            {"idIngredient": "O008", "nom":"cheese"},
+            {"idIngredient": "O009", "nom":"egg"},
+            {"idIngredient": "O010", "nom":"flour"}
+        ]
+    }
 }
