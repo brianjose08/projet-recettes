@@ -212,7 +212,7 @@
             ]
         },
         {
-            "idRecette": 3,
+            "idRecette": 4,
             "title": "Turkey Tomato Cheese Pizza",
             "prix": 241.43,
             "image": "https://spoonacular.com/recipeImages/658753-556x370.jpg",
@@ -266,7 +266,150 @@
                     "unite":"few slices"
                 }
             ]
+        },
+        {
+            "idRecette": 5,
+            "title": "Thai Yellow Curry with Seafood",
+            "prix": 98.49,
+            "image": "https://spoonacular.com/recipeImages/730000-556x370.jpg",
+            "pretEnMinutes": 10,
+            "calorie":1100,
+            "etapes":[
+                {
+                    "numero":1,
+                    "etape": "Heat up some oil in the wok and add in the curry paste. Stir it until you smell the aroma."
+                },
+                {
+                    "numero":2,
+                    "etape": "Add in all the shellfish and zucchini to give them a quick stir."
+                },
+                {
+                    "numero":3,
+                    "etape": "Add in the coconut milk. Cover the wok and bring it to boil or until all shells are open."
+                },
+                {
+                    "numero":4,
+                    "etape": "Add fish sauce and palm sugar to taste (this dish should taste creamy, salty, and sweet)."
+                },
+                {
+                    "numero":5,
+                    "etape": "Add some curry leaves/basil leaves/kaffir lime leaves if you have them handy. If the curry is too thick, add some water."
+                },
+                {
+                    "numero":6,
+                    "etape": "Serve hot with plain white steamed rice."
+                }
+            ],
+            "ingredients":[
+                {
+                    "idIngredient": "V003",
+                    "unite":"1 basil leaf"
+                },
+                {
+                    "idIngredient": "O011",
+                    "unite":"2 clams"
+                },
+                {
+                    "idIngredient": "O012",
+                    "unite":"2 coconut milk"
+                },
+                {
+                    "idIngredient": "V007",
+                    "unite":"1 curry leak"
+                },
+                {
+                    "idIngredient": "O013",
+                    "unite":"2 curry paste"
+                },
+                {
+                    "idIngredient": "O014",
+                    "unite":"2 fish sauce"
+                },
+                {
+                    "idIngredient": "V008",
+                    "unite":"1 kaffir lime leaf"
+                },
+                {
+                    "idIngredient": "O015",
+                    "unite":"2 mussels"
+                },
+                {
+                    "idIngredient": "O016",
+                    "unite":"2 palm sugar"
+                },
+                {
+                    "idIngredient": "O017",
+                    "unite":"2 shrimps"
+                },
+                {
+                    "idIngredient": "O018",
+                    "unite":"2 scallops"
+                },
+                {
+                    "idIngredient": "V009",
+                    "unite":"2 zucchinis"
+                }
+            ]
+
+        },
+        {
+            "idRecette": 6,
+            "title": "Easy Berry French Toast",
+            "prix": 278.52,
+            "image": "https://spoonacular.com/recipeImages/1444543-556x370.jpg",
+            "pretEnMinutes": 45,
+            "calorie":500,
+            "etapes":[
+                {
+                    "numero":1,
+                    "etape": "Beat eggs."
+                },
+                {
+                    "numero":2,
+                    "etape": "Add milk and vanilla sugar.Dip the bread into the egg mixture one slice at a time, lightly pressing the slices into the egg mixture. Turn to coat both sides evenly. Melt 1 tbsp of butter in a large skillet over medium heat."
+                },
+                {
+                    "numero":3,
+                    "etape": "Add 2-3 slices to the skillet (depending on the size of your bread and your skillet).Fry the bread until browned on both sides.Keep warm in the oven while you finish the other slices, adding butter to the pan as needed.Top with fresh or heated frozen berries (I heat frozen berries gently in a saucepan while I make the French toast)."
+                },
+                {
+                    "numero":4,
+                    "etape": "Serve with maple syrup."
+                }
+            ],
+            "ingredients":[
+                {
+                    "idIngredient": "O009",
+                    "unite":"6 eggs"
+                },
+                {
+                    "idIngredient": "O019",
+                    "unite":"1 1/2 cups of milk"
+                },
+                {
+                    "idIngredient": "O020",
+                    "unite":"1 packet of vanilla sugar"
+                },
+                {
+                    "idIngredient": "O006",
+                    "unite":"8 slices of bread"
+                },
+                {
+                    "idIngredient": "O021",
+                    "unite":"4 tablespoons of butter"
+                },
+                {
+                    "idIngredient": "F005",
+                    "unite":"2 cups of mixed berries"
+                },
+                {
+                    "idIngredient": "O022",
+                    "unite":"1/2 cup of maple syrup"
+                }
+            ]
+            
         }
+
     ],
     "ingredients": {
         "Meat":[
@@ -283,13 +426,17 @@
             {"idIngredient": "V003", "nom":"basil"},
             {"idIngredient": "V004", "nom":"green pepper"},
             {"idIngredient": "V005", "nom":"parsley"},
-            {"idIngredient": "V006", "nom":"onion"}
+            {"idIngredient": "V006", "nom":"onion"},
+            {"idIngredient": "V007", "nom":"curry leaf"},
+            {"idIngredient": "V008", "nom":"kaffir lime leaf"},
+            {"idIngredient": "V009", "nom":"zucchini"}
         ],
         "Fruits":[
             {"idIngredient": "F001", "nom":"strawberry"},
             {"idIngredient": "F002", "nom":"banana"},
             {"idIngredient": "F003", "nom":"apple"},
-            {"idIngredient": "F004", "nom":"orange"}
+            {"idIngredient": "F004", "nom":"orange"},
+            {"idIngredient": "F005", "nom":"berry"}
         ],
         "Seasoning":[
             {"idIngredient": "S001", "nom":"salt"},
@@ -309,7 +456,19 @@
             {"idIngredient": "O007", "nom":"pie crust"},
             {"idIngredient": "O008", "nom":"cheese"},
             {"idIngredient": "O009", "nom":"egg"},
-            {"idIngredient": "O010", "nom":"flour"}
+            {"idIngredient": "O010", "nom":"flour"},
+            {"idIngredient": "O011", "nom":"clams"},
+            {"idIngredient": "O012", "nom":"coconut milk"},
+            {"idIngredient": "O013", "nom":"curry paste"},
+            {"idIngredient": "O014", "nom":"fish sauce"},
+            {"idIngredient": "O015", "nom":"mussels"},
+            {"idIngredient": "O016", "nom":"palm sugar"},
+            {"idIngredient": "O017", "nom":"shrimp"},
+            {"idIngredient": "O018", "nom":"scallop"},
+            {"idIngredient": "O019", "nom":"milk"},
+            {"idIngredient": "O020", "nom":"vanilla sugar"},
+            {"idIngredient": "O021", "nom":"butter"},
+            {"idIngredient": "O022", "nom":"maple syrup"}
         ]
     }
 }
