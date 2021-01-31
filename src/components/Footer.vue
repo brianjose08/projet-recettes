@@ -89,19 +89,10 @@ export default {
 }
 .social-icons {
   padding-left: 50px;
-  margin-bottom: 0;
-  list-style: none;
 }
 .social-icons li {
   display: block;
-  margin-bottom: 4px;
-}
-.social-icons li.title {
-  margin-right: 15px;
-  text-transform: uppercase;
-  color: #005cd4;
-  font-weight: 700;
-  font-size: 13px;
+  margin-bottom: 5px;
 }
 .social-icons a {
   background-color: #eceeef;
@@ -112,12 +103,6 @@ export default {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
-}
-.social-icons a:active,
-.social-icons a:focus,
-.social-icons a:hover {
-  color: #fff;
-  background-color: #29aafe;
 }
 .social-icons.size-sm a {
   line-height: 34px;
