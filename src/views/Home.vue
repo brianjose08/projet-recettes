@@ -46,8 +46,6 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-    width: 100%;
-    height: 130vh;
     background-image: url(https://images5.alphacoders.com/904/904774.jpg);
     background-size: cover;
 }
@@ -58,15 +56,13 @@ export default {
   padding-bottom: 20px;
 }
 .titre{
-    background-color: rgb(21, 28, 63);
-    opacity: 0.9;
+    background-color: rgba(182, 143, 60, 0.966);
     border-radius: 10%;
     border-style: solid;
     border-color: rgb(0, 0, 0);
 }
 
 .titre h1{
-      text-decoration: none;
       color: rgb(255, 255, 255);
       font-size: 150px;
       font-weight: 1200;
@@ -74,7 +70,7 @@ export default {
       text-align: center;
       font-family: 'Brush Script MT', cursive;
       -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: rgb(0, 0, 0);
+      -webkit-text-stroke-color: rgba(0, 0, 0, 0.856);
 }
 .titre p{
       text-decoration: none;
@@ -86,6 +82,6 @@ export default {
       padding-bottom: 30px;
       padding-left: 30px;
       -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: rgb(0, 0, 0);
+      -webkit-text-stroke-color: rgba(0, 0, 0, 0.678);
 }
 </style>
