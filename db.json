@@ -303,10 +303,10 @@
             "ingredients":[
                 {
                     "idIngredient": "V003",
-                    "unite":"1 basil leaf"
+                    "unite":"1 leaf"
                 },
                 {
-                    "idIngredient": "O011",
+                    "idIngredient": "SF04",
                     "unite":"2 clams"
                 },
                 {
@@ -318,11 +318,11 @@
                     "unite":"1 curry leak"
                 },
                 {
-                    "idIngredient": "O013",
+                    "idIngredient": "S007",
                     "unite":"2 curry paste"
                 },
                 {
-                    "idIngredient": "O014",
+                    "idIngredient": "S008",
                     "unite":"2 fish sauce"
                 },
                 {
@@ -330,19 +330,19 @@
                     "unite":"1 kaffir lime leaf"
                 },
                 {
-                    "idIngredient": "O015",
+                    "idIngredient": "SF01",
                     "unite":"2 mussels"
                 },
                 {
-                    "idIngredient": "O016",
-                    "unite":"2 palm sugar"
+                    "idIngredient": "S006",
+                    "unite":"2 tablespoon"
                 },
                 {
-                    "idIngredient": "O017",
+                    "idIngredient": "SF02",
                     "unite":"2 shrimps"
                 },
                 {
-                    "idIngredient": "O018",
+                    "idIngredient": "SF03",
                     "unite":"2 scallops"
                 },
                 {
@@ -383,33 +383,230 @@
                     "unite":"6 eggs"
                 },
                 {
-                    "idIngredient": "O019",
-                    "unite":"1 1/2 cups of milk"
+                    "idIngredient": "O013",
+                    "unite":"1 1/2 cups"
                 },
                 {
-                    "idIngredient": "O020",
-                    "unite":"1 packet of vanilla sugar"
+                    "idIngredient": "O014",
+                    "unite":"1 packet"
                 },
                 {
                     "idIngredient": "O006",
-                    "unite":"8 slices of bread"
+                    "unite":"8 slices"
                 },
                 {
-                    "idIngredient": "O021",
-                    "unite":"4 tablespoons of butter"
+                    "idIngredient": "O015",
+                    "unite":"4 tablespoons"
                 },
                 {
                     "idIngredient": "F005",
-                    "unite":"2 cups of mixed berries"
+                    "unite":"2 cups"
                 },
                 {
-                    "idIngredient": "O022",
-                    "unite":"1/2 cup of maple syrup"
+                    "idIngredient": "O016",
+                    "unite":"1/2 cup"
                 }
             ]
             
-        }
+        },
+        {
+            "idRecette": 7,
+            "title": "Korean Sweet n Sour Chicken",
+            "prix": 272.67,
+            "image": "https://spoonacular.com/recipeImages/638369-556x370.jpg",
+            "pretEnMinutes": 30,
+            "calorie": 604,
+            "etapes":[
+                {
+                    "numero":1,
+                    "etape": "Cut the chicken into thin strips, about 1 or 2-inch pieces."
+                },
+                {
+                    "numero":2,
+                    "etape": "Add soy sauce to the chicken for a short marination; mix well and set aside."
+                },
+                {
+                    "numero":3,
+                    "etape": "Cut the vegetables into large bite-sized pieces. Set aside until the sauce is ready and thickened.Make batter by mixing the flour, cornstarch, water and beaten egg."
+                },
+                {
+                    "numero":4,
+                    "etape": "Add more flour until a thick consistency is reached. Dip the marinated chicken strips into the batter.Bring vegetable oil to medium high heat. Deep fry each of the strips for about 3, 4 min for each batch or until browned and cooked through. When finished, place on paper towel-lined dish to remove excess oil. Once the first round of frying is done, heat the oil and re-fry the batch for the 2nd time to make it really crispy (optional).To make the sauce bring the following ingredients in a saucepan: one cup of water along 3 tbsp vinegar, 3 tbsp sugar, and 2 tbsp of soy sauce. Bring to a rapid boil and then add the mixture of cornstarch and water."
+                },
+                {
+                    "numero":5,
+                    "etape": "Add desired vegetables and let simmer for about 5 minutes or until it thickens.On a large plate, add the fried chicken strips, then pour over the sauce/vegetable mixture and serve while warm."
+                },
+                {
+                    "numero":6,
+                    "etape": "Serve hot with plain white steamed rice."
+                }
+            ],
+            "ingredients":[
+                {
+                    "idIngredient": "M005",
+                    "unite":"2 lbs"
+                },
+                {
+                    "idIngredient": "S004",
+                    "unite":"3 tablespoons"
+                },
+                {
+                    "idIngredient": "O017",
+                    "unite":"2 tablespoons"
+                },
+                {
+                    "idIngredient": "O009",
+                    "unite":"3 eggs"
+                },
+                {
+                    "idIngredient": "O010",
+                    "unite":"1/2 cup"
+                },
+                {
+                    "idIngredient": "V006",
+                    "unite":"1 onion"
+                },
+                {
+                    "idIngredient": "S009",
+                    "unite":"2 tablespoons"
+                },
+                {
+                    "idIngredient": "S006",
+                    "unite":"3 tablespoons"
+                },
+                {
+                    "idIngredient": "S005",
+                    "unite":"3 tablespoons"
+                },
+                {
+                    "idIngredient": "O005",
+                    "unite":"1 cup"
+                }
+            ]
 
+        },
+        {
+            "idRecette": 8,
+            "title": "Ratatouille Pasta",
+            "prix": 190.62,
+            "image": "https://spoonacular.com/recipeImages/657933-556x370.jpg",
+            "pretEnMinutes": 45,
+            "calorie": 417,
+            "etapes":[
+                {
+                    "numero":1,
+                    "etape": "Saute the yellow onion in a large skillet or saute pan with enough Olive oil to coat the bottom of the pan, over medium-low heat until tender and translucent. Season with salt and pepper."
+                },
+                {
+                    "numero":2,
+                    "etape": "Add garlic, saute until fragrant."
+                },
+                {
+                    "numero":3,
+                    "etape": "Add another tablespoon of Olive oil and the zucchini, eggplant and Italian seasoning. Continue sauteing until the zucchini and eggplant start to break down and become limp and tender."
+                },
+                {
+                    "numero":4,
+                    "etape": "Add the artichokes and tomatoes. Season with salt and pepper. Bring to a simmer for ten - fifteen minutes. Taste and re-season if needed."
+                },
+                {
+                    "numero":5,
+                    "etape": "Meanwhile cook the spaghetti to al dente according to package directions."
+                },
+                {
+                    "numero":6,
+                    "etape": "Toss with pasta and serve with a drizzle of extra-virgin Olive oil and Parmesan cheese."
+                }
+            ],
+            "ingredients":[
+                {
+                    "idIngredient": "V006",
+                    "unite":"1 onion"
+                },
+                {
+                    "idIngredient": "S005",
+                    "unite":"3 tablespoons"
+                },
+                {
+                    "idIngredient": "S001",
+                    "unite":"1 tablespoon"
+                },
+                {
+                    "idIngredient": "V002",
+                    "unite":"4 gloves"
+                },
+                {
+                    "idIngredient": "V009",
+                    "unite":"3 cups"
+                },
+                {
+                    "idIngredient": "V011",
+                    "unite":"3 cups"
+                },
+                {
+                    "idIngredient": "S010",
+                    "unite":"1 teaspoon"
+                },
+                {
+                    "idIngredient": "V012",
+                    "unite":"14 ounces"
+                },
+                {
+                    "idIngredient": "V001",
+                    "unite":"2 tomatoes"
+                },
+                {
+                    "idIngredient": "O019",
+                    "unite":"8 cups"
+                },
+                {
+                    "idIngredient": "O008",
+                    "unite":"3 cups"
+                }
+            ]
+
+        },
+        {
+            "idRecette": 9,
+            "title": "Mango Fried Rice",
+            "prix": 140.4,
+            "image": "https://spoonacular.com/recipeImages/716311-556x370.jpg",
+            "pretEnMinutes": 45,
+            "calorie": 485,
+            "etapes":[
+                {
+                    "numero":1,
+                    "etape": "Wash your rice and bring to boil on medium heat with very little water as you are still going to cook it in chicken stock.Once the rice is slightly soft and the initial water has dried up, reduce the heat and pour in the chicken stock and cook till the chicken stock is all absorbed and has dried up. The chicken stock if freshly made will have some oil from the chicken so your rice does not need oil.Increase the heat and stir in the chopped vegetables and pepper."
+                },
+                {
+                    "numero":2,
+                    "etape": "Add your seasoning cube.Finally stir in your cubed mango and serve warm with any protein of your choice. I’d say chicken but it’s up to you."
+                }
+            ],
+            "ingredients":[
+                {
+                    "idIngredient": "F006",
+                    "unite":"3 slices"
+                },
+                {
+                    "idIngredient": "O020",
+                    "unite":"1 cup"
+                },
+                {
+                    "idIngredient": "V013",
+                    "unite":"1 cup"
+                },
+                {
+                    "idIngredient": "S001",
+                    "unite":"1 teaspoon"
+                },
+                {
+                    "idIngredient": "S001",
+                    "unite":"1/2 teaspoon"
+                }
+            ]
+        }
     ],
     "ingredients": {
         "Meat":[
@@ -429,14 +626,20 @@
             {"idIngredient": "V006", "nom":"onion"},
             {"idIngredient": "V007", "nom":"curry leaf"},
             {"idIngredient": "V008", "nom":"kaffir lime leaf"},
-            {"idIngredient": "V009", "nom":"zucchini"}
+            {"idIngredient": "V009", "nom":"zucchini"},
+            {"idIngredient": "V010", "nom":"edamane"},
+            {"idIngredient": "V011", "nom":"eggplant"},
+            {"idIngredient": "V012", "nom":"artichokes"},
+            {"idIngredient": "V013", "nom":"root vegetables"}
+            
         ],
         "Fruits":[
             {"idIngredient": "F001", "nom":"strawberry"},
             {"idIngredient": "F002", "nom":"banana"},
             {"idIngredient": "F003", "nom":"apple"},
             {"idIngredient": "F004", "nom":"orange"},
-            {"idIngredient": "F005", "nom":"berry"}
+            {"idIngredient": "F005", "nom":"berry"},
+            {"idIngredient": "F006", "nom":"mango"}
         ],
         "Seasoning":[
             {"idIngredient": "S001", "nom":"salt"},
@@ -444,7 +647,17 @@
             {"idIngredient": "S003", "nom":"creole seasoning"},
             {"idIngredient": "S004", "nom":"vinegar"},
             {"idIngredient": "S005", "nom":"olive oil"},
-            {"idIngredient": "S006", "nom":"sugar"}
+            {"idIngredient": "S006", "nom":"sugar"},
+            {"idIngredient": "S007", "nom":"curry paste"},
+            {"idIngredient": "S008", "nom":"fish sauce"},
+            {"idIngredient": "S009", "nom":"soy sauce"},
+            {"idIngredient": "S010", "nom":"italian seasoning"}
+        ],
+        "Seafood":[
+            {"idIngredient": "SF01", "nom":"mussels"},
+            {"idIngredient": "SF02", "nom":"shrimp"},
+            {"idIngredient": "SF03", "nom":"scallop"},
+            {"idIngredient": "SF04", "nom":"clams"}
         ],
         "Others":[
             {"idIngredient": "O001", "nom":"baking powder"},
@@ -457,18 +670,15 @@
             {"idIngredient": "O008", "nom":"cheese"},
             {"idIngredient": "O009", "nom":"egg"},
             {"idIngredient": "O010", "nom":"flour"},
-            {"idIngredient": "O011", "nom":"clams"},
             {"idIngredient": "O012", "nom":"coconut milk"},
-            {"idIngredient": "O013", "nom":"curry paste"},
-            {"idIngredient": "O014", "nom":"fish sauce"},
-            {"idIngredient": "O015", "nom":"mussels"},
-            {"idIngredient": "O016", "nom":"palm sugar"},
-            {"idIngredient": "O017", "nom":"shrimp"},
-            {"idIngredient": "O018", "nom":"scallop"},
-            {"idIngredient": "O019", "nom":"milk"},
-            {"idIngredient": "O020", "nom":"vanilla sugar"},
-            {"idIngredient": "O021", "nom":"butter"},
-            {"idIngredient": "O022", "nom":"maple syrup"}
+            {"idIngredient": "O013", "nom":"milk"},
+            {"idIngredient": "O014", "nom":"vanilla sugar"},
+            {"idIngredient": "O015", "nom":"butter"},
+            {"idIngredient": "O016", "nom":"maple syrup"},
+            {"idIngredient": "O017", "nom":"corn stach"},
+            {"idIngredient": "O018", "nom":"pineapple juice"},
+            {"idIngredient": "O019", "nom":"spaghetti"},
+            {"idIngredient": "O020", "nom":"rice"}
         ]
     }
 }
