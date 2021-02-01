@@ -1,32 +1,37 @@
 <template>
   <div class="home">
-
-      <Navbar/>
-      <div class="contenu">
-      <div class="titre">
-                <h1>What To Eat?</h1>
+    <Navbar />
+    <div class="gridview">
+      <div class="generalInfo">
+        <h1>What To Eat?</h1>
         <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac tempor orci.
-Aenean libero sem, egestas eget malesuada ut, pretium ac quam. Nunc in nulla urna.
-Cras id sollicitudin ligula. Donec turpis ligula, vehicula ornare aliquet sit amet,
-mollis sed risus.
-Cras vitae tristique nisl. Praesent in ex nec turpis pellentesque blandit a et est.</p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          ac tempor orci. Aenean libero sem, egestas eget malesuada ut, pretium
+          ac quam. Nunc in nulla urna. Cras id sollicitudin ligula. Donec turpis
+          ligula, vehicula ornare aliquet sit amet, mollis sed risus. Cras vitae
+          tristique nisl. Praesent in ex nec turpis pellentesque blandit a et
+          est.
+        </p>
+      </div>
+      <div class="about">
+        <h1>About</h1>
         <p>
-Ut molestie diam in mauris aliquam, id mollis justo efficitur. Etiam nec augue tristique, rutrum
-lorem
-nec,
- tristique orci.
-Pellentesque egestas a tellus quis tempor. Morbi varius nibh tortor, sit amet malesuada arcu mattis
-vel
- Integer nec tortor eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- Etiam leo diam, viverra id iaculis nec, lobortis a nisl. Nullam et est vel eros vehicula consequat.
- Etiam augue leo, pellentesque ultricies malesuada ultricies, molestie vitae justo.
- Sed nec quam quis urna tempor interdum a at tortor. Duis libero massa, dictum a lacinia id,
- porttitor sed augue.</p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          ac tempor orci. Aenean libero sem, egestas eget malesuada ut, pretium
+          ac quam. Nunc in nulla urna.
+          est.
+        </p>
       </div>
+      <div class="slidder">
+        <h1>Slidder</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          ac tempor orci. Aenean libero sem, egestas eget malesuada ut, pretium
+          ac quam. Nunc in nulla urna.
+        </p>
       </div>
-      <Footer/>
-
+    </div>
+    <Footer />
   </div>
 </template>
 
@@ -46,42 +51,71 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-    background-image: url(https://images5.alphacoders.com/904/904774.jpg);
-    background-size: cover;
-}
-.contenu{
-  margin: auto;
-  width: 60%;
-  padding-top: 100px;
-  padding-bottom: 20px;
-}
-.titre{
-    background-color: rgba(182, 143, 60, 0.966);
-    border-radius: 10%;
-    border-style: solid;
-    border-color: rgb(0, 0, 0);
+  background-image: url(https://images5.alphacoders.com/904/904774.jpg);
+  background-size: cover;
 }
 
-.titre h1{
-      color: rgb(255, 255, 255);
-      font-size: 150px;
-      font-weight: 1200;
-      font-style: italic;
-      text-align: center;
-      font-family: 'Brush Script MT', cursive;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: rgba(0, 0, 0, 0.856);
+.gridview {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 1em;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1em;
+  justify-content: stretch;
+  align-content: stretch;
+  padding: 5%;
+
 }
-.titre p{
-      text-decoration: none;
-      color: rgb(255, 255, 255);
-      font-size: 34px;
-      font-weight: 500;
-      text-align: left;
-      padding-right: 30px;
-      padding-bottom: 30px;
-      padding-left: 30px;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: rgba(0, 0, 0, 0.678);
+
+.gridview > div {
+  background: #eee;
+}
+
+.gridview > div:nth-child(odd) {
+  background: #ddd;
+}
+
+.generalInfo {
+  grid-column: 1/3;
+  grid-row: 1/3;
+  padding: 10%;
+}
+.generalInfo > p {
+  font-size: 240%;
+}
+
+.about {
+
+}
+.about > p {
+  font-size: 140%;
+}
+.slidder {
+
+}
+.slidder > p {
+  font-size: 140%;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-size: 600%;
+  font-weight: 1200;
+  font-style: italic;
+  text-align: center;
+  font-family: "Brush Script MT", cursive;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.856);
+}
+p {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  text-align: left;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.678);
 }
 </style>
