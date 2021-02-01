@@ -14,12 +14,15 @@
         </p>
       </div>
       <div class="about">
-        <h1>About</h1>
+        <h1>About Us</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          ac tempor orci. Aenean libero sem, egestas eget malesuada ut, pretium
-          ac quam. Nunc in nulla urna.
-          est.
+          Étudiant en fin de session, <br/>
+          Par: Brian-José Meija-Rivera <br/>
+          @e1746533 <br/>
+          Par: Franco Huynh <br/>
+          @e1794013 <br/>
+          <br/>
+          @Collège de Maisonneuve <br/>
         </p>
       </div>
       <div class="slidder">
@@ -31,20 +34,17 @@
         </p>
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Navbar from '../components/Navbar.vue';
-import Footer from '../components/Footer.vue';
 
 export default {
   name: 'Home',
   components: {
     Navbar,
-    Footer,
   },
 };
 </script>
@@ -64,7 +64,6 @@ export default {
   justify-content: stretch;
   align-content: stretch;
   padding: 5%;
-
 }
 
 .gridview > div {
@@ -80,12 +79,26 @@ export default {
   grid-row: 1/3;
   padding: 10%;
 }
+.generalInfo > h1 {
+  color: black;
+  font-size: 800%;
+  text-align: center;
+  font-family: "Brush Script MT", cursive;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.856);
+}
 .generalInfo > p {
   font-size: 240%;
 }
 
-.about {
-
+.about > h1{
+  color: black;
+  font-size: 400%;
+  font-family: "Hand-written Fonts", cursive;
+  text-align: left;
+  padding-left: 7.5%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.856);
 }
 .about > p {
   font-size: 140%;
@@ -97,25 +110,12 @@ export default {
   font-size: 140%;
 }
 
-h1 {
-  color: rgb(255, 255, 255);
-  font-size: 600%;
-  font-weight: 1200;
-  font-style: italic;
-  text-align: center;
-  font-family: "Brush Script MT", cursive;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgba(0, 0, 0, 0.856);
-}
 p {
   text-decoration: none;
-  color: rgb(255, 255, 255);
   font-weight: 500;
   text-align: left;
   padding-right: 30px;
   padding-bottom: 30px;
   padding-left: 30px;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgba(0, 0, 0, 0.678);
 }
 </style>

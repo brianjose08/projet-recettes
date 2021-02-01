@@ -85,4 +85,8 @@ nav ul li a:hover {
       color: rgb(241, 177, 0);
       border-color: rgb(241, 177, 0);
 }
+
+.menu {
+      font-family: "Hand-written Fonts", cursive;
+}
 </style>
