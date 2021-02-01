@@ -83,7 +83,7 @@ export default {
   color: black;
   font-size: 800%;
   text-align: center;
-  font-family: "Brush Script MT", cursive;
+  font-family: 'Architects Daughter', cursive;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.856);
 }
