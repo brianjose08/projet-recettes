@@ -24,10 +24,7 @@
                 >
               </a>
               <img
-                src="https://spoonacular.com/recipeImages/1444543-556x370.jpg"
-                width="450px"
-                height="350px"
-              />
+                src="https://spoonacular.com/recipeImages/1444543-556x370.jpg"/>
               <h2>Easy Berry French Toast</h2>
             </div>
             <div class="ingredients-recette">
@@ -159,23 +156,24 @@ ul li div img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-top: 15px;
+  height: auto;
+  width: 98%;
 }
 
  ul li div h2 {
   border-style: solid;
-  overflow-x: scroll;
   border-color: black;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   margin-top: 0;
   position: relative;
   bottom: 5px;
-  width: 450px;
-  height: 50px;
+  width: auto;
 }
 .gridview{
     display: grid;
     grid-template-columns: 1fr 2fr 3fr;
+    grid-auto-rows: minmax(100px, auto);
     grid-gap: 3em;
     justify-content: stretch;
     align-content: stretch;
@@ -186,22 +184,23 @@ ul li div img {
   overflow-y: scroll;
   margin-top: 33px;
   padding: 10px;
-  width: 620px;
-  height: 380px;
   border-style: solid;
   border-color: black;
   border-radius: 10px;
+  width: auto;
+  height: 205px;
 }
 .etapes-recette p {
   text-align: left;
   font-size: 22px;
   overflow-y: scroll;
   margin-top: 33px;
+  margin-right: 50px;
   padding: 10px;
-  width: 620px;
-  height: 380px;
   border-style: solid;
   border-color: black;
   border-radius: 10px;
+  width: auto;
+  height: 205px;
 }
 </style>
