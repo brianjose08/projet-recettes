@@ -26,18 +26,18 @@
         </p>
       </div>
       <div class="slidder">
-        <h1>Slidder</h1>
+        <img src="./../assets/CookingPicture.jpg">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          ac tempor orci. Aenean libero sem, egestas eget malesuada ut, pretium
-          ac quam. Nunc in nulla urna.
+          Enjoy your cooking !
         </p>
       </div>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
+import Footer from '../components/Footer.vue';
 // @ is an alias to /src
 import Navbar from '../components/Navbar.vue';
 
@@ -45,6 +45,7 @@ export default {
   name: 'Home',
   components: {
     Navbar,
+    Footer,
   },
 };
 </script>
@@ -87,6 +88,7 @@ export default {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.856);
 }
+
 .generalInfo > p {
   font-size: 240%;
 }
@@ -94,28 +96,21 @@ export default {
 .about > h1{
   color: black;
   font-size: 400%;
-  font-family: "Hand-written Fonts", cursive;
-  text-align: left;
+  font-family: "Architects Daughter", cursive;
   padding-left: 7.5%;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgba(0, 0, 0, 0.856);
 }
-.about > p {
-  font-size: 140%;
-}
-.slidder {
 
+.about > p {
+  font-size: 180%;
 }
+
 .slidder > p {
-  font-size: 140%;
+  font-size: 240%;
 }
 
 p {
   text-decoration: none;
   font-weight: 500;
-  text-align: left;
-  padding-right: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
+  font-family: "Architects Daughter", cursive;
 }
 </style>

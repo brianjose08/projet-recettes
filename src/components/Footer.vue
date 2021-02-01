@@ -1,14 +1,12 @@
 <template>
   <div id="footer">
     <div>
-      <h3>About us</h3>
+      <h3>General Informations</h3>
       <p>
         Morbi varius lectus arcu. Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Etiam in augue eget massa ornare consequat. In a eros
-        at justo feugiat molestie eget id eros. Curabitur non ante tellus.
-        Phasellus nibh dolor, imperdiet eget accumsan nec, commodo eu orci.
-        Quisque sit amet tempus risus. Mauris id tellus luctus turpis imperdiet
-        rutrum.
+        at justo feugiat molestie eget id eros. urabitur non ante tellus.
+        Phasellus nibh dolor, imperdiet eget accumsan nec.
       </p>
     </div>
     <div>
@@ -61,6 +59,7 @@ export default {
   justify-content: center;
   width: 100%;
   background: #1f1e1ef5;
+  font-family: "Architects Daughter", cursive;
 }
 #footer h3 {
   margin-top: 2%;
