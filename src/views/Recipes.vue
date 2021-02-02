@@ -9,12 +9,19 @@
         >
       </a>
     </div>
+
+    <ul v-for="category in allIngredients" :key="category.name">
+      <li>ingredient.id</li>
+    </ul>
     <ul v-for="recette in allRecettes" :key="recette.idRecette">
       <li class="item-recette">
         <div class="gridview">
           <div>
             <a>
-              <router-link to="/modify" class="modifier-recette"
+              <router-link
+                to="/modify"
+                class="modifier-recette"
+                @click="afficher()"
                 >Modifier</router-link
               >
             </a>
@@ -65,13 +72,17 @@ export default {
   },
 
   methods: {
-    ...mapActions(['fetchRecettes']),
+    ...mapActions(['fetchRecettes', 'fetchIngredients']),
+    afficher(ingredient) {
+      console.log(ingredient);
+    },
   },
 
-  computed: mapGetters(['allRecettes']),
+  computed: mapGetters(['allRecettes', 'allIngredients']),
 
   created() {
     this.fetchRecettes();
+    this.fetchIngredients();
   },
 
   mounted() {},

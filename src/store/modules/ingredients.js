@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const getters = {
-  allIngredients: (state) => state.recettes,
+  allIngredients: (state) => state.ingredients,
 };
 
 const actions = {
