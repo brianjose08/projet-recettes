@@ -9,7 +9,7 @@
         >
       </a>
     </div>
-      <ul>
+      <ul v-for="recette in allRecettes" :key="recette.idRecette">
         <li class="item-recette">
           <div class="gridview">
             <div>
@@ -24,8 +24,8 @@
                 >
               </a>
               <img
-                src="https://spoonacular.com/recipeImages/1444543-556x370.jpg"/>
-              <h2>Easy Berry French Toast</h2>
+                :src="recette.image"/>
+              <h2>{{recette.titre}}</h2>
             </div>
             <div class="ingredients-recette">
               <p>
@@ -72,6 +72,7 @@
 
 <script>
 // @ is an alias to /src
+import { mapGetters, mapActions } from 'vuex';
 import Navbar from '../components/Navbar.vue';
 import Footer from '../components/Footer.vue';
 
@@ -81,6 +82,21 @@ export default {
     Navbar,
     Footer,
   },
+
+  methods: {
+    ...mapActions(['fetchRecettes']),
+  },
+
+  computed: mapGetters(['allRecettes']),
+
+  created() {
+    this.fetchRecettes();
+  },
+
+  mounted() {
+
+  },
+
 };
 </script>
 <style lang="scss" scoped>
