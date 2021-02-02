@@ -13,6 +13,8 @@
       <li class="item-recette">
         <div class="gridview">
           <div>
+            <h2>{{ recette.title }}</h2>
+            <img :src="recette.image" />
             <a>
               <router-link
                 to="/modify"
@@ -26,8 +28,6 @@
                 >Supprimer</router-link
               >
             </a>
-            <img :src="recette.image" />
-            <h2>{{ recette.title }}</h2>
           </div>
           <div class="ingredients-recette">
             <b>Price: </b>{{ recette.price }} $ <br />
@@ -63,7 +63,8 @@
               v-bind="etape"
               :key="etape.numberStep"
             >
-              <b>{{ etape.numberStep }}</b>- {{ etape.step }}
+              <b>{{ etape.numberStep }}</b
+              >- {{ etape.step }}
             </div>
           </div>
         </div>
@@ -108,7 +109,7 @@ export default {
   font-family: "Architects Daughter", cursive;
 }
 .search {
-  padding-top: 100px;
+  padding-top: 110px;
   display: block;
   justify-content: center;
 }
@@ -139,6 +140,7 @@ export default {
   text-align: center;
   text-decoration: none;
   color: rgb(255, 255, 255);
+  margin-right: 2px;
   font-size: 15px;
   padding: 10px;
   border-radius: 5px;
@@ -155,6 +157,7 @@ export default {
   text-align: center;
   text-decoration: none;
   color: rgb(255, 255, 255);
+  margin-left: 2px;
   font-size: 15px;
   padding: 10px;
   border-radius: 5px;
@@ -169,29 +172,32 @@ export default {
 }
 ul li {
   display: grid;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  border-style: double;
+  border-color: black;
+  padding: 40px 0px 40px 20px;
+  margin-right: 30px;
 }
 ul li div img {
   border-style: solid;
   border-color: black;
-  border-bottom: none;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  margin-top: 15px;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   height: auto;
-  width: 98%;
+  width: 100%;
+  position: relative;
+  bottom:30px;
 }
 
 ul li div h2 {
   border-style: solid;
   border-color: black;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  margin-top: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 18px;
   position: relative;
-  bottom: 5px;
-  width: auto;
+  bottom: 15px;
+  width: 100%;
 }
 .gridview {
   display: grid;
@@ -205,7 +211,6 @@ ul li div h2 {
   text-align: left;
   font-size: 22px;
   overflow-y: scroll;
-  margin-top: 33px;
   padding: 10px;
   border-style: solid;
   border-color: black;
@@ -217,7 +222,6 @@ ul li div h2 {
   text-align: left;
   font-size: 22px;
   overflow-y: scroll;
-  margin-top: 33px;
   margin-right: 50px;
   padding: 10px;
   border-style: solid;

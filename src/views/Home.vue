@@ -64,7 +64,7 @@ export default {
   grid-gap: 1em;
   justify-content: stretch;
   align-content: stretch;
-  padding: 5%;
+  padding: 10%;
 }
 
 .gridview > div {
