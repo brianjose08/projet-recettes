@@ -9,63 +9,48 @@
         >
       </a>
     </div>
-      <ul v-for="recette in allRecettes" :key="recette.idRecette">
-        <li class="item-recette">
-          <div class="gridview">
-            <div>
-              <a>
-                <router-link to="/modify" class="modifier-recette"
-                  >Modifier</router-link
-                >
-              </a>
-              <a>
-                <router-link to="/delete" class="supprimer-recette"
-                  >Supprimer</router-link
-                >
-              </a>
-              <img
-                :src="recette.image"/>
-              <h2>{{recette.titre}}</h2>
-            </div>
-            <div class="ingredients-recette">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                non malesuada nunc. Orci varius natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus. Donec congue dui sed
-                eros efficitur, sit amet vehicula enim aliquam. Cras sit amet
-                magna quis magna rhoncus fermentum vel ac tortor. Etiam
-                vulputate leo nec sapien luctus porttitor. In blandit varius
-                mattis. Sed auctor quis erat id imperdiet. Phasellus nec dui
-                suscipit, posuere diam vel, scelerisque ipsum.
-                <br />
-                <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Curabitur gravida felis sapien, vitae faucibus est facilisis
-                euismod. Proin vitae eros pretium, bibendum mauris vel,
-                imperdiet metus. Donec fringilla vulputate metus at interdum.
-                Donec porta pretium libero, at placerat nibh iaculis quis. Sed
-                dapibus et diam ac interdum. Praesent egestas in massa vel
-                aliquet. Orci varius natoque penatibus et magnis dis parturient
-                montes, nascetur ridiculus mus. Ut non massa vitae tellus
-                suscipit eleifend. Suspendisse laoreet mauris eget venenatis
-                molestie. Vivamus malesuada ut nunc a pellentesque. Suspendisse
-                potenti. Suspendisse pulvinar vehicula tristique. Cras ut quam
-                et diam scelerisque tempor. Fusce ante massa, vestibulum sit
-                amet quam ut, aliquet placerat ex.
-              </p>
-            </div>
-            <div class="etapes-recette">
-              <p>
-                Ut non massa vitae tellus suscipit eleifend. Suspendisse laoreet
-                mauris eget venenatis molestie. Vivamus malesuada ut nunc a
-                pellentesque. Suspendisse potenti. Suspendisse pulvinar vehicula
-                tristique. Cras ut quam et diam scelerisque tempor. Fusce ante
-                massa, vestibulum sit amet quam ut, aliquet placerat ex.
-              </p>
-            </div>
+    <ul v-for="recette in allRecettes" :key="recette.idRecette">
+      <li class="item-recette">
+        <div class="gridview">
+          <div>
+            <a>
+              <router-link to="/modify" class="modifier-recette"
+                >Modifier</router-link
+              >
+            </a>
+            <a>
+              <router-link to="/delete" class="supprimer-recette"
+                >Supprimer</router-link
+              >
+            </a>
+            <img :src="recette.image" />
+            <h2>{{ recette.titre }}</h2>
           </div>
-        </li>
-      </ul>
+          <div class="ingredients-recette">
+            <ul>
+              <li
+                v-for="ingredient in recette.ingredients"
+                v-bind="ingredient"
+                :key="ingredient.idIngredient"
+              >
+                {{ ingredient.unite }}
+              </li>
+            </ul>
+          </div>
+          <div class="etapes-recette">
+            <ul>
+            <li
+              v-for="etape in recette.etapes"
+              v-bind="etape"
+              :key="etape.numero"
+            >
+              {{etape.numero}}- {{ etape.etape }}
+            </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
     <Footer />
   </div>
 </template>
@@ -93,10 +78,7 @@ export default {
     this.fetchRecettes();
   },
 
-  mounted() {
-
-  },
-
+  mounted() {},
 };
 </script>
 <style lang="scss" scoped>
@@ -161,9 +143,9 @@ export default {
   background-color: rgb(255, 196, 0);
 }
 ul li {
-    display: grid;
-    padding-top: 40px;
-    padding-bottom: 40px;
+  display: grid;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 ul li div img {
   border-style: solid;
@@ -176,7 +158,7 @@ ul li div img {
   width: 98%;
 }
 
- ul li div h2 {
+ul li div h2 {
   border-style: solid;
   border-color: black;
   border-bottom-left-radius: 10px;
@@ -186,15 +168,15 @@ ul li div img {
   bottom: 5px;
   width: auto;
 }
-.gridview{
-    display: grid;
-    grid-template-columns: 1fr 2fr 3fr;
-    grid-auto-rows: minmax(100px, auto);
-    grid-gap: 3em;
-    justify-content: stretch;
-    align-content: stretch;
+.gridview {
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 3em;
+  justify-content: stretch;
+  align-content: stretch;
 }
-.ingredients-recette p {
+.ingredients-recette ul {
   text-align: left;
   font-size: 22px;
   overflow-y: scroll;
@@ -206,7 +188,7 @@ ul li div img {
   width: auto;
   height: 205px;
 }
-.etapes-recette p {
+.etapes-recette ul {
   text-align: left;
   font-size: 22px;
   overflow-y: scroll;
