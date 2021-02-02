@@ -9,10 +9,6 @@
         >
       </a>
     </div>
-
-    <ul v-for="category in allIngredients" :key="category.name">
-      <li>ingredient.id</li>
-    </ul>
     <ul v-for="recette in allRecettes" :key="recette.idRecette">
       <li class="item-recette">
         <div class="gridview">
@@ -34,21 +30,40 @@
             <h2>{{ recette.titre }}</h2>
           </div>
           <div class="ingredients-recette">
+            <b>Price: </b>{{ recette.prix }} $ <br />
+            <b>Cooking time: </b>{{ recette.pretEnMinutes }} min. <br />
+            <b>Calories: </b>{{ recette.calorie }} calories <br />
+            <b>Liste of ingredients:</b>
             <div
               v-for="ingredient in recette.ingredients"
               v-bind="ingredient"
               :key="ingredient.idIngredient"
             >
-              {{ ingredient.unite }}
+              <div v-for="category in allIngredients" :key="category">
+                <div
+                  v-for="ingredientCategory in category"
+                  :key="ingredientCategory.idIngredient"
+                >
+                  <div
+                    v-if="
+                      ingredient.idIngredient ===
+                      ingredientCategory.idIngredient
+                    "
+                  >
+                    -{{ ingredientCategory.nom }} ({{ ingredient.unite }})
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="etapes-recette">
+            <b>Steps: </b><br />
             <div
               v-for="etape in recette.etapes"
               v-bind="etape"
               :key="etape.numero"
             >
-              {{ etape.numero }}- {{ etape.etape }}
+              <b>{{ etape.numero }}</b>- {{ etape.etape }}
             </div>
           </div>
         </div>
