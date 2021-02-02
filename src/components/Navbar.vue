@@ -12,7 +12,7 @@
       </a>
       <div class="menuCenter">
         <a>
-            <router-link to="/" tag="img"
+            <router-link id="logo" to="/" tag="img"
             v-bind:src="require('./../assets/RecipeWebLogo.png')"
             class="navbar-item noHover is-clickable"></router-link>
         </a>
@@ -47,6 +47,7 @@ export default {
   float: left;
   color: #f2f2f2;
   text-align: center;
+
   padding: 14px 16px;
   text-decoration: none;
   font-size: 140%;
@@ -65,6 +66,11 @@ export default {
 }
 
 .menuCenter {
-  text-align-last: center;
+  display: inline-block;
+  padding-right: 12%;
+}
+
+#logo {
+  height: 100px;
 }
 </style>
