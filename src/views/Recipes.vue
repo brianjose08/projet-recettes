@@ -27,12 +27,12 @@
               >
             </a>
             <img :src="recette.image" />
-            <h2>{{ recette.titre }}</h2>
+            <h2>{{ recette.title }}</h2>
           </div>
           <div class="ingredients-recette">
-            <b>Price: </b>{{ recette.prix }} $ <br />
-            <b>Cooking time: </b>{{ recette.pretEnMinutes }} min. <br />
-            <b>Calories: </b>{{ recette.calorie }} calories <br />
+            <b>Price: </b>{{ recette.price }} $ <br />
+            <b>Cooking time: </b>{{ recette.cookingTime }} min. <br />
+            <b>Calories: </b>{{ recette.calories }} calories <br />
             <b>Liste of ingredients:</b>
             <div
               v-for="ingredient in recette.ingredients"
@@ -50,7 +50,7 @@
                       ingredientCategory.idIngredient
                     "
                   >
-                    -{{ ingredientCategory.nom }} ({{ ingredient.unite }})
+                    -{{ ingredientCategory.name }} ({{ ingredient.unit }})
                   </div>
                 </div>
               </div>
@@ -59,11 +59,11 @@
           <div class="etapes-recette">
             <b>Steps: </b><br />
             <div
-              v-for="etape in recette.etapes"
+              v-for="etape in recette.steps"
               v-bind="etape"
-              :key="etape.numero"
+              :key="etape.numberStep"
             >
-              <b>{{ etape.numero }}</b>- {{ etape.etape }}
+              <b>{{ etape.numberStep }}</b>- {{ etape.step }}
             </div>
           </div>
         </div>

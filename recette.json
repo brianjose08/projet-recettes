@@ -16,669 +16,669 @@
     "recettes":[
         {
             "idRecette": 1,
-            "titre":"Silver Dollar Buttermilk-Pecan Pancakes with Bourbon Molasses Butter and Maple Syrup",
-            "prix":163.15,
+            "title":"Silver Dollar Buttermilk-Pecan Pancakes with Bourbon Molasses Butter and Maple Syrup",
+            "price":163.15,
             "image":"https://spoonacular.com/recipeImages/324694-556x370.jpeg",
-            "pretEnMinutes": 55,
-            "calorie":2000,
-            "etapes":[
+            "cookingTime": 55,
+            "calories":2000,
+            "steps":[
                 {
-                    "numero":1,
-                    "etape":"Preheat the oven to 200 degrees F."
+                    "numberStep":1,
+                    "step":"Preheat the oven to 200 degrees F."
                 },
                 {
-                    "numero":2,
-                    "etape":"Whisk together the flour, pecans, granulated sugar, light brown sugar, baking powder, baking soda, and salt in a medium bowl."
+                    "numberStep":2,
+                    "step":"Whisk together the flour, pecans, granulated sugar, light brown sugar, baking powder, baking soda, and salt in a medium bowl."
                 },
                 {
-                    "numero":3,
-                    "etape":"Whisk together the eggs, buttermilk, butter and vanilla extract and vanilla bean in a small bowl."
+                    "numberStep":3,
+                    "step":"Whisk together the eggs, buttermilk, butter and vanilla extract and vanilla bean in a small bowl."
                 },
                 {
-                    "numero":4,
-                    "etape":"Add the egg mixture to the dry mixture and gently mix to combine. Do not overmix."
+                    "numberStep":4,
+                    "step":"Add the egg mixture to the dry mixture and gently mix to combine. Do not overmix."
                 },
                 {
-                    "numero":5,
-                    "etape":"Let the batter sit at room temperature for at least 15 minutes and up to 30 minutes before using."
+                    "numberStep":5,
+                    "step":"Let the batter sit at room temperature for at least 15 minutes and up to 30 minutes before using."
                 },
                 {
-                    "numero":6,
-                    "etape":"Heat a cast iron or nonstick griddle pan over medium heat and brush with melted butter. Once the butter begins to sizzle, use 2 tablespoons of the batter for each pancake and cook until the bubbles appear on the surface and the bottom is golden brown, about 2 minutes, flip over and cook until the bottom is golden brown, 1 to 2 minutes longer."
+                    "numberStep":6,
+                    "step":"Heat a cast iron or nonstick griddle pan over medium heat and brush with melted butter. Once the butter begins to sizzle, use 2 tablespoons of the batter for each pancake and cook until the bubbles appear on the surface and the bottom is golden brown, about 2 minutes, flip over and cook until the bottom is golden brown, 1 to 2 minutes longer."
                 },
                 {
-                    "numero":7,
-                    "etape":"Transfer the pancakes to a platter and keep warm in a 200 degree F oven."
+                    "numberStep":7,
+                    "step":"Transfer the pancakes to a platter and keep warm in a 200 degree F oven."
                 },
                 {
-                    "numero":8,
-                    "etape":"Serve 6 pancakes per person, top each with some of the bourbon butter."
+                    "numberStep":8,
+                    "step":"Serve 6 pancakes per person, top each with some of the bourbon butter."
                 },
                 {
-                    "numero":9,
-                    "etape":"Drizzle with warm maple syrup and dust with confectioners' sugar."
+                    "numberStep":9,
+                    "step":"Drizzle with warm maple syrup and dust with confectioners' sugar."
                 },
                 {
-                    "numero":10,
-                    "etape":"Garnish with fresh mint sprigs and more toasted pecans, if desired."
+                    "numberStep":10,
+                    "step":"Garnish with fresh mint sprigs and more toasted pecans, if desired."
                 }
             ],
             "ingredients":[
                 {
                     "idIngredient": "O001",
-                    "unite":"1 teaspoon"
+                    "unit":"1 teaspoon"
                 },
                 {
                     "idIngredient": "O002",
-                    "unite":"1/2 teaspoon"
+                    "unit":"1/2 teaspoon"
                 },
                 {
                     "idIngredient": "O003",
-                    "unite":"1/2 cup"
+                    "unit":"1/2 cup"
                 },
                 {
                     "idIngredient": "O009",
-                    "unite":"1 egg"
+                    "unit":"1 egg"
                 },
                 {
                     "idIngredient": "O010",
-                    "unite":"1 1/2 cups"
+                    "unit":"1 1/2 cups"
                 },
                 {
                     "idIngredient": "S006",
-                    "unite":"1/4 cup"
+                    "unit":"1/4 cup"
                 }
             ]
         },
         {
             "idRecette": 2,
-            "titre":"Simple Baked Chicken Breasts",
-            "prix":110.57,
+            "title":"Simple Baked Chicken Breasts",
+            "price":110.57,
             "image":"https://spoonacular.com/recipeImages/720000-556x370.jpg",
-            "pretEnMinutes": 40,
-            "calorie":1510,
-            "etapes":[
+            "cookingTime": 40,
+            "calories":1510,
+            "steps":[
                 {
-                    "numero":1,
-                    "etape":"Preheat convection oven to 400 degrees F (200 degrees C)."
+                    "numberStep":1,
+                    "step":"Preheat convection oven to 400 degrees F (200 degrees C)."
                 },
                 {
-                    "numero":2,
-                    "etape":"Rub chicken breasts with olive oil and sprinkle both sides with salt and Creole seasoning."
+                    "numberStep":2,
+                    "step":"Rub chicken breasts with olive oil and sprinkle both sides with salt and Creole seasoning."
                 },
                 {
-                    "numero":3,
-                    "etape":"Place chicken in a broiler pan."
+                    "numberStep":3,
+                    "step":"Place chicken in a broiler pan."
                 },
                 {
-                    "numero":4,
-                    "etape":"Bake in the preheated oven for 10 minutes. Flip chicken and cook until no longer pink in the center and the juices run clear, about 15 minutes more. An instant-read thermometer inserted into the center should read at least 165 degrees F (74 degrees C)."
+                    "numberStep":4,
+                    "step":"Bake in the preheated oven for 10 minutes. Flip chicken and cook until no longer pink in the center and the juices run clear, about 15 minutes more. An instant-read thermometer inserted into the center should read at least 165 degrees F (74 degrees C)."
                 },
                 {
-                    "numero":5,
-                    "etape":"Remove chicken from pan."
+                    "numberStep":5,
+                    "step":"Remove chicken from pan."
                 },
                 {
-                    "numero":6,
-                    "etape":"Pour water into the pan, while scraping the browned bits of food off of the bottom of the pan with a wooden spoon."
+                    "numberStep":6,
+                    "step":"Pour water into the pan, while scraping the browned bits of food off of the bottom of the pan with a wooden spoon."
                 },
                 {
-                    "numero":7,
-                    "etape":"Add more water if needed to dislodge the browned bits; serve alongside chicken."
+                    "numberStep":7,
+                    "step":"Add more water if needed to dislodge the browned bits; serve alongside chicken."
                 }
             ],
             "ingredients":[
                 {
                     "idIngredient": "S001",
-                    "unite":"1 tablespoon"
+                    "unit":"1 tablespoon"
                 },
                 {
                     "idIngredient": "S003",
-                    "unite":"1 pinch"
+                    "unit":"1 pinch"
                 },
                 {
                     "idIngredient": "S005",
-                    "unite":"2 tablespoons"
+                    "unit":"2 tablespoons"
                 },
                 {
                     "idIngredient": "M005",
-                    "unite":"4 chicken breast"
+                    "unit":"4 chicken breast"
                 },
                 {
                     "idIngredient": "O005",
-                    "unite":"1 tablespoon"
+                    "unit":"1 tablespoon"
                 }
             ]
         },
         {
             "idRecette": 3,
-            "titre": "Roma Tomato Bruschetta",
-            "prix": 189.3,
+            "title": "Roma Tomato Bruschetta",
+            "price": 189.3,
             "image": "https://spoonacular.com/recipeImages/658753-556x370.jpg",
-            "pretEnMinutes": 45,
-            "calorie":1510,
-            "etapes":[
+            "cookingTime": 45,
+            "calories":1510,
+            "steps":[
                 {
-                    "numero":1,
-                    "etape":"Slice the bread on a bias about 1/2 inch thick. We need about 10-12 slices.Take 2 tablespoons of extra virgin olive oil and add salt and pepper (about 1/3 teaspoon each - as per taste)."
+                    "numberStep":1,
+                    "step":"Slice the bread on a bias about 1/2 inch thick. We need about 10-12 slices.Take 2 tablespoons of extra virgin olive oil and add salt and pepper (about 1/3 teaspoon each - as per taste)."
                 },
                 {
-                    "numero":2,
-                    "etape":"Brush this on both sides of the bread."
+                    "numberStep":2,
+                    "step":"Brush this on both sides of the bread."
                 },
                 {
-                    "numero":3,
-                    "etape":"Place these slices on a sheet pan and bake for about 3-4 minutes in a 400 degree preheated oven till golden brown. Once one side is done, turn over the crostini to the other side to crisp that as well.When the crostini are hot out the oven, rub a garlic clove on them.Chop the tomatoes.Chiffonade the basil and add to the tomatoes."
+                    "numberStep":3,
+                    "step":"Place these slices on a sheet pan and bake for about 3-4 minutes in a 400 degree preheated oven till golden brown. Once one side is done, turn over the crostini to the other side to crisp that as well.When the crostini are hot out the oven, rub a garlic clove on them.Chop the tomatoes.Chiffonade the basil and add to the tomatoes."
                 },
                 {
-                    "numero":4,
-                    "etape":"Add salt, pepper, olive oil and balsamic vinegar and let it rest for a few minutes.Put a generous amount of tomato on the crostini and serve."
+                    "numberStep":4,
+                    "step":"Add salt, pepper, olive oil and balsamic vinegar and let it rest for a few minutes.Put a generous amount of tomato on the crostini and serve."
                 }
             ],
             "ingredients":[
                 {
                     "idIngredient": "S001",
-                    "unite":"1 tablespoon"
+                    "unit":"1 tablespoon"
                 },
                 {
                     "idIngredient": "S002",
-                    "unite":"1 tablespoon"
+                    "unit":"1 tablespoon"
                 },
                 {
                     "idIngredient": "O006",
-                    "unite":"1 loaf"
+                    "unit":"1 loaf"
                 },
                 {
                     "idIngredient": "S005",
-                    "unite":"4 tablespoons"
+                    "unit":"4 tablespoons"
                 },
                 {
                     "idIngredient": "V001",
-                    "unite":"4 tomatoes"
+                    "unit":"4 tomatoes"
                 },
                 {
                     "idIngredient": "V002",
-                    "unite":"1 clove"
+                    "unit":"1 clove"
                 },
                 {
                     "idIngredient": "V003",
                     "nom":"basil",
-                    "unite":"10 leaves"
+                    "unit":"10 leaves"
                 },
                 {
                     "idIngredient": "S004",
-                    "unite":"1 tablespoon"
+                    "unit":"1 tablespoon"
                 }
             ]
         },
         {
             "idRecette": 4,
-            "titre": "Turkey Tomato Cheese Pizza",
-            "prix": 241.43,
+            "title": "Turkey Tomato Cheese Pizza",
+            "price": 241.43,
             "image": "https://spoonacular.com/recipeImages/658753-556x370.jpg",
-            "pretEnMinutes": 15,
-            "calorie":1510,
-            "etapes":[
+            "cookingTime": 15,
+            "calories":1510,
+            "steps":[
                 {
-                    "numero":1,
-                    "etape": "Heat up your grill to 450 degrees.Start off with your whole wheat crust and spread the tomato sauce evenly over the top."
+                    "numberStep":1,
+                    "step": "Heat up your grill to 450 degrees.Start off with your whole wheat crust and spread the tomato sauce evenly over the top."
                 },
                 {
-                    "numero":2,
-                    "etape": "Add a little cheese, bell pepper, onion, turkey and create a layer.Top with another layer of cheese, turkey, tomato, bell pepper, onion."
+                    "numberStep":2,
+                    "step": "Add a little cheese, bell pepper, onion, turkey and create a layer.Top with another layer of cheese, turkey, tomato, bell pepper, onion."
                 },
                 {
-                    "numero":3,
-                    "etape": "Add another layer of cheese, and then sprinkle with pepper."
+                    "numberStep":3,
+                    "step": "Add another layer of cheese, and then sprinkle with pepper."
                 },
                 {
-                    "numero":4,
-                    "etape": "Place the pizza on a ceramic grill plate and place into the grill.Grill for 6-10 minutes, or until cooked as desired.Slice, and serve immediately."
+                    "numberStep":4,
+                    "step": "Place the pizza on a ceramic grill plate and place into the grill.Grill for 6-10 minutes, or until cooked as desired.Slice, and serve immediately."
                 }
             ],
             "ingredients":[
                 {
                     "idIngredient": "V004",
-                    "unite":"1 tablespoon"
+                    "unit":"1 tablespoon"
                 },
                 {
                     "idIngredient": "V005",
-                    "unite":"1 loaf"
+                    "unit":"1 loaf"
                 },
                 {
                     "idIngredient": "O007",
-                    "unite":"1 whole"
+                    "unit":"1 whole"
                 },
                 {
                     "idIngredient": "V001",
-                    "unite":"4 tomatoes"
+                    "unit":"4 tomatoes"
                 },
                 {
                     "idIngredient": "O008",
-                    "unite":"1 clove"
+                    "unit":"1 clove"
                 },
                 {
                     "idIngredient": "M006",
-                    "unite":"10 leaves"
+                    "unit":"10 leaves"
                 },
                 {
                     "idIngredient": "V006",
-                    "unite":"few slices"
+                    "unit":"few slices"
                 }
             ]
         },
         {
             "idRecette": 5,
-            "titre": "Thai Yellow Curry with Seafood",
-            "prix": 98.49,
+            "title": "Thai Yellow Curry with Seafood",
+            "price": 98.49,
             "image": "https://spoonacular.com/recipeImages/730000-556x370.jpg",
-            "pretEnMinutes": 10,
-            "calorie":1100,
-            "etapes":[
+            "cookingTime": 10,
+            "calories":1100,
+            "steps":[
                 {
-                    "numero":1,
-                    "etape": "Heat up some oil in the wok and add in the curry paste. Stir it until you smell the aroma."
+                    "numberStep":1,
+                    "step": "Heat up some oil in the wok and add in the curry paste. Stir it until you smell the aroma."
                 },
                 {
-                    "numero":2,
-                    "etape": "Add in all the shellfish and zucchini to give them a quick stir."
+                    "numberStep":2,
+                    "step": "Add in all the shellfish and zucchini to give them a quick stir."
                 },
                 {
-                    "numero":3,
-                    "etape": "Add in the coconut milk. Cover the wok and bring it to boil or until all shells are open."
+                    "numberStep":3,
+                    "step": "Add in the coconut milk. Cover the wok and bring it to boil or until all shells are open."
                 },
                 {
-                    "numero":4,
-                    "etape": "Add fish sauce and palm sugar to taste (this dish should taste creamy, salty, and sweet)."
+                    "numberStep":4,
+                    "step": "Add fish sauce and palm sugar to taste (this dish should taste creamy, salty, and sweet)."
                 },
                 {
-                    "numero":5,
-                    "etape": "Add some curry leaves/basil leaves/kaffir lime leaves if you have them handy. If the curry is too thick, add some water."
+                    "numberStep":5,
+                    "step": "Add some curry leaves/basil leaves/kaffir lime leaves if you have them handy. If the curry is too thick, add some water."
                 },
                 {
-                    "numero":6,
-                    "etape": "Serve hot with plain white steamed rice."
+                    "numberStep":6,
+                    "step": "Serve hot with plain white steamed rice."
                 }
             ],
             "ingredients":[
                 {
                     "idIngredient": "V003",
-                    "unite":"1 leaf"
+                    "unit":"1 leaf"
                 },
                 {
                     "idIngredient": "SF04",
-                    "unite":"2 clams"
+                    "unit":"2 clams"
                 },
                 {
                     "idIngredient": "O012",
-                    "unite":"2 coconut milk"
+                    "unit":"2 coconut milk"
                 },
                 {
                     "idIngredient": "V007",
-                    "unite":"1 curry leak"
+                    "unit":"1 curry leak"
                 },
                 {
                     "idIngredient": "S007",
-                    "unite":"2 curry paste"
+                    "unit":"2 curry paste"
                 },
                 {
                     "idIngredient": "S008",
-                    "unite":"2 fish sauce"
+                    "unit":"2 fish sauce"
                 },
                 {
                     "idIngredient": "V008",
-                    "unite":"1 kaffir lime leaf"
+                    "unit":"1 kaffir lime leaf"
                 },
                 {
                     "idIngredient": "SF01",
-                    "unite":"2 mussels"
+                    "unit":"2 mussels"
                 },
                 {
                     "idIngredient": "S006",
-                    "unite":"2 tablespoon"
+                    "unit":"2 tablespoon"
                 },
                 {
                     "idIngredient": "SF02",
-                    "unite":"2 shrimps"
+                    "unit":"2 shrimps"
                 },
                 {
                     "idIngredient": "SF03",
-                    "unite":"2 scallops"
+                    "unit":"2 scallops"
                 },
                 {
                     "idIngredient": "V009",
-                    "unite":"2 zucchinis"
+                    "unit":"2 zucchinis"
                 }
             ]
 
         },
         {
             "idRecette": 6,
-            "titre": "Easy Berry French Toast",
-            "prix": 278.52,
+            "title": "Easy Berry French Toast",
+            "price": 278.52,
             "image": "https://spoonacular.com/recipeImages/1444543-556x370.jpg",
-            "pretEnMinutes": 45,
-            "calorie":500,
-            "etapes":[
+            "cookingTime": 45,
+            "calories":500,
+            "steps":[
                 {
-                    "numero":1,
-                    "etape": "Beat eggs."
+                    "numberStep":1,
+                    "step": "Beat eggs."
                 },
                 {
-                    "numero":2,
-                    "etape": "Add milk and vanilla sugar.Dip the bread into the egg mixture one slice at a time, lightly pressing the slices into the egg mixture. Turn to coat both sides evenly. Melt 1 tbsp of butter in a large skillet over medium heat."
+                    "numberStep":2,
+                    "step": "Add milk and vanilla sugar.Dip the bread into the egg mixture one slice at a time, lightly pressing the slices into the egg mixture. Turn to coat both sides evenly. Melt 1 tbsp of butter in a large skillet over medium heat."
                 },
                 {
-                    "numero":3,
-                    "etape": "Add 2-3 slices to the skillet (depending on the size of your bread and your skillet).Fry the bread until browned on both sides.Keep warm in the oven while you finish the other slices, adding butter to the pan as needed.Top with fresh or heated frozen berries (I heat frozen berries gently in a saucepan while I make the French toast)."
+                    "numberStep":3,
+                    "step": "Add 2-3 slices to the skillet (depending on the size of your bread and your skillet).Fry the bread until browned on both sides.Keep warm in the oven while you finish the other slices, adding butter to the pan as needed.Top with fresh or heated frozen berries (I heat frozen berries gently in a saucepan while I make the French toast)."
                 },
                 {
-                    "numero":4,
-                    "etape": "Serve with maple syrup."
+                    "numberStep":4,
+                    "step": "Serve with maple syrup."
                 }
             ],
             "ingredients":[
                 {
                     "idIngredient": "O009",
-                    "unite":"6 eggs"
+                    "unit":"6 eggs"
                 },
                 {
                     "idIngredient": "O013",
-                    "unite":"1 1/2 cups"
+                    "unit":"1 1/2 cups"
                 },
                 {
                     "idIngredient": "O014",
-                    "unite":"1 packet"
+                    "unit":"1 packet"
                 },
                 {
                     "idIngredient": "O006",
-                    "unite":"8 slices"
+                    "unit":"8 slices"
                 },
                 {
                     "idIngredient": "O015",
-                    "unite":"4 tablespoons"
+                    "unit":"4 tablespoons"
                 },
                 {
                     "idIngredient": "F005",
-                    "unite":"2 cups"
+                    "unit":"2 cups"
                 },
                 {
                     "idIngredient": "O016",
-                    "unite":"1/2 cup"
+                    "unit":"1/2 cup"
                 }
             ]
             
         },
         {
             "idRecette": 7,
-            "titre": "Korean Sweet n Sour Chicken",
-            "prix": 272.67,
+            "title": "Korean Sweet n Sour Chicken",
+            "price": 272.67,
             "image": "https://spoonacular.com/recipeImages/638369-556x370.jpg",
-            "pretEnMinutes": 30,
-            "calorie": 604,
-            "etapes":[
+            "cookingTime": 30,
+            "calories": 604,
+            "steps":[
                 {
-                    "numero":1,
-                    "etape": "Cut the chicken into thin strips, about 1 or 2-inch pieces."
+                    "numberStep":1,
+                    "step": "Cut the chicken into thin strips, about 1 or 2-inch pieces."
                 },
                 {
-                    "numero":2,
-                    "etape": "Add soy sauce to the chicken for a short marination; mix well and set aside."
+                    "numberStep":2,
+                    "step": "Add soy sauce to the chicken for a short marination; mix well and set aside."
                 },
                 {
-                    "numero":3,
-                    "etape": "Cut the vegetables into large bite-sized pieces. Set aside until the sauce is ready and thickened.Make batter by mixing the flour, cornstarch, water and beaten egg."
+                    "numberStep":3,
+                    "step": "Cut the vegetables into large bite-sized pieces. Set aside until the sauce is ready and thickened.Make batter by mixing the flour, cornstarch, water and beaten egg."
                 },
                 {
-                    "numero":4,
-                    "etape": "Add more flour until a thick consistency is reached. Dip the marinated chicken strips into the batter.Bring vegetable oil to medium high heat. Deep fry each of the strips for about 3, 4 min for each batch or until browned and cooked through. When finished, place on paper towel-lined dish to remove excess oil. Once the first round of frying is done, heat the oil and re-fry the batch for the 2nd time to make it really crispy (optional).To make the sauce bring the following ingredients in a saucepan: one cup of water along 3 tbsp vinegar, 3 tbsp sugar, and 2 tbsp of soy sauce. Bring to a rapid boil and then add the mixture of cornstarch and water."
+                    "numberStep":4,
+                    "step": "Add more flour until a thick consistency is reached. Dip the marinated chicken strips into the batter.Bring vegetable oil to medium high heat. Deep fry each of the strips for about 3, 4 min for each batch or until browned and cooked through. When finished, place on paper towel-lined dish to remove excess oil. Once the first round of frying is done, heat the oil and re-fry the batch for the 2nd time to make it really crispy (optional).To make the sauce bring the following ingredients in a saucepan: one cup of water along 3 tbsp vinegar, 3 tbsp sugar, and 2 tbsp of soy sauce. Bring to a rapid boil and then add the mixture of cornstarch and water."
                 },
                 {
-                    "numero":5,
-                    "etape": "Add desired vegetables and let simmer for about 5 minutes or until it thickens.On a large plate, add the fried chicken strips, then pour over the sauce/vegetable mixture and serve while warm."
+                    "numberStep":5,
+                    "step": "Add desired vegetables and let simmer for about 5 minutes or until it thickens.On a large plate, add the fried chicken strips, then pour over the sauce/vegetable mixture and serve while warm."
                 },
                 {
-                    "numero":6,
-                    "etape": "Serve hot with plain white steamed rice."
+                    "numberStep":6,
+                    "step": "Serve hot with plain white steamed rice."
                 }
             ],
             "ingredients":[
                 {
                     "idIngredient": "M005",
-                    "unite":"2 lbs"
+                    "unit":"2 lbs"
                 },
                 {
                     "idIngredient": "S004",
-                    "unite":"3 tablespoons"
+                    "unit":"3 tablespoons"
                 },
                 {
                     "idIngredient": "O017",
-                    "unite":"2 tablespoons"
+                    "unit":"2 tablespoons"
                 },
                 {
                     "idIngredient": "O009",
-                    "unite":"3 eggs"
+                    "unit":"3 eggs"
                 },
                 {
                     "idIngredient": "O010",
-                    "unite":"1/2 cup"
+                    "unit":"1/2 cup"
                 },
                 {
                     "idIngredient": "V006",
-                    "unite":"1 onion"
+                    "unit":"1 onion"
                 },
                 {
                     "idIngredient": "S009",
-                    "unite":"2 tablespoons"
+                    "unit":"2 tablespoons"
                 },
                 {
                     "idIngredient": "S006",
-                    "unite":"3 tablespoons"
+                    "unit":"3 tablespoons"
                 },
                 {
                     "idIngredient": "S005",
-                    "unite":"3 tablespoons"
+                    "unit":"3 tablespoons"
                 },
                 {
                     "idIngredient": "O005",
-                    "unite":"1 cup"
+                    "unit":"1 cup"
                 }
             ]
 
         },
         {
             "idRecette": 8,
-            "titre": "Ratatouille Pasta",
-            "prix": 190.62,
+            "title": "Ratatouille Pasta",
+            "price": 190.62,
             "image": "https://spoonacular.com/recipeImages/657933-556x370.jpg",
-            "pretEnMinutes": 45,
-            "calorie": 417,
-            "etapes":[
+            "cookingTime": 45,
+            "calories": 417,
+            "steps":[
                 {
-                    "numero":1,
-                    "etape": "Saute the yellow onion in a large skillet or saute pan with enough Olive oil to coat the bottom of the pan, over medium-low heat until tender and translucent. Season with salt and pepper."
+                    "numberStep":1,
+                    "step": "Saute the yellow onion in a large skillet or saute pan with enough Olive oil to coat the bottom of the pan, over medium-low heat until tender and translucent. Season with salt and pepper."
                 },
                 {
-                    "numero":2,
-                    "etape": "Add garlic, saute until fragrant."
+                    "numberStep":2,
+                    "step": "Add garlic, saute until fragrant."
                 },
                 {
-                    "numero":3,
-                    "etape": "Add another tablespoon of Olive oil and the zucchini, eggplant and Italian seasoning. Continue sauteing until the zucchini and eggplant start to break down and become limp and tender."
+                    "numberStep":3,
+                    "step": "Add another tablespoon of Olive oil and the zucchini, eggplant and Italian seasoning. Continue sauteing until the zucchini and eggplant start to break down and become limp and tender."
                 },
                 {
-                    "numero":4,
-                    "etape": "Add the artichokes and tomatoes. Season with salt and pepper. Bring to a simmer for ten - fifteen minutes. Taste and re-season if needed."
+                    "numberStep":4,
+                    "step": "Add the artichokes and tomatoes. Season with salt and pepper. Bring to a simmer for ten - fifteen minutes. Taste and re-season if needed."
                 },
                 {
-                    "numero":5,
-                    "etape": "Meanwhile cook the spaghetti to al dente according to package directions."
+                    "numberStep":5,
+                    "step": "Meanwhile cook the spaghetti to al dente according to package directions."
                 },
                 {
-                    "numero":6,
-                    "etape": "Toss with pasta and serve with a drizzle of extra-virgin Olive oil and Parmesan cheese."
+                    "numberStep":6,
+                    "step": "Toss with pasta and serve with a drizzle of extra-virgin Olive oil and Parmesan cheese."
                 }
             ],
             "ingredients":[
                 {
                     "idIngredient": "V006",
-                    "unite":"1 onion"
+                    "unit":"1 onion"
                 },
                 {
                     "idIngredient": "S005",
-                    "unite":"3 tablespoons"
+                    "unit":"3 tablespoons"
                 },
                 {
                     "idIngredient": "S001",
-                    "unite":"1 tablespoon"
+                    "unit":"1 tablespoon"
                 },
                 {
                     "idIngredient": "V002",
-                    "unite":"4 gloves"
+                    "unit":"4 gloves"
                 },
                 {
                     "idIngredient": "V009",
-                    "unite":"3 cups"
+                    "unit":"3 cups"
                 },
                 {
                     "idIngredient": "V011",
-                    "unite":"3 cups"
+                    "unit":"3 cups"
                 },
                 {
                     "idIngredient": "S010",
-                    "unite":"1 teaspoon"
+                    "unit":"1 teaspoon"
                 },
                 {
                     "idIngredient": "V012",
-                    "unite":"14 ounces"
+                    "unit":"14 ounces"
                 },
                 {
                     "idIngredient": "V001",
-                    "unite":"2 tomatoes"
+                    "unit":"2 tomatoes"
                 },
                 {
                     "idIngredient": "O019",
-                    "unite":"8 cups"
+                    "unit":"8 cups"
                 },
                 {
                     "idIngredient": "O008",
-                    "unite":"3 cups"
+                    "unit":"3 cups"
                 }
             ]
 
         },
         {
             "idRecette": 9,
-            "titre": "Mango Fried Rice",
-            "prix": 140.4,
+            "title": "Mango Fried Rice",
+            "price": 140.4,
             "image": "https://spoonacular.com/recipeImages/716311-556x370.jpg",
-            "pretEnMinutes": 45,
-            "calorie": 485,
-            "etapes":[
+            "cookingTime": 45,
+            "calories": 485,
+            "steps":[
                 {
-                    "numero":1,
-                    "etape": "Wash your rice and bring to boil on medium heat with very little water as you are still going to cook it in chicken stock.Once the rice is slightly soft and the initial water has dried up, reduce the heat and pour in the chicken stock and cook till the chicken stock is all absorbed and has dried up. The chicken stock if freshly made will have some oil from the chicken so your rice does not need oil.Increase the heat and stir in the chopped vegetables and pepper."
+                    "numberStep":1,
+                    "step": "Wash your rice and bring to boil on medium heat with very little water as you are still going to cook it in chicken stock.Once the rice is slightly soft and the initial water has dried up, reduce the heat and pour in the chicken stock and cook till the chicken stock is all absorbed and has dried up. The chicken stock if freshly made will have some oil from the chicken so your rice does not need oil.Increase the heat and stir in the chopped vegetables and pepper."
                 },
                 {
-                    "numero":2,
-                    "etape": "Add your seasoning cube.Finally stir in your cubed mango and serve warm with any protein of your choice. I’d say chicken but it’s up to you."
+                    "numberStep":2,
+                    "step": "Add your seasoning cube.Finally stir in your cubed mango and serve warm with any protein of your choice. I’d say chicken but it’s up to you."
                 }
             ],
             "ingredients":[
                 {
                     "idIngredient": "F006",
-                    "unite":"3 slices"
+                    "unit":"3 slices"
                 },
                 {
                     "idIngredient": "O020",
-                    "unite":"1 cup"
+                    "unit":"1 cup"
                 },
                 {
                     "idIngredient": "V013",
-                    "unite":"1 cup"
+                    "unit":"1 cup"
                 },
                 {
                     "idIngredient": "S001",
-                    "unite":"1 teaspoon"
+                    "unit":"1 teaspoon"
                 },
                 {
                     "idIngredient": "S001",
-                    "unite":"1/2 teaspoon"
+                    "unit":"1/2 teaspoon"
                 }
             ]
         }
     ],
     "ingredients": {
         "Meat":[
-            {"idIngredient": "M001", "nom":"beef"},
-            {"idIngredient": "M002", "nom":"chicken"},
-            {"idIngredient": "M003", "nom":"lamb"},
-            {"idIngredient": "M004", "nom":"pork"},
-            {"idIngredient": "M005", "nom":"chicken breast"},
-            {"idIngredient": "M006", "nom":"turkey"}      
+            {"idIngredient": "M001", "name":"beef"},
+            {"idIngredient": "M002", "name":"chicken"},
+            {"idIngredient": "M003", "name":"lamb"},
+            {"idIngredient": "M004", "name":"pork"},
+            {"idIngredient": "M005", "name":"chicken breast"},
+            {"idIngredient": "M006", "name":"turkey"}      
         ],
         "Vegetable":[
-            {"idIngredient": "V001", "nom":"tomato"},
-            {"idIngredient": "V002", "nom":"garlic"},
-            {"idIngredient": "V003", "nom":"basil"},
-            {"idIngredient": "V004", "nom":"green pepper"},
-            {"idIngredient": "V005", "nom":"parsley"},
-            {"idIngredient": "V006", "nom":"onion"},
-            {"idIngredient": "V007", "nom":"curry leaf"},
-            {"idIngredient": "V008", "nom":"kaffir lime leaf"},
-            {"idIngredient": "V009", "nom":"zucchini"},
-            {"idIngredient": "V010", "nom":"edamane"},
-            {"idIngredient": "V011", "nom":"eggplant"},
-            {"idIngredient": "V012", "nom":"artichokes"},
-            {"idIngredient": "V013", "nom":"root vegetables"}
+            {"idIngredient": "V001", "name":"tomato"},
+            {"idIngredient": "V002", "name":"garlic"},
+            {"idIngredient": "V003", "name":"basil"},
+            {"idIngredient": "V004", "name":"green pepper"},
+            {"idIngredient": "V005", "name":"parsley"},
+            {"idIngredient": "V006", "name":"onion"},
+            {"idIngredient": "V007", "name":"curry leaf"},
+            {"idIngredient": "V008", "name":"kaffir lime leaf"},
+            {"idIngredient": "V009", "name":"zucchini"},
+            {"idIngredient": "V010", "name":"edamane"},
+            {"idIngredient": "V011", "name":"eggplant"},
+            {"idIngredient": "V012", "name":"artichokes"},
+            {"idIngredient": "V013", "name":"root vegetables"}
             
         ],
         "Fruits":[
-            {"idIngredient": "F001", "nom":"strawberry"},
-            {"idIngredient": "F002", "nom":"banana"},
-            {"idIngredient": "F003", "nom":"apple"},
-            {"idIngredient": "F004", "nom":"orange"},
-            {"idIngredient": "F005", "nom":"berry"},
-            {"idIngredient": "F006", "nom":"mango"}
+            {"idIngredient": "F001", "name":"strawberry"},
+            {"idIngredient": "F002", "name":"banana"},
+            {"idIngredient": "F003", "name":"apple"},
+            {"idIngredient": "F004", "name":"orange"},
+            {"idIngredient": "F005", "name":"berry"},
+            {"idIngredient": "F006", "name":"mango"}
         ],
         "Seasoning":[
-            {"idIngredient": "S001", "nom":"salt"},
-            {"idIngredient": "S002", "nom":"pepper"},
-            {"idIngredient": "S003", "nom":"creole seasoning"},
-            {"idIngredient": "S004", "nom":"vinegar"},
-            {"idIngredient": "S005", "nom":"olive oil"},
-            {"idIngredient": "S006", "nom":"sugar"},
-            {"idIngredient": "S007", "nom":"curry paste"},
-            {"idIngredient": "S008", "nom":"fish sauce"},
-            {"idIngredient": "S009", "nom":"soy sauce"},
-            {"idIngredient": "S010", "nom":"italian seasoning"}
+            {"idIngredient": "S001", "name":"salt"},
+            {"idIngredient": "S002", "name":"pepper"},
+            {"idIngredient": "S003", "name":"creole seasoning"},
+            {"idIngredient": "S004", "name":"vinegar"},
+            {"idIngredient": "S005", "name":"olive oil"},
+            {"idIngredient": "S006", "name":"sugar"},
+            {"idIngredient": "S007", "name":"curry paste"},
+            {"idIngredient": "S008", "name":"fish sauce"},
+            {"idIngredient": "S009", "name":"soy sauce"},
+            {"idIngredient": "S010", "name":"italian seasoning"}
         ],
         "Seafood":[
-            {"idIngredient": "SF01", "nom":"mussels"},
-            {"idIngredient": "SF02", "nom":"shrimp"},
-            {"idIngredient": "SF03", "nom":"scallop"},
-            {"idIngredient": "SF04", "nom":"clams"}
+            {"idIngredient": "SF01", "name":"mussels"},
+            {"idIngredient": "SF02", "name":"shrimp"},
+            {"idIngredient": "SF03", "name":"scallop"},
+            {"idIngredient": "SF04", "name":"clams"}
         ],
         "Others":[
-            {"idIngredient": "O001", "nom":"baking powder"},
-            {"idIngredient": "O002", "nom":"baking soda"},
-            {"idIngredient": "O003", "nom":"bourbon"},
-            {"idIngredient": "O004", "nom":"buttermilk"},
-            {"idIngredient": "O005", "nom":"water"},
-            {"idIngredient": "O006", "nom":"bread"},
-            {"idIngredient": "O007", "nom":"pie crust"},
-            {"idIngredient": "O008", "nom":"cheese"},
-            {"idIngredient": "O009", "nom":"egg"},
-            {"idIngredient": "O010", "nom":"flour"},
-            {"idIngredient": "O012", "nom":"coconut milk"},
-            {"idIngredient": "O013", "nom":"milk"},
-            {"idIngredient": "O014", "nom":"vanilla sugar"},
-            {"idIngredient": "O015", "nom":"butter"},
-            {"idIngredient": "O016", "nom":"maple syrup"},
-            {"idIngredient": "O017", "nom":"corn stach"},
-            {"idIngredient": "O018", "nom":"pineapple juice"},
-            {"idIngredient": "O019", "nom":"spaghetti"},
-            {"idIngredient": "O020", "nom":"rice"}
+            {"idIngredient": "O001", "name":"baking powder"},
+            {"idIngredient": "O002", "name":"baking soda"},
+            {"idIngredient": "O003", "name":"bourbon"},
+            {"idIngredient": "O004", "name":"buttermilk"},
+            {"idIngredient": "O005", "name":"water"},
+            {"idIngredient": "O006", "name":"bread"},
+            {"idIngredient": "O007", "name":"pie crust"},
+            {"idIngredient": "O008", "name":"cheese"},
+            {"idIngredient": "O009", "name":"egg"},
+            {"idIngredient": "O010", "name":"flour"},
+            {"idIngredient": "O012", "name":"coconut milk"},
+            {"idIngredient": "O013", "name":"milk"},
+            {"idIngredient": "O014", "name":"vanilla sugar"},
+            {"idIngredient": "O015", "name":"butter"},
+            {"idIngredient": "O016", "name":"maple syrup"},
+            {"idIngredient": "O017", "name":"corn stach"},
+            {"idIngredient": "O018", "name":"pineapple juice"},
+            {"idIngredient": "O019", "name":"spaghetti"},
+            {"idIngredient": "O020", "name":"rice"}
         ]
     }
 }
