@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="recipePage">
     <Navbar />
     <div class="search">
       <input type="text" placeholder="Search Recipe..." />
@@ -27,26 +27,22 @@
             <h2>{{ recette.titre }}</h2>
           </div>
           <div class="ingredients-recette">
-            <ul>
-              <li
-                v-for="ingredient in recette.ingredients"
-                v-bind="ingredient"
-                :key="ingredient.idIngredient"
-              >
-                {{ ingredient.unite }}
-              </li>
-            </ul>
+            <div
+              v-for="ingredient in recette.ingredients"
+              v-bind="ingredient"
+              :key="ingredient.idIngredient"
+            >
+              {{ ingredient.unite }}
+            </div>
           </div>
           <div class="etapes-recette">
-            <ul>
-            <li
+            <div
               v-for="etape in recette.etapes"
               v-bind="etape"
               :key="etape.numero"
             >
-              {{etape.numero}}- {{ etape.etape }}
-            </li>
-            </ul>
+              {{ etape.numero }}- {{ etape.etape }}
+            </div>
           </div>
         </div>
       </li>
@@ -82,6 +78,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.recipePage {
+  font-family: "Architects Daughter", cursive;
+}
 .search {
   padding-top: 100px;
   display: block;
@@ -176,7 +175,7 @@ ul li div h2 {
   justify-content: stretch;
   align-content: stretch;
 }
-.ingredients-recette ul {
+.ingredients-recette {
   text-align: left;
   font-size: 22px;
   overflow-y: scroll;
@@ -188,7 +187,7 @@ ul li div h2 {
   width: auto;
   height: 205px;
 }
-.etapes-recette ul {
+.etapes-recette {
   text-align: left;
   font-size: 22px;
   overflow-y: scroll;
