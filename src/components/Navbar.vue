@@ -10,6 +10,13 @@
       <a>
         <router-link to="/personalspace">Personal Space</router-link>
       </a>
+      <div class="menuCenter">
+        <a>
+            <router-link to="/" tag="img"
+            v-bind:src="require('./../assets/RecipeWebLogo.png')"
+            class="navbar-item noHover is-clickable"></router-link>
+        </a>
+      </div>
       <div class="menuRight">
           <a>
             <router-link to="/signup">Sign up</router-link>
@@ -54,7 +61,10 @@ export default {
 }
 
 .menuRight {
-      float: right;
+  float: right;
 }
 
+.menuCenter {
+  text-align-last: center;
+}
 </style>
