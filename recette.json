@@ -152,7 +152,7 @@
         },
         {
             "idRecette": 3,
-            "title": "Roma Tomato Bruschetta",
+            "titre": "Roma Tomato Bruschetta",
             "prix": 189.3,
             "image": "https://spoonacular.com/recipeImages/658753-556x370.jpg",
             "pretEnMinutes": 45,
@@ -213,7 +213,7 @@
         },
         {
             "idRecette": 4,
-            "title": "Turkey Tomato Cheese Pizza",
+            "titre": "Turkey Tomato Cheese Pizza",
             "prix": 241.43,
             "image": "https://spoonacular.com/recipeImages/658753-556x370.jpg",
             "pretEnMinutes": 15,
@@ -269,7 +269,7 @@
         },
         {
             "idRecette": 5,
-            "title": "Thai Yellow Curry with Seafood",
+            "titre": "Thai Yellow Curry with Seafood",
             "prix": 98.49,
             "image": "https://spoonacular.com/recipeImages/730000-556x370.jpg",
             "pretEnMinutes": 10,
@@ -354,7 +354,7 @@
         },
         {
             "idRecette": 6,
-            "title": "Easy Berry French Toast",
+            "titre": "Easy Berry French Toast",
             "prix": 278.52,
             "image": "https://spoonacular.com/recipeImages/1444543-556x370.jpg",
             "pretEnMinutes": 45,
@@ -411,7 +411,7 @@
         },
         {
             "idRecette": 7,
-            "title": "Korean Sweet n Sour Chicken",
+            "titre": "Korean Sweet n Sour Chicken",
             "prix": 272.67,
             "image": "https://spoonacular.com/recipeImages/638369-556x370.jpg",
             "pretEnMinutes": 30,
@@ -488,7 +488,7 @@
         },
         {
             "idRecette": 8,
-            "title": "Ratatouille Pasta",
+            "titre": "Ratatouille Pasta",
             "prix": 190.62,
             "image": "https://spoonacular.com/recipeImages/657933-556x370.jpg",
             "pretEnMinutes": 45,
@@ -569,7 +569,7 @@
         },
         {
             "idRecette": 9,
-            "title": "Mango Fried Rice",
+            "titre": "Mango Fried Rice",
             "prix": 140.4,
             "image": "https://spoonacular.com/recipeImages/716311-556x370.jpg",
             "pretEnMinutes": 45,
