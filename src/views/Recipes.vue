@@ -1,6 +1,5 @@
 <template>
   <div class="recipePage">
-    <Navbar />
     <div class="search">
       <input type="text" placeholder="Search Recipe..." />
       <a>
@@ -33,7 +32,7 @@
             <b>Price: </b>{{ recette.price }} $ <br />
             <b>Cooking time: </b>{{ recette.cookingTime }} min. <br />
             <b>Calories: </b>{{ recette.calories }} calories <br />
-            <b>Liste of ingredients:</b>
+            <b>List of ingredients:</b>
             <div
               v-for="ingredient in recette.ingredients"
               v-bind="ingredient"
@@ -76,13 +75,11 @@
 <script>
 // @ is an alias to /src
 import { mapGetters, mapActions } from 'vuex';
-import Navbar from '../components/Navbar.vue';
 import Footer from '../components/Footer.vue';
 
 export default {
   name: 'Recipes',
   components: {
-    Navbar,
     Footer,
   },
 

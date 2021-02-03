@@ -1,6 +1,5 @@
 <template>
   <div>
-      <Navbar/>
         <div class="contenu">
             <h1>MODIFIER UNE RECETTE EN CONSTRUCTION</h1>
       </div>
@@ -10,13 +9,11 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from '../components/Navbar.vue';
 import Footer from '../components/Footer.vue';
 
 export default {
   name: 'Modify',
   components: {
-    Navbar,
     Footer,
   },
 };

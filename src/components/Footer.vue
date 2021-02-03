@@ -60,6 +60,9 @@ export default {
   width: 100%;
   background: #1f1e1ef5;
   font-family: "Architects Daughter", cursive;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 #footer h3 {
   margin-top: 2%;

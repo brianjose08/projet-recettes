@@ -1,22 +1,19 @@
 <template>
   <div>
-      <Navbar/>
-            <div class="contenu">
-                <h1>PERSONAL SPACE EN CONSTRUCTION</h1>
-            </div>
+      <div class="contenu">
+          <h1>PERSONAL SPACE EN CONSTRUCTION</h1>
+      </div>
       <Footer/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Navbar from '../components/Navbar.vue';
 import Footer from '../components/Footer.vue';
 
 export default {
   name: 'PersonalSpace',
   components: {
-    Navbar,
     Footer,
   },
 };

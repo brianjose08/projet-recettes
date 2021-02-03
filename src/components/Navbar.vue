@@ -12,9 +12,10 @@
       </a>
       <div class="menuCenter">
         <a>
-            <router-link id="logo" to="/" tag="img"
+            <!-- <router-link id="logo" to="/" tag="img"
             v-bind:src="require('./../assets/RecipeWebLogo.png')"
-            class="navbar-item noHover is-clickable"></router-link>
+            class="navbar-item noHover is-clickable"></router-link> -->
+            <router-link id="logo" to="/">VURT TO EAT</router-link>
         </a>
       </div>
       <div class="menuRight">
@@ -47,8 +48,7 @@ export default {
   float: left;
   color: #f2f2f2;
   text-align: center;
-
-  padding: 14px 16px;
+  padding: 5px 15px;
   text-decoration: none;
   font-size: 140%;
   font-family: "Architects Daughter", cursive;
@@ -71,6 +71,6 @@ export default {
 }
 
 #logo {
-  height: 100px;
+  color: rgb(241, 177, 0);
 }
 </style>

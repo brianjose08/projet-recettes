@@ -1,29 +1,48 @@
 <template>
   <div>
-      <Navbar/>
-        <div class="contenu">
-            <h1>LOGIN EN CONSTRUCTION</h1>
-      </div>
-      <Footer/>
+    <div class="loginPage">
+      <div id="titleInformation">Username</div>
+      <input id="loginInformation" type="text"/>
+      <br/>
+      <br/>
+      <div id="titleInformation">Password</div>
+      <input id="loginInformation" type="text"/>
+      <br/>
+      <br/>
+      <button>Login</button>
+    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Navbar from '../components/Navbar.vue';
 import Footer from '../components/Footer.vue';
 
 export default {
   name: 'Login',
   components: {
-    Navbar,
     Footer,
   },
 };
 </script>
 <style lang="scss" scoped>
-.contenu{
+.loginPage {
+  font-size: 200%;
+  font-family: "Architects Daughter", cursive;
   padding-top: 100px;
-  padding-bottom: 20px;
+  padding-bottom: 20rem;
+}
+#loginInformation {
+  font-size: 100%;
+}
+
+#titleInformation {
+  padding-right: 13%;
+}
+
+button {
+  font-size: 100%;
+  font-family: "Architects Daughter", cursive;
 }
 </style>
