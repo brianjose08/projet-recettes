@@ -42,6 +42,7 @@ export default {
   background-color: rgba(51, 51, 51, 0.9);
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 .menu a {

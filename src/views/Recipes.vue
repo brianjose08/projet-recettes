@@ -1,10 +1,16 @@
 <template>
+<div>
   <div class="recipePage">
     <div class="search">
       <input type="text" placeholder="Search Recipe..." />
       <a>
+        <router-link to="/" class="search-recette"
+          >Search</router-link
+        >
+      </a>
+      <a>
         <router-link to="/add" class="ajouter-recette"
-          >Ajouter une nouvelle recette</router-link
+          >Add new recipe</router-link
         >
       </a>
     </div>
@@ -69,19 +75,17 @@
         </div>
       </li>
     </ul>
-    <Footer />
   </div>
+</div>
 </template>
 
 <script>
 // @ is an alias to /src
 import { mapGetters, mapActions } from 'vuex';
-import Footer from '../components/Footer.vue';
 
 export default {
   name: 'Recipes',
   components: {
-    Footer,
   },
 
   methods: {
@@ -102,9 +106,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.recipePage {
-  font-family: "Architects Daughter", cursive;
-}
 .search {
   padding-top: 110px;
   display: block;
@@ -114,9 +115,12 @@ export default {
   width: 60%;
   height: 30px;
   border-radius: 5px;
+  font-size: 25px;
+  color: black;
+  background-color: rgba(255, 253, 253, 0.61);
 }
 
-.ajouter-recette {
+.search-recette {
   margin-left: 10px;
   text-align: center;
   text-decoration: none;
@@ -125,6 +129,19 @@ export default {
   padding: 10px;
   border-radius: 5px;
   background-color: rgb(0, 0, 0);
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.ajouter-recette {
+  margin-left: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(0, 195, 255);
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
@@ -168,11 +185,14 @@ export default {
   background-color: rgb(255, 196, 0);
 }
 ul li {
+  color: black;
   display: grid;
   border-style: double;
   border-color: black;
-  padding: 40px 0px 40px 20px;
+  border-radius: 3pc;
+  padding: 20px 0px 20px 20px;
   margin-right: 30px;
+  background-color: rgba(255, 253, 253, 0.61);
 }
 ul li div img {
   border-style: solid;
@@ -191,7 +211,7 @@ ul li div h2 {
   border-color: black;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  font-size: 18px;
+  font-size: 20px;
   position: relative;
   bottom: 15px;
   width: 100%;
@@ -200,7 +220,7 @@ ul li div h2 {
   display: grid;
   grid-template-columns: 1fr 2fr 3fr;
   grid-auto-rows: minmax(100px, auto);
-  grid-gap: 3em;
+  grid-gap: 1em;
   justify-content: stretch;
   align-content: stretch;
 }
@@ -219,7 +239,7 @@ ul li div h2 {
   text-align: left;
   font-size: 22px;
   overflow-y: scroll;
-  margin-right: 50px;
+  margin-right: 20px;
   padding: 10px;
   border-style: solid;
   border-color: black;

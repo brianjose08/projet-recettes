@@ -3,18 +3,15 @@
         <div class="contenu">
             <h1>MODIFIER UNE RECETTE EN CONSTRUCTION</h1>
       </div>
-      <Footer/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Footer from '../components/Footer.vue';
 
 export default {
   name: 'Modify',
   components: {
-    Footer,
   },
 };
 </script>

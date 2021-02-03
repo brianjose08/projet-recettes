@@ -1,57 +1,46 @@
 <template>
-  <div>
-    <div class="home">
-      <div class="gridview">
-        <div class="generalInfo">
-          <h1>What To Eat?</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            ac tempor orci. Aenean libero sem, egestas eget malesuada ut,
-            pretium ac quam. Nunc in nulla urna. Cras id sollicitudin ligula.
-            Donec turpis ligula, vehicula ornare aliquet sit amet, mollis sed
-            risus. Cras vitae tristique nisl. Praesent in ex nec turpis
-            pellentesque blandit a et est.
-          </p>
-        </div>
-        <div class="about">
-          <h1>About Us</h1>
-          <p>
-            Étudiant en fin de session, <br />
-            Par: Brian-José Meija-Rivera <br />
-            @e1746533 <br />
-            Par: Franco Huynh <br />
-            @e1794013 <br />
-            <br />
-            @Collège de Maisonneuve <br />
-          </p>
-        </div>
-        <div class="slidder">
-          <img src="./../assets/CookingPicture.jpg" />
-          <p>Enjoy your cooking !</p>
-        </div>
+  <div class="home">
+    <div class="gridview">
+      <div class="generalInfo">
+        <h1>What To Eat?</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          ac tempor orci. Aenean libero sem, egestas eget malesuada ut, pretium
+          ac quam. Nunc in nulla urna. Cras id sollicitudin ligula. Donec turpis
+          ligula, vehicula ornare aliquet sit amet, mollis sed risus. Cras vitae
+          tristique nisl. Praesent in ex nec turpis pellentesque blandit a et
+          est.
+        </p>
+      </div>
+      <div class="about">
+        <h1>About Us</h1>
+        <p>
+          Étudiant en fin de session, <br />
+          Par: Brian-José Meija-Rivera <br />
+          @e1746533 <br />
+          Par: Franco Huynh <br />
+          @e1794013 <br />
+          <br />
+          @Collège de Maisonneuve <br />
+        </p>
+      </div>
+      <div class="slidder">
+        <img src="./../assets/CookingPicture.jpg" />
+        <p>Enjoy your cooking !</p>
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Footer from '../components/Footer.vue';
 // @ is an alias to /src
 export default {
   name: 'Home',
-  components: {
-    Footer,
-  },
+  components: {},
 };
 </script>
 
 <style lang="scss" scoped>
-.home {
-  background-image: url(https://images5.alphacoders.com/904/904774.jpg);
-  background-size: cover;
-  padding-bottom: 15rem;
-}
 
 .gridview {
   display: grid;
@@ -61,7 +50,7 @@ export default {
   grid-gap: 1em;
   justify-content: stretch;
   align-content: stretch;
-  padding: 10%;
+  padding: 5%;
 }
 
 .gridview > div {
@@ -81,7 +70,6 @@ export default {
   color: black;
   font-size: 800%;
   text-align: center;
-  font-family: "Architects Daughter", cursive;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.856);
 }
@@ -93,7 +81,6 @@ export default {
 .about > h1 {
   color: black;
   font-size: 400%;
-  font-family: "Architects Daughter", cursive;
   padding-left: 7.5%;
 }
 
@@ -108,6 +95,5 @@ export default {
 p {
   text-decoration: none;
   font-weight: 500;
-  font-family: "Architects Daughter", cursive;
 }
 </style>

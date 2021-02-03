@@ -1,37 +1,33 @@
 <template>
-  <div>
-    <div class="loginPage">
-      <div id="titleInformation">Username</div>
-      <input id="loginInformation" type="text"/>
-      <br/>
-      <br/>
-      <div id="titleInformation">Password</div>
-      <input id="loginInformation" type="text"/>
-      <br/>
-      <br/>
-      <button>Login</button>
-    </div>
-    <Footer />
+  <div class="loginPage">
+    <div id="titleInformation">Username</div>
+    <input id="loginInformation" type="text" />
+    <br />
+    <br />
+    <div id="titleInformation">Password</div>
+    <input id="loginInformation" type="text" />
+    <br />
+    <br />
+    <button>Login</button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Footer from '../components/Footer.vue';
 
 export default {
   name: 'Login',
-  components: {
-    Footer,
-  },
+  components: {},
 };
 </script>
 <style lang="scss" scoped>
+div  {
+  color: white;
+}
+
 .loginPage {
   font-size: 200%;
-  font-family: "Architects Daughter", cursive;
-  padding-top: 100px;
-  padding-bottom: 20rem;
+  padding-top: 260px;
 }
 #loginInformation {
   font-size: 100%;
