@@ -1,5 +1,6 @@
 <template>
   <div class="loginPage">
+    <h1>Sign in</h1>
     <div id="titleInformation">Username</div>
     <input id="loginInformation" type="text" />
     <br />
@@ -8,7 +9,7 @@
     <input id="loginInformation" type="text" />
     <br />
     <br />
-    <button>Login</button>
+    <button type="submit">Login</button>
   </div>
 </template>
 

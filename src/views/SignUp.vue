@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="loginPage">
+          <h1>Sign Up</h1>
       <div id="titleInformation">Username</div>
       <input id="loginInformation" type="text" />
       <br />
@@ -32,7 +33,7 @@ div  {
 
 .loginPage {
   font-size: 200%;
-  padding-top: 260px;
+  padding-top: 200px;
 }
 #loginInformation {
   font-size: 100%;
