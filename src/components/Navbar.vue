@@ -12,10 +12,9 @@
       </a>
       <div class="menuCenter">
         <a>
-          <!-- <router-link id="logo" to="/" tag="img"
+          <router-link id="logo" to="/" tag="img"
             v-bind:src="require('./../assets/RecipeWebLogo.png')"
-            class="navbar-item noHover is-clickable"></router-link> -->
-          <router-link id="logo" to="/">VURT TO EAT</router-link>
+            class="navbar-item noHover is-clickable"></router-link>
         </a>
       </div>
       <div class="menuRight" v-if="isLoggedIn">
@@ -60,6 +59,7 @@ export default {
   position: fixed;
   width: 100%;
   z-index: 1;
+  height: 8%;
 }
 
 .menu a {
@@ -90,5 +90,6 @@ export default {
 
 #logo {
   color: rgb(241, 177, 0);
+  height: 70px;
 }
 </style>
