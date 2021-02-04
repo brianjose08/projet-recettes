@@ -18,7 +18,12 @@
             <router-link id="logo" to="/">VURT TO EAT</router-link>
         </a>
       </div>
-      <div class="menuRight">
+      <div class="menuRight" v-if="isLoggedIn">
+          <a @click="logout">
+            <router-link to="/">Logout</router-link>
+          </a>
+      </div>
+            <div class="menuRight" v-else>
           <a>
             <router-link to="/signup">Sign up</router-link>
           </a>

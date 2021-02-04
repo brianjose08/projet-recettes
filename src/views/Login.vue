@@ -1,16 +1,18 @@
 <template>
-  <div class="loginPage">
+  <form class="loginPage" @submit.prevent="login">
     <h1>Sign in</h1>
     <div id="titleInformation">Username</div>
-    <input id="loginInformation" type="text" />
+    <input id="loginInformation" required v-model="username"
+    type="text" placeholder="Enter your username" />
     <br />
     <br />
     <div id="titleInformation">Password</div>
-    <input id="loginInformation" type="text" />
+    <input id="loginInformation" required v-model="password"
+    type="password" placeholder="Enter your password" />
     <br />
     <br />
     <button type="submit">Login</button>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -18,11 +20,11 @@
 
 export default {
   name: 'Login',
-  components: {},
 };
 </script>
+
 <style lang="scss" scoped>
-div  {
+form  {
   color: white;
 }
 

@@ -14,7 +14,7 @@
         >
       </a>
     </div>
-    <ul v-for="recette in allRecettes" :key="recette.idRecette">
+    <ul v-for="recette in allRecettes" :key="recette.id">
       <li class="item-recette">
         <div class="gridview">
           <div>

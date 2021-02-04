@@ -1,21 +1,25 @@
 <template>
   <div>
-    <div class="loginPage">
+    <form class="loginPage" @submit.prevent="register">
           <h1>Sign Up</h1>
       <div id="titleInformation">Username</div>
-      <input id="loginInformation" type="text" />
-      <br />
-      <br />
-      <div id="titleInformation">Password</div>
-      <input id="loginInformation" type="text" />
+      <input id="loginInformation" type="text" v-model="username" required autofocus />
       <br />
       <br />
       <div id="emailInfo">Email</div>
-      <input id="loginInformation" type="text" />
+      <input id="loginInformation" type="email" v-model="email" required/>
+      <br />
+      <br />
+      <div id="titleInformation">Password</div>
+      <input id="loginInformation" type="password" v-model="password" required />
+      <br />
+      <br />
+      <div id="password-confirmation">Confirm Password</div>
+      <input id="loginInformation" type="password" v-model="password_confirmation" required />
       <br />
       <br />
       <button>Sign Up</button>
-    </div>
+    </form>
   </div>
 </template>
 
@@ -23,17 +27,16 @@
 // @ is an alias to /src
 export default {
   name: 'SignUp',
-  components: {},
 };
 </script>
 <style lang="scss" scoped>
-div  {
+form  {
   color: white;
 }
 
 .loginPage {
   font-size: 200%;
-  padding-top: 200px;
+  padding-top: 150px;
 }
 #loginInformation {
   font-size: 100%;
@@ -46,6 +49,10 @@ div  {
 {
   padding-right: 17%;
 }
+#password-confirmation{
+padding-right: 6%;
+}
+
 button {
   font-size: 100%;
   font-family: "Architects Daughter", cursive;
