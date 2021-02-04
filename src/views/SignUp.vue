@@ -1,21 +1,46 @@
 <template>
   <div>
     <form class="loginPage" @submit.prevent="register">
-          <h1>Sign Up</h1>
+      <h1>Sign Up</h1>
       <div id="titleInformation">Username</div>
-      <input id="loginInformation" type="text" v-model="username" required autofocus />
+      <input
+        id="loginInformation"
+        type="text"
+        v-model="username"
+        required
+        autofocus
+        placeholder="Enter your username"
+      />
       <br />
       <br />
       <div id="emailInfo">Email</div>
-      <input id="loginInformation" type="email" v-model="email" required/>
+      <input
+        id="loginInformation"
+        type="email"
+        v-model="email"
+        required
+        placeholder="Enter your email"
+      />
       <br />
       <br />
       <div id="titleInformation">Password</div>
-      <input id="loginInformation" type="password" v-model="password" required />
+      <input
+        id="loginInformation"
+        type="password"
+        v-model="password"
+        required
+        placeholder="Enter your password"
+      />
       <br />
       <br />
       <div id="password-confirmation">Confirm Password</div>
-      <input id="loginInformation" type="password" v-model="password_confirmation" required />
+      <input
+        id="loginInformation"
+        type="password"
+        v-model="password_confirmation"
+        required
+        placeholder="Confirm your password"
+      />
       <br />
       <br />
       <button>Sign Up</button>
@@ -37,20 +62,21 @@ export default {
   },
   methods: {
     register() {
-      const data = {
-        username: this.username,
-        email: this.email,
-        password: this.password,
-      };
-      this.$store.dispatch('register', data)
-        .then(() => this.$router.push('/'))
-        .catch((err) => console.log(err));
+      if (this.password === this.password_confirmation) {
+        const data = {
+          username: this.username,
+          email: this.email,
+          password: this.password,
+        };
+        this.$store.dispatch('register', data);
+        this.$router.push('/login');
+      }
     },
   },
 };
 </script>
 <style lang="scss" scoped>
-form  {
+form {
   color: white;
 }
 
@@ -65,14 +91,9 @@ form  {
 #titleInformation {
   padding-right: 13%;
 }
-#emailInfo
-{
+#emailInfo {
   padding-right: 17%;
 }
-#password-confirmation{
-padding-right: 6%;
-}
-
 button {
   font-size: 100%;
   font-family: "Architects Daughter", cursive;
