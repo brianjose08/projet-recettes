@@ -1,6 +1,6 @@
 <template>
   <form class="loginPage" @submit.prevent="login">
-    <h1>Sign in</h1>
+    <h1>Login</h1>
     <div id="titleInformation">Username</div>
     <input id="loginInformation" required v-model="username"
     type="text" placeholder="Enter your username" />
@@ -11,7 +11,7 @@
     type="password" placeholder="Enter your password" />
     <br />
     <br />
-    <button type="submit">Login</button>
+    <button type="submit">Sign in</button>
   </form>
 </template>
 
