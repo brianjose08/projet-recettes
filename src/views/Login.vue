@@ -12,7 +12,7 @@
     <br />
     <br />
     <button type="submit">
-      <router-link to="/">Sign in</router-link>
+      Sign in
     </button>
   </form>
 </template>
