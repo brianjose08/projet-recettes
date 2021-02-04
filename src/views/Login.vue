@@ -20,6 +20,23 @@
 
 export default {
   name: 'Login',
+  data() {
+    return {
+      username: '',
+      password: '',
+    };
+  },
+  methods: {
+    login() {
+      const data = {
+        username: this.username,
+        password: this.password,
+      };
+      this.$store.dispatch('login', data)
+        .then(() => window.location.reload())
+        .catch((err) => console.log(err));
+    },
+  },
 };
 </script>
 

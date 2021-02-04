@@ -16,6 +16,15 @@ export default {
     Navbar,
     Footer,
   },
+  created() {
+    // eslint-disable-next-line
+    this.$http.interceptors.response.use(undefined, (err) => new Promise(function () {
+      if (err.status === 401 && err.config && !err.config.isRetryRequest) {
+        this.$store.dispatch('logout');
+      }
+      throw err;
+    }));
+  },
 };
 </script>
 <style lang="scss">

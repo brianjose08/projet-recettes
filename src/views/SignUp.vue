@@ -27,6 +27,26 @@
 // @ is an alias to /src
 export default {
   name: 'SignUp',
+  data() {
+    return {
+      username: '',
+      email: '',
+      password: '',
+      password_confirmation: '',
+    };
+  },
+  methods: {
+    register() {
+      const data = {
+        username: this.username,
+        email: this.email,
+        password: this.password,
+      };
+      this.$store.dispatch('register', data)
+        .then(() => this.$router.push('/'))
+        .catch((err) => console.log(err));
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
