@@ -58,7 +58,7 @@ export default {
       email: '',
       password: '',
       password_confirmation: '',
-      recettes: {},
+      recettes: [{}],
     };
   },
   methods: {
