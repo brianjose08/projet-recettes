@@ -58,6 +58,7 @@ export default {
       email: '',
       password: '',
       password_confirmation: '',
+      recettes: {},
     };
   },
   methods: {
@@ -67,6 +68,7 @@ export default {
           username: this.username,
           email: this.email,
           password: this.password,
+          recettes: this.recettes,
         };
         this.$store.dispatch('register', data);
         this.$router.push('/login');
