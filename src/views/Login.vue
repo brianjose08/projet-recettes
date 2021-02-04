@@ -11,7 +11,9 @@
     type="password" placeholder="Enter your password" />
     <br />
     <br />
-    <button type="submit">Sign in</button>
+    <button type="submit">
+      <router-link to="/">Sign in</router-link>
+    </button>
   </form>
 </template>
 

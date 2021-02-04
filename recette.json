@@ -17,6 +17,15 @@
         {}
       ],
       "id": 2
+    },
+    {
+      "username": "Franco",
+      "email": "franco@gmail.com",
+      "password": "test",
+      "recettes": [
+        {}
+      ],
+      "id": 3
     }
   ],
   "recettes": [
