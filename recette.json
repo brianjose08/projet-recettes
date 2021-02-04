@@ -10,22 +10,13 @@
       ]
     },
     {
-      "username": "test1",
-      "email": "test1@hotmail.com",
-      "password": "123",
+      "username": "Franco",
+      "email": "franco@gmail.com",
+      "password": "1234",
       "recettes": [
         {}
       ],
       "id": 2
-    },
-    {
-      "username": "Franco",
-      "email": "franco@gmail.com",
-      "password": "test",
-      "recettes": [
-        {}
-      ],
-      "id": 3
     }
   ],
   "recettes": [
