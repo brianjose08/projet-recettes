@@ -4,32 +4,32 @@
       <a>
         <router-link to="/">Home</router-link>
       </a>
-      <a>
-        <router-link to="/recipes">Recipes</router-link>
-      </a>
+        <a>
+          <router-link to="/recipes">Recipes</router-link>
+        </a>
       <a>
         <router-link to="/personalspace">Personal Space</router-link>
       </a>
       <div class="menuCenter">
         <a>
-            <!-- <router-link id="logo" to="/" tag="img"
+          <!-- <router-link id="logo" to="/" tag="img"
             v-bind:src="require('./../assets/RecipeWebLogo.png')"
             class="navbar-item noHover is-clickable"></router-link> -->
-            <router-link id="logo" to="/">VURT TO EAT</router-link>
+          <router-link id="logo" to="/">VURT TO EAT</router-link>
         </a>
       </div>
       <div class="menuRight" v-if="isLoggedIn">
-          <a @click="logout">
-            <router-link to="/">Logout</router-link>
-          </a>
+        <a @click="logout">
+          <router-link to="/">Logout</router-link>
+        </a>
       </div>
-            <div class="menuRight" v-else>
-          <a>
-            <router-link to="/signup">Sign up</router-link>
-          </a>
-          <a>
-            <router-link to="/login">Login</router-link>
-          </a>
+      <div class="menuRight" v-else>
+        <a>
+          <router-link to="/signup">Sign up</router-link>
+        </a>
+        <a>
+          <router-link to="/login">Login</router-link>
+        </a>
       </div>
     </div>
   </nav>
@@ -39,14 +39,15 @@
 export default {
   name: 'navbar',
   computed: {
-    isLoggedIn() { return this.$store.getters.isLoggedIn; },
+    isLoggedIn() {
+      return this.$store.getters.isLoggedIn;
+    },
   },
   methods: {
     logout() {
-      this.$store.dispatch('logout')
-        .then(() => {
-          this.$router.push('/login');
-        });
+      this.$store.dispatch('logout').then(() => {
+        this.$router.push('/login');
+      });
     },
   },
 };
