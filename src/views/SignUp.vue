@@ -47,6 +47,36 @@
     </form>
   </div>
 </template>
+
+<script>
+// @ is an alias to /src
+export default {
+  name: 'SignUp',
+  data() {
+    return {
+      username: '',
+      email: '',
+      password: '',
+      password_confirmation: '',
+      recettes: [{}],
+    };
+  },
+  methods: {
+    register() {
+      if (this.password === this.password_confirmation) {
+        const data = {
+          username: this.username,
+          email: this.email,
+          password: this.password,
+          recettes: this.recettes,
+        };
+        this.$store.dispatch('register', data);
+        this.$router.push('/login');
+      }
+    },
+  },
+};
+</script>
 <style lang="scss" scoped>
 form {
   color: white;
