@@ -62,13 +62,14 @@
         <div class="row3-col1">
           <div>
             <h2>Ingredients</h2>
-            <button id="addIngredient">+</button>
+            <button type="button" id="addIngredient" @click="showModal = true">+</button>
+            <ingredient-modale v-if="showModal" @close="showModal = false"></ingredient-modale>
           </div>
         </div>
         <div class="row4-col1">
           <div>
             <h2>Steps</h2>
-            <button id="addStep">+</button>
+            <button type="button" id="addStep">+</button>
           </div>
         </div>
         <div class="row5-col2">
@@ -84,9 +85,16 @@
 <script>
 // @ is an alias to /src
 
+import IngredientModale from '../components/IngredientModal.vue';
+
 export default {
   name: 'Add',
-  components: {},
+  data() {
+    return {
+      showModal: false,
+    };
+  },
+  components: { IngredientModale },
 };
 </script>
 <style lang="scss" scoped>
