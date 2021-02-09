@@ -8,22 +8,22 @@
         <div class="row2-col2">
           <div>
             <img
-              src="https://spoonacular.com/recipeImages/716311-556x370.jpg"/>
+              src="https://spoonacular.com/recipeImages/716311-556x370.jpg"
+            />
             <br />
             <button>Upload a picture of your recipe here</button>
           </div>
         </div>
         <div class="row2-col1">
           <div>
-          <label for="rTitle">Recipe Title</label>
-          <br />
-          <input
-            type="text"
-            id="rTitle"
-            placeholder="Your recipe's name"
-            v-model="title"
-            required
-          />
+            <label for="rTitle">Recipe Title</label>
+            <br />
+            <input
+              type="text"
+              id="rTitle"
+              placeholder="Your recipe's name"
+              v-model="recette.title"
+            />
           </div>
           <div>
             <label for="rCalories">Calories</label>
@@ -32,8 +32,7 @@
               type="number"
               id="rCalories"
               placeholder="Calories"
-              v-model="calories"
-              required
+              v-model="recette.calories"
             />
           </div>
           <div>
@@ -43,8 +42,7 @@
               type="number"
               id="rTime"
               placeholder="Time"
-              v-model="time"
-              required
+              v-model="recette.cookingTime"
             />minutes
           </div>
           <div>
@@ -54,16 +52,20 @@
               type="number"
               id="rPrice"
               placeholder="Price"
-              v-model="price"
-              required
+              v-model="recette.price"
             />$
           </div>
         </div>
         <div class="row3-col1">
           <div>
             <h2>Ingredients</h2>
-            <button type="button" id="addIngredient" @click="showModal = true">+</button>
-            <ingredient-modale v-if="showModal" @close="showModal = false"></ingredient-modale>
+            <button type="button" id="addIngredient" @click="showModal = true">
+              +
+            </button>
+            <ingredient-modale
+              v-if="showModal"
+              @close="showModal = false"
+            ></ingredient-modale>
           </div>
         </div>
         <div class="row4-col1">
@@ -74,7 +76,9 @@
         </div>
         <div class="row5-col2">
           <div>
-            <input type="submit" value="Add Recipe" />
+            <a>
+              <button @click="createRecette()">Add Recipe</button>
+            </a>
           </div>
         </div>
       </div>
@@ -83,18 +87,36 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 // @ is an alias to /src
 
 import IngredientModale from '../components/IngredientModal.vue';
 
 export default {
   name: 'Add',
-  data() {
-    return {
-      showModal: false,
-    };
-  },
+  data: () => ({
+    recette: {
+      title: '',
+      price: 0,
+      image: '',
+      cookingTime: 0,
+      calories: 0,
+      steps: [],
+      ingredients: [],
+    },
+    showModal: false,
+  }),
   components: { IngredientModale },
+
+  methods: {
+    ...mapActions(['addRecette']),
+
+    createRecette() {
+      this.addRecette(this.recette).then(() => {
+        this.$router.push('recipes');
+      });
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -177,12 +199,12 @@ label {
 }
 
 .row2-col2 div img {
-  width: 80%;;
+  width: 80%;
   height: auto;
 }
 
 //premiere colonne, quatrieme rangee
-.row3-col1{
+.row3-col1 {
   width: 98%;
   grid-column: 1;
   grid-row: 3;
@@ -192,13 +214,13 @@ label {
   border-top: none;
 }
 
-.row3-col1 div{
+.row3-col1 div {
   display: block;
-  float:left;
+  float: left;
   padding: 0px 0px 20px 25px;
 }
 
-#addIngredient{
+#addIngredient {
   display: block;
   padding: 10px 15px 10px 15px;
   border-radius: 100%;
@@ -212,12 +234,12 @@ label {
   transition: all 0.2s linear;
 }
 
-#addIngredient:hover{
-    background-color: rgb(255, 196, 0);
+#addIngredient:hover {
+  background-color: rgb(255, 196, 0);
 }
 
 //premiere colonne, cinquieme rangee
-.row4-col1{
+.row4-col1 {
   width: 98%;
   grid-column: 1/2;
   grid-row: 4;
@@ -229,13 +251,13 @@ label {
   border-bottom-right-radius: 20px;
 }
 
-.row4-col1 div{
+.row4-col1 div {
   display: block;
-  float:left;
+  float: left;
   padding: 0px 0px 20px 25px;
 }
 
-#addStep{
+#addStep {
   display: block;
   padding: 10px 15px 10px 15px;
   border-radius: 100%;
@@ -249,8 +271,8 @@ label {
   transition: all 0.2s linear;
 }
 
-#addStep:hover{
-    background-color: rgb(255, 196, 0);
+#addStep:hover {
+  background-color: rgb(255, 196, 0);
 }
 
 //bouton add recipe
@@ -262,7 +284,7 @@ label {
   padding-top: 10px;
 }
 
-.row5-col2 div input {
+.row5-col2 div button {
   padding: 20px;
   font-size: 200%;
   font-family: "Architects Daughter", cursive;
@@ -275,7 +297,7 @@ label {
   transition: all 0.2s linear;
 }
 
-.row5-col2 div input:hover {
+.row5-col2 div button:hover {
   background-color: rgb(255, 196, 0);
 }
 </style>
