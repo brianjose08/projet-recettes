@@ -51,7 +51,7 @@
             <div class="listeIngredients">
               <!-- Un for ici pour chaque ingredient enregistré dans une liste maybe?-->
               <div
-                v-for="ingredientAjouter in listeIngredientsRecette"
+                v-for="ingredientAjouter in allIngredientsTemporaire"
                 :key="ingredientAjouter.idIngredient"
               >
                 <div v-for="(item, index) in allIngredients" :key="index">
@@ -90,6 +90,13 @@
             >
               Okay
             </button>
+            <button
+              type="button"
+              class="modal-default-button"
+              @click="$emit('cancel')"
+            >
+              Cancel
+            </button>
           </div>
         </div>
       </div>
@@ -106,33 +113,30 @@ export default {
     return {
       selected: '',
       unit: '',
-      listeIngredientsRecette: [],
     };
   },
   methods: {
-    ...mapActions(['fetchIngredients']),
+    ...mapActions([
+      'fetchIngredients',
+      'addIngredientTemporaire',
+      'deleteIngredientTemporaire',
+    ]),
     afficher(ingredient) {
       console.log(ingredient);
     },
     addIngredient(idParam) {
       const data = { idIngredient: idParam, unit: this.unit };
-      this.listeIngredientsRecette.push(data);
+      this.addIngredientTemporaire(data);
     },
     removeIngredient(idParam) {
-      for (let i = 0; i < this.listeIngredientsRecette.length; i += 1) {
-        console.log(idParam);
-        console.log(this.listeIngredientsRecette[i]);
-        if (this.listeIngredientsRecette[i].idIngredient === idParam) {
-          this.listeIngredientsRecette.splice(i, 1);
-        }
-      }
+      console.log('remove');
+      this.deleteIngredientTemporaire(idParam);
     },
   },
-  computed: mapGetters(['allIngredients']),
+  computed: mapGetters(['allIngredients', 'allIngredientsTemporaire']),
 
   created() {
     this.fetchIngredients();
-    this.fetchIngredientsTemporaire();
   },
 };
 </script>

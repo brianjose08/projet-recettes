@@ -8,10 +8,8 @@
           >Search</router-link
         >
       </a>
-      <a>
-        <router-link to="/add" class="ajouter-recette"
-          >Add new recipe</router-link
-        >
+      <a href="/add" class="ajouter-recette">
+        Add new recipe
       </a>
     </div>
     <ul v-for="recette in allRecettes" :key="recette.id">

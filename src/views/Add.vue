@@ -64,7 +64,8 @@
             </button>
             <ingredient-modale
               v-if="showModal"
-              @close="showModal = false"
+              @close="showModalClose()"
+              @cancel="showModalCancel()"
             ></ingredient-modale>
           </div>
         </div>
@@ -114,6 +115,7 @@ export default {
     computed: mapGetters(['allIngredientsTemporaire']),
 
     created() {
+      window.location.reload();
       this.fetchIngredientsTemporaire();
     },
 
@@ -121,6 +123,19 @@ export default {
       this.addRecette(this.recette).then(() => {
         this.$router.push('recipes');
       });
+    },
+
+    showModalClose() {
+      this.showModal = false;
+      const table = this.$store.state.ingredientsTemporaire.ingredientsTemp;
+      table.forEach((element) => {
+        this.recette.ingredients.push(element);
+      });
+      console.log(this.recette.ingredients);
+    },
+
+    showModalCancel() {
+      this.showModal = false;
     },
   },
 };

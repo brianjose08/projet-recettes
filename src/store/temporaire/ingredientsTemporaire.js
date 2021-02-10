@@ -4,16 +4,23 @@ const getters = {
 
 const actions = {
   fetchIngredientsTemporaire({ commit }) {
-    commit('setIngredients', []);
+    commit('setIngredientsTemp', []);
   },
   addIngredientTemporaire({ commit }, data) {
-    commit('newRecette', data);
+    commit('newIngredientTemp', data);
+  },
+  deleteIngredientTemporaire({ commit }, idIngredient) {
+    commit('removeIngredientTemp', idIngredient);
   },
 };
 
 const mutations = {
-  setIngredients: (state, ingredientsTemp) => { (state.ingredientsTemp = ingredientsTemp); },
-  newRecette: (state, ingredientsTemp) => state.ingredientsTemp.unshift(ingredientsTemp),
+  setIngredientsTemp: (state, ingredient) => { (state.ingredientsTemp = ingredient); },
+  newIngredientTemp: (state, ingredient) => state.ingredientsTemp.unshift(ingredient),
+  removeIngredientTemp: (state, idIngredient) => {
+    // eslint-disable-next-line max-len
+    (state.ingredientsTemp = state.ingredientsTemp.filter((ingredient) => ingredient.idIngredient !== idIngredient));
+  },
 };
 
 const state = {
