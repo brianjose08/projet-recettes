@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import axios from 'axios';
 import recettes from './modules/recettes';
 import ingredients from './modules/ingredients';
+import ingredientsTemporaire from './temporaire/ingredientsTemporaire';
 
 Vue.use(Vuex);
 
@@ -80,5 +81,6 @@ export default new Vuex.Store({
   modules: {
     recettes,
     ingredients,
+    ingredientsTemporaire,
   },
 });

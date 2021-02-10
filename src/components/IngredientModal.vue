@@ -3,17 +3,93 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
-          <div class="modal-footer">
-            <slot name="footer">
-              default footer
-              <button
-                type="button"
-                class="modal-default-button"
-                @click="$emit('close')"
+          <div class="row1-col1">
+            <p>
+              <b>List of ingredients</b>
+            </p>
+          </div>
+          <div class="row1-col2">
+            <p>
+              <b>List of ingredients added for this recipe</b>
+            </p>
+          </div>
+          <div class="row2-col1">
+            <!--Ici c'est le dropdownlist pour les categories-->
+            <div>
+              <select v-model="selected">
+                <option disabled value="">Choissisez une categorie</option>
+                <option v-for="(item, index) in allIngredients" :key="index">
+                  {{ index }}
+                </option>
+              </select>
+              <br />
+              <input v-model="unit" type="text" placeholder="Unit of mesure" />
+            </div>
+            <!--Ici c'est la liste d'ingredients selon la categorie-->
+            <div class="listeIngredients">
+              <div v-for="(item, index) in allIngredients" :key="index">
+                <div v-if="index === selected">
+                  <div
+                    class="ingredientsFiltrer"
+                    v-for="ingredients in item"
+                    :key="ingredients.idIngredient"
+                  >
+                    <div>{{ ingredients.name }}</div>
+                    <!-- <input v-model="unit" type="text" placeholder="Unit of mesure" /> -->
+                    <button
+                      type="button"
+                      @click="addIngredient(ingredients.idIngredient)"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row2-col2">
+            <div class="listeIngredients">
+              <!-- Un for ici pour chaque ingredient enregistré dans une liste maybe?-->
+              <div
+                v-for="ingredientAjouter in listeIngredientsRecette"
+                :key="ingredientAjouter.idIngredient"
               >
-                OK
-              </button>
-            </slot>
+                <div v-for="(item, index) in allIngredients" :key="index">
+                  <div v-for="ingredients in item" :key="ingredients.id">
+                    <div
+                      class="ingredientsAjoute"
+                      v-if="
+                        ingredients.idIngredient ===
+                        ingredientAjouter.idIngredient
+                      "
+                    >
+                      <div>{{ ingredients.name }}</div>
+                      <input
+                        type="text"
+                        placeholder="Unit of mesure"
+                        :value="ingredientAjouter.unit"
+                        readonly
+                      />
+                      <button
+                        type="button"
+                        @click="removeIngredient(ingredients.idIngredient)"
+                      >
+                        -
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="modal-default-button"
+              @click="$emit('close')"
+            >
+              Okay
+            </button>
           </div>
         </div>
       </div>
@@ -22,11 +98,46 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
   name: 'IngredientModal',
+  data() {
+    return {
+      selected: '',
+      unit: '',
+      listeIngredientsRecette: [],
+    };
+  },
+  methods: {
+    ...mapActions(['fetchIngredients']),
+    afficher(ingredient) {
+      console.log(ingredient);
+    },
+    addIngredient(idParam) {
+      const data = { idIngredient: idParam, unit: this.unit };
+      this.listeIngredientsRecette.push(data);
+    },
+    removeIngredient(idParam) {
+      for (let i = 0; i < this.listeIngredientsRecette.length; i += 1) {
+        console.log(idParam);
+        console.log(this.listeIngredientsRecette[i]);
+        if (this.listeIngredientsRecette[i].idIngredient === idParam) {
+          this.listeIngredientsRecette.splice(i, 1);
+        }
+      }
+    },
+  },
+  computed: mapGetters(['allIngredients']),
+
+  created() {
+    this.fetchIngredients();
+    this.fetchIngredientsTemporaire();
+  },
 };
 </script>
-<style scoped>
+
+<style lang="scss" scoped>
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -45,28 +156,174 @@ export default {
 }
 
 .modal-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0fr 0fr 0fr;
   width: 900px;
   margin-top: 100px;
   margin-left: 450px;
-  padding: 300px 30px;
+  padding: 20px 30px;
   background-color: #fff;
-  border-radius: 2px;
+  border-style: solid;
+  border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
-}
-
-.modal-body {
-  margin: 20px 0;
-}
-
 .modal-default-button {
   float: right;
+}
+
+//Colonne 1, rangee 1 pour titre du premiere tableau
+
+.row1-col1 {
+  grid-column: 1;
+  grid-row: 1;
+  text-decoration: underline;
+  font-size: 120%;
+}
+
+//Colonne 2, rangee 1 pour titre du deuxieme tableau
+
+.row1-col2 {
+  grid-column: 2;
+  grid-row: 1;
+  text-decoration: underline;
+  font-size: 120%;
+}
+
+//Colonne 1, rangee 2
+
+.row2-col1 {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: left;
+  width: 100%;
+  border-style: solid;
+}
+
+.listeIngredients {
+  margin: 10px;
+  overflow-y: scroll;
+  height: 250px;
+}
+
+.ingredientsFiltrer {
+  display: grid;
+  grid-template-columns: 0fr 0fr;
+  grid-template-rows: 0fr;
+  border-style: solid;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.ingredientsFiltrer div {
+  grid-column: 1/3;
+  grid-row: 1;
+  font-size: 80%;
+  height: 38px;
+}
+
+.ingredientsFiltrer input {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: right;
+}
+
+.ingredientsFiltrer button {
+  grid-column: 3;
+  grid-row: 1;
+  padding: 0px 15px 0px 15px;
+  justify-self: right;
+  background-color: rgb(0, 199, 60);
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.ingredientsFiltrer button:hover {
+  background-color: rgb(255, 196, 0);
+}
+
+//Colonne 2, rangee 2
+
+.row2-col2 {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: right;
+  width: 98%;
+  border-style: solid;
+}
+
+.ingredientsAjoute {
+  display: grid;
+  grid-template-columns: 0fr 0fr;
+  grid-template-rows: 0fr;
+  border-style: solid;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.ingredientsAjoute div {
+  grid-column: 1/3;
+  grid-row: 1;
+  font-size: 80%;
+  height: 38px;
+}
+
+.ingredientsAjoute input {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: center;
+  text-align: center;
+}
+
+.ingredientsAjoute button {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: right;
+  padding: 0px 15px 0px 15px;
+  background-color: rgb(189, 0, 0);
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.ingredientsAjoute button:hover {
+  background-color: rgb(255, 196, 0);
+}
+
+//Colonne 1 et 2, rangee 3
+
+.modal-footer {
+  grid-column: 1/3;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.modal-footer button {
+  padding: 20px;
+  font-size: 150%;
+  font-family: "Architects Daughter", cursive;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-style: none;
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.modal-footer button:hover {
+  background-color: rgb(255, 196, 0);
 }
 
 /*

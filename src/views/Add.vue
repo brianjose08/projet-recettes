@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 // @ is an alias to /src
 
 import IngredientModale from '../components/IngredientModal.vue';
@@ -109,7 +109,13 @@ export default {
   components: { IngredientModale },
 
   methods: {
-    ...mapActions(['addRecette']),
+    ...mapActions(['addRecette', 'fetchIngredientsTemporaire']),
+
+    computed: mapGetters(['allIngredientsTemporaire']),
+
+    created() {
+      this.fetchIngredientsTemporaire();
+    },
 
     createRecette() {
       this.addRecette(this.recette).then(() => {
