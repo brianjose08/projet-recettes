@@ -65,7 +65,8 @@
             <ingredient-modale
               v-if="showModal"
               @close="showModalClose()"
-              @cancel="showModalCancel()"
+              @add="addIngredient"
+              @remove="removeIngredient"
             ></ingredient-modale>
           </div>
         </div>
@@ -127,15 +128,20 @@ export default {
 
     showModalClose() {
       this.showModal = false;
-      const table = this.$store.state.ingredientsTemporaire.ingredientsTemp;
-      table.forEach((element) => {
-        this.recette.ingredients.push(element);
-      });
+    },
+
+    addIngredient(data) {
+      this.recette.ingredients.push(data);
       console.log(this.recette.ingredients);
     },
 
-    showModalCancel() {
-      this.showModal = false;
+    removeIngredient(id) {
+      for (let i = 0; i < this.recette.ingredients.length; i += 1) {
+        if (this.recette.ingredients[i].idIngredient === id) {
+          this.recette.ingredients.splice(i, 1);
+        }
+      }
+      console.log(this.recette.ingredients);
     },
   },
 };

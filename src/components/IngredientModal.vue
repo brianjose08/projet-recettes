@@ -90,13 +90,6 @@
             >
               Okay
             </button>
-            <button
-              type="button"
-              class="modal-default-button"
-              @click="$emit('cancel')"
-            >
-              Cancel
-            </button>
           </div>
         </div>
       </div>
@@ -126,10 +119,12 @@ export default {
     },
     addIngredient(idParam) {
       const data = { idIngredient: idParam, unit: this.unit };
+      this.$emit('add', data);
       this.addIngredientTemporaire(data);
     },
     removeIngredient(idParam) {
       console.log('remove');
+      this.$emit('remove', idParam);
       this.deleteIngredientTemporaire(idParam);
     },
   },
