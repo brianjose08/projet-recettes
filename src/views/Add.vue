@@ -59,12 +59,12 @@
         <div class="row3-col1">
           <div>
             <h2>Ingredients</h2>
-            <button type="button" id="addIngredient" @click="showModal = true">
+            <button type="button" id="addIngredient" @click="showIngredientModal = true">
               +
             </button>
             <ingredient-modale
-              v-if="showModal"
-              @close="showModalClose()"
+              v-if="showIngredientModal"
+              @close="showIngredientModalClose()"
               @add="addIngredient"
               @remove="removeIngredient"
             ></ingredient-modale>
@@ -73,7 +73,12 @@
         <div class="row4-col1">
           <div>
             <h2>Steps</h2>
-            <button type="button" id="addStep">+</button>
+            <button type="button" id="addStep" @click="showCookingStepModal = true">+</button>
+            <cooking-step-modal
+              v-if="showCookingStepModal"
+              @close="showCookingStepModalClose()"
+            >
+            </cooking-step-modal>
           </div>
         </div>
         <div class="row5-col2">
@@ -90,6 +95,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import CookingStepModal from '../components/CookingStepModal.vue';
 // @ is an alias to /src
 
 import IngredientModale from '../components/IngredientModal.vue';
@@ -106,9 +112,10 @@ export default {
       steps: [],
       ingredients: [],
     },
-    showModal: false,
+    showIngredientModal: false,
+    showCookingStepModal: false,
   }),
-  components: { IngredientModale },
+  components: { IngredientModale, CookingStepModal },
 
   methods: {
     ...mapActions(['addRecette', 'fetchIngredientsTemporaire']),
@@ -126,8 +133,11 @@ export default {
       });
     },
 
-    showModalClose() {
-      this.showModal = false;
+    showIngredientModalClose() {
+      this.showIngredientModal = false;
+    },
+    showCookingStepModalClose() {
+      this.showCookingStepModal = false;
     },
 
     addIngredient(data) {
