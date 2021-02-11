@@ -15,14 +15,14 @@
               v-model="step"
               value="Cooking steps..."
             />
-            <button
+            <button style="font-size:20px;"
               @click="
                 addCookingStep(idStep);
                 addSuccess();
               "
               type="button"
             >
-              +
+              Ajouter
             </button>
           </div>
           <div class="col3">
@@ -31,15 +31,16 @@
               v-bind:key="cookingStep.numberStep"
             >
               <div class="cookingStep">
-                {{ cookingStep.numberStep }}-
-                {{ cookingStep.step }}
+                <div>
+                {{ cookingStep.numberStep }}-{{ cookingStep.step }}
+                </div>
                 <button
                   @click="
                     removeCookingStep(cookingStep.numberStep);
                     removeSuccess();
                   "
                 >
-                  -
+                  x
                 </button>
               </div>
             </div>
@@ -129,7 +130,7 @@ export default {
   border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Architects Daughter", cursive;
 }
 
 .modal-default-button {
@@ -138,16 +139,26 @@ export default {
 
 .col2 input {
   width: 80%;
-  height: 20px;
+  height: 25px;
   font-size: 20px;
   margin-right: 20px;
   border-style: solid;
+  font-family: "Architects Daughter", cursive;
 }
 
 .col2 button {
-  height: 28px;
+  font-family: "Architects Daughter", cursive;
+  height: 35px;
   font-size: 20px;
   border-style: solid;
+  background-color: rgb(0, 195, 255);
+  color: white;
+  border-style: none;
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .col3 {
@@ -160,12 +171,34 @@ export default {
 }
 
 .cookingStep {
+  display: grid;
+  grid-template-columns: 0fr 0fr;
+  grid-template-rows: 0fr;
   font-size: 25px;
   text-align: left;
+  width: 400px;
 }
+.cookingStep > div {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: left;
+}
+
 .cookingStep > button {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: right;
   font-size: 25px;
   width: 30px;
+  height: 60px;
+  background-color: rgb(255, 9, 9);
+  color: white;
+  border-style: none;
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .modal-footer {

@@ -15,7 +15,7 @@
           </div>
           <div class="row2-col1">
             <!--Ici c'est le dropdownlist pour les categories-->
-            <div>
+            <div class="selectCategory">
               <select v-model="selected">
                 <option disabled value="">Choissisez une categorie</option>
                 <option v-for="(item, index) in allIngredients" :key="index">
@@ -36,7 +36,7 @@
                   >
                     <div>{{ ingredients.name }}</div>
                     <!-- <input v-model="unit" type="text" placeholder="Unit of mesure" /> -->
-                    <button
+                    <button style="font-size:20px;"
                       type="button"
                       @click="addIngredient(ingredients.idIngredient)"
                     >
@@ -48,7 +48,7 @@
             </div>
           </div>
           <div class="row2-col2">
-            <div class="listeIngredients">
+            <div class="listeIngredientsAjoutes">
               <!-- Un for ici pour chaque ingredient enregistré dans une liste maybe?-->
               <div
                 v-for="ingredientAjouter in allIngredientsTemporaire"
@@ -70,7 +70,7 @@
                         :value="ingredientAjouter.unit"
                         readonly
                       />
-                      <button
+                      <button style="font-size:20px;"
                         type="button"
                         @click="removeIngredient(ingredients.idIngredient)"
                       >
@@ -159,7 +159,7 @@ export default {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0fr 0fr 0fr;
   width: 900px;
-  margin-top: 100px;
+  margin-top: 70px;
   margin-left: 450px;
   padding: 20px 30px;
   background-color: #fff;
@@ -167,7 +167,7 @@ export default {
   border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Architects Daughter", cursive;
 }
 
 .modal-default-button {
@@ -202,26 +202,48 @@ export default {
   border-style: solid;
 }
 
-.listeIngredients {
-  margin: 10px;
-  overflow-y: scroll;
-  height: 250px;
+.selectCategory > select{
+  margin-bottom: 10px;
+  width: 100%;
+  height: 35px;
+  font-size: 20px;
+  font-family: "Architects Daughter", cursive;
 }
 
+.selectCategory > input{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 80%;
+  height: 25px;
+  font-size: 20px;
+  font-family: "Architects Daughter", cursive;
+}
+
+.listeIngredients {
+  overflow-y: scroll;
+  height: 510px;
+}
+.listeIngredientsAjoutes{
+  overflow-y: scroll;
+  height: 600px;
+}
 .ingredientsFiltrer {
   display: grid;
   grid-template-columns: 0fr 0fr;
   grid-template-rows: 0fr;
   border-style: solid;
   padding: 10px;
-  margin-top: 10px;
+  margin: 5px;
 }
 
 .ingredientsFiltrer div {
   grid-column: 1/3;
   grid-row: 1;
-  font-size: 80%;
+  font-size: 120%;
+  font-family: "Architects Daughter", cursive;
   height: 38px;
+  width: 200px;
+  text-align: left;
 }
 
 .ingredientsFiltrer input {
@@ -263,21 +285,27 @@ export default {
   grid-template-rows: 0fr;
   border-style: solid;
   padding: 10px;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 .ingredientsAjoute div {
   grid-column: 1/3;
   grid-row: 1;
-  font-size: 80%;
+  font-size: 140%;
   height: 38px;
+  width: 200px;
+  text-align: left;
 }
 
 .ingredientsAjoute input {
   grid-column: 3;
   grid-row: 1;
+  font-family: "Architects Daughter", cursive;
   justify-self: center;
   text-align: center;
+  font-size: 20px;
+  width: 30%;
+  margin-left: 40%;
 }
 
 .ingredientsAjoute button {
