@@ -9,10 +9,9 @@
           <div>
             <img
               id="imgPreview"
-              src=""
+              :src="previewImage"
               alt="Preview"
             />
-            <br />
             <input
               type="file"
               @change="uploadRecipePicture()"
@@ -131,6 +130,7 @@ export default {
       steps: [],
       ingredients: [],
     },
+    previewImage: 'http://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png',
     showIngredientModal: false,
     showCookingStepModal: false,
   }),
@@ -186,10 +186,13 @@ export default {
     },
 
     uploadRecipePicture() {
+      this.recette.image = null;
       const uploadInput = document.getElementById('upload');
       const reader = new FileReader();
       reader.addEventListener('load', () => {
+        console.log(reader);
         localStorage.setItem('recent-image', reader.result);
+        this.previewImage = reader.result;
       });
       reader.readAsDataURL(uploadInput.files[0]);
       const recentImageDataUrl = localStorage.getItem('recent-image');
@@ -273,13 +276,25 @@ label {
 }
 
 .row2-col2 div {
-  display: block;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .row2-col2 div img {
-  width: 80%;
+  grid-column: 2;
+  grid-row: 1;
+  width: 300px;
   height: auto;
+}
+
+input[type='file']{
+  grid-column: 2;
+  grid-row: 2;
+  color: transparent;
+  margin-top: 20px;
+  margin-left: 100px;
+
 }
 
 //premiere colonne, quatrieme rangee

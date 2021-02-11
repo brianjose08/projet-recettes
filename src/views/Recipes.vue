@@ -42,7 +42,7 @@
               v-bind="ingredient"
               :key="ingredient.idIngredient"
             >
-              <div v-for="category in allIngredients" :key="category">
+              <div v-for="(category, index) in allIngredients" :key="index">
                 <div
                   v-for="ingredientCategory in category"
                   :key="ingredientCategory.idIngredient"
