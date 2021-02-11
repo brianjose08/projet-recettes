@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="formAddRecipe" @submit.prevent="addRecipe">
+    <form class="formAddRecipe" @submit.prevent="createRecette">
       <div class="contenu">
         <div class="row1-col1">
           <h1>New recipe</h1>
@@ -76,7 +76,9 @@
             <button type="button" id="addStep" @click="showCookingStepModal = true">+</button>
             <cooking-step-modal
               v-if="showCookingStepModal"
-              @close="showCookingStepModalClose()"
+              @closeStep="showCookingStepModalClose()"
+              @addStep="addCookingStep"
+              @removeStep="removeCookingStep"
             >
             </cooking-step-modal>
           </div>
@@ -84,7 +86,7 @@
         <div class="row5-col2">
           <div>
             <a>
-              <button @click="createRecette()">Add Recipe</button>
+              <button>Add Recipe</button>
             </a>
           </div>
         </div>
@@ -118,13 +120,14 @@ export default {
   components: { IngredientModale, CookingStepModal },
 
   methods: {
-    ...mapActions(['addRecette', 'fetchIngredientsTemporaire']),
+    ...mapActions(['addRecette', 'fetchIngredientsTemporaire', 'fetchCookingStepTemporaire']),
 
-    computed: mapGetters(['allIngredientsTemporaire']),
+    computed: mapGetters(['allIngredientsTemporaire', 'allCookingStepTemporaire']),
 
     created() {
       window.location.reload();
       this.fetchIngredientsTemporaire();
+      this.fetchCookingStepTemporaire();
     },
 
     createRecette() {
@@ -144,7 +147,10 @@ export default {
       this.recette.ingredients.push(data);
       console.log(this.recette.ingredients);
     },
-
+    addCookingStep(data) {
+      this.recette.steps.push(data);
+      console.log(this.recette.steps);
+    },
     removeIngredient(id) {
       for (let i = 0; i < this.recette.ingredients.length; i += 1) {
         if (this.recette.ingredients[i].idIngredient === id) {
@@ -152,6 +158,14 @@ export default {
         }
       }
       console.log(this.recette.ingredients);
+    },
+    removeCookingStep(id) {
+      for (let i = 0; i < this.recette.steps.length; i += 1) {
+        if (this.recette.steps[i].numberStep === id) {
+          this.recette.steps.splice(i, 1);
+        }
+      }
+      console.log(this.recette.steps);
     },
   },
 };

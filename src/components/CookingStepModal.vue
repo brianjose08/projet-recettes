@@ -4,25 +4,51 @@
       <div class="modal-wrapper">
         <div class="modal-container">
           <div class="col1">
-            <p style="font-size: 25px;">
+            <p style="font-size: 25px">
               <b>List of cooking steps</b>
             </p>
           </div>
           <div class="col2">
-            <input type="text" value="Cooking steps...">
-            <button>+</button>
+            <input
+              id="cookingStepDescription"
+              type="text"
+              v-model="step"
+              value="Cooking steps..."
+            />
+            <button
+              @click="
+                addCookingStep(idStep);
+                addSuccess();
+              "
+              type="button"
+            >
+              +
+            </button>
           </div>
           <div class="col3">
-              <div>a</div>
-              <div>a</div>
-              <div>a</div>
-              <div>a</div>
+            <div
+              v-for="cookingStep in allCookingStepTemporaire"
+              v-bind:key="cookingStep.numberStep"
+            >
+              <div class="cookingStep">
+                {{ cookingStep.numberStep }}-
+                {{ cookingStep.step }}
+                <button
+                  @click="
+                    removeCookingStep(cookingStep.numberStep);
+                    removeSuccess();
+                  "
+                >
+                  -
+                </button>
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button
               type="button"
               class="modal-default-button"
-              @click="$emit('close')"
+              @click="$emit('closeStep')"
             >
               Okay
             </button>
@@ -34,8 +60,44 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
   name: 'CookingStepModal',
+  data() {
+    return {
+      idStep: 1,
+      step: '',
+    };
+  },
+  methods: {
+    ...mapActions([
+      'fetchCookingStepTemporaire',
+      'addCookingStepTemporaire',
+      'deleteCookingStepTemporaire',
+    ]),
+    addSuccess() {
+      this.idStep += 1;
+      this.step = '';
+    },
+    removeSuccess() {
+      this.idStep -= 1;
+    },
+    afficher(cookingStep) {
+      console.log(cookingStep);
+    },
+    addCookingStep(idStep) {
+      const data = { numberStep: idStep, step: this.step };
+      this.$emit('addStep', data);
+      this.addCookingStepTemporaire(data);
+    },
+    removeCookingStep(idStep) {
+      console.log('remove');
+      this.$emit('removeStep', idStep);
+      this.deleteCookingStepTemporaire(idStep);
+    },
+  },
+  computed: mapGetters(['allCookingStepTemporaire']),
 };
 </script>
 
@@ -89,10 +151,21 @@ export default {
 }
 
 .col3 {
+  font-family: "Architects Daughter", cursive;
   width: 100%;
   margin-top: 15px;
   height: 400px;
   border-style: solid;
+  overflow-y: scroll;
+}
+
+.cookingStep {
+  font-size: 25px;
+  text-align: left;
+}
+.cookingStep > button {
+  font-size: 25px;
+  width: 30px;
 }
 
 .modal-footer {
