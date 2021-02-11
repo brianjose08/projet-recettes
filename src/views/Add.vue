@@ -8,10 +8,17 @@
         <div class="row2-col2">
           <div>
             <img
-              src="https://spoonacular.com/recipeImages/716311-556x370.jpg"
+              id="imgPreview"
+              src=""
+              alt="Preview"
             />
             <br />
-            <button>Upload a picture of your recipe here</button>
+            <input
+              type="file"
+              @change="uploadRecipePicture()"
+              id="upload"
+              value="Upload a picture of your recipe"
+            />
           </div>
         </div>
         <div class="row2-col1">
@@ -59,7 +66,11 @@
         <div class="row3-col1">
           <div>
             <h2>Ingredients</h2>
-            <button type="button" id="addIngredient" @click="showIngredientModal = true">
+            <button
+              type="button"
+              id="addIngredient"
+              @click="showIngredientModal = true"
+            >
               +
             </button>
             <ingredient-modale
@@ -73,7 +84,13 @@
         <div class="row4-col1">
           <div>
             <h2>Steps</h2>
-            <button type="button" id="addStep" @click="showCookingStepModal = true">+</button>
+            <button
+              type="button"
+              id="addStep"
+              @click="showCookingStepModal = true"
+            >
+              +
+            </button>
             <cooking-step-modal
               v-if="showCookingStepModal"
               @closeStep="showCookingStepModalClose()"
@@ -166,6 +183,17 @@ export default {
         }
       }
       console.log(this.recette.steps);
+    },
+
+    uploadRecipePicture() {
+      const uploadInput = document.getElementById('upload');
+      const reader = new FileReader();
+      reader.addEventListener('load', () => {
+        localStorage.setItem('recent-image', reader.result);
+      });
+      reader.readAsDataURL(uploadInput.files[0]);
+      const recentImageDataUrl = localStorage.getItem('recent-image');
+      this.recette.image = recentImageDataUrl;
     },
   },
 };
