@@ -26,11 +26,15 @@
                 >Modifier</router-link
               >
             </a>
-            <a>
-              <router-link to="/delete" class="supprimer-recette"
-                >Supprimer</router-link
-              >
-            </a>
+              <button class="supprimer-recette"
+              @click="showSupprimerRecetteModale = true"
+                >Supprimer
+              </button>
+              <supprimer-recette-modale
+              v-if="showSupprimerRecetteModale"
+              @close="showSupprimerRecetteModaleClose()">
+              </supprimer-recette-modale>
+
           </div>
           <div class="ingredients-recette">
             <b>Price: </b>{{ recette.price }} $ <br />
@@ -80,16 +84,25 @@
 <script>
 // @ is an alias to /src
 import { mapGetters, mapActions } from 'vuex';
+import SupprimerRecetteModale from '../components/SupprimerRecetteModale.vue';
 
 export default {
   name: 'Recipes',
+  data: () => ({
+    showSupprimerRecetteModale: false,
+  }),
   components: {
+    SupprimerRecetteModale,
   },
 
   methods: {
     ...mapActions(['fetchRecettes', 'fetchIngredients']),
     afficher(ingredient) {
       console.log(ingredient);
+    },
+
+    showSupprimerRecetteModaleClose() {
+      this.showSupprimerRecetteModale = false;
     },
   },
 
