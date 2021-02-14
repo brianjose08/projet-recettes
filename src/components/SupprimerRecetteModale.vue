@@ -1,13 +1,22 @@
 <template>
-    <div>
-        <div>
-        <p>Voulez vous vraiment supprimer?</p>
+    <transition name="modal">
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+          <div class="col1">
+            <p style="font-size: 25px">
+            <div>
+            <p>Voulez vous vraiment supprimer?</p>
+            </div>
+            <div>
+                <button class="confirmeDelete">Yes</button>
+                <button class="cancelDelete" type="button" @click="$emit('close')">Cancel</button>
+            </div>
+          </div>
         </div>
-        <div>
-            <button>Oui</button>
-            <button type="button" @click="$emit('close')">Non</button>
-        </div>
+      </div>
     </div>
+    </transition>
 </template>
 
 <script>
@@ -31,7 +40,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
   display: table;
   transition: opacity 0.3s ease;
 }
@@ -42,11 +51,8 @@ export default {
 }
 
 .modal-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0fr 0fr 0fr;
   width: 900px;
-  margin-top: 70px;
+  margin-top: 100px;
   margin-left: 450px;
   padding: 20px 30px;
   background-color: #fff;
@@ -57,19 +63,24 @@ export default {
   font-family: "Architects Daughter", cursive;
 }
 
-.modal-footer {
-  grid-column: 1/3;
-  grid-row: 3;
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
+.modal-default-button {
+  float: right;
 }
 
-.modal-footer button {
-  padding: 20px;
-  font-size: 150%;
+.modal-footer button:hover {
+  background-color: rgb(255, 196, 0);
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
   font-family: "Architects Daughter", cursive;
-  background-color: rgb(0, 0, 0);
+  height: 35px;
+  font-size: 20px;
+  border-style: solid;
   color: white;
   border-style: none;
   border-radius: 15px;
@@ -77,10 +88,16 @@ export default {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  margin-right: 2%;
+  margin-left: 2%;
 }
 
-.modal-footer button:hover {
-  background-color: rgb(255, 196, 0);
+.confirmeDelete {
+  background-color: rgb(14, 172, 0);
+}
+
+.cancelDelete {
+  background-color: rgb(230, 0, 0);
 }
 
 /*

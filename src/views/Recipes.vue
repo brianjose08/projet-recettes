@@ -187,6 +187,7 @@ export default {
   padding: 10px;
   border-radius: 5px;
   background-color: rgb(199, 0, 0);
+  font-family: "Architects Daughter", cursive;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
