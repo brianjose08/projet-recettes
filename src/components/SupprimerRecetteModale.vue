@@ -6,12 +6,12 @@
           <div class="col1">
             <p style="font-size: 25px"></p>
             <div>
-              <p>Voulez vous vraiment supprimer? {{ this.idSelected }}</p>
+              <p>Voulez vous vraiment supprimer?</p>
             </div>
             <div>
               <button
                 class="confirmeDelete"
-                @click="deleteRecetteConfirmation(this.idReceive)"
+                @click="deleteRecetteConfirmation()"
               >
                 Yes
               </button>
@@ -45,8 +45,8 @@ export default {
   methods: {
     ...mapActions(['deleteRecette']),
 
-    deleteRecetteConfirmation(id) {
-      console.log(id);
+    deleteRecetteConfirmation() {
+      console.log(this.idReceive);
       /*
       this.deleteRecette(id).then(() => {
         this.$router.push('recipes');
