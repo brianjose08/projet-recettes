@@ -1,34 +1,59 @@
 <template>
-    <transition name="modal">
+  <transition name="modal">
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
           <div class="col1">
-            <p style="font-size: 25px">
+            <p style="font-size: 25px"></p>
             <div>
-            <p>Voulez vous vraiment supprimer? {{this.idSelected}}</p>
+              <p>Voulez vous vraiment supprimer? {{ this.idSelected }}</p>
             </div>
             <div>
-                <button class="confirmeDelete">Yes</button>
-                <button class="cancelDelete" type="button" @click="$emit('close')">Cancel</button>
+              <button
+                class="confirmeDelete"
+                @click="deleteRecetteConfirmation(this.idReceive)"
+              >
+                Yes
+              </button>
+              <button
+                class="cancelDelete"
+                type="button"
+                @click="$emit('close')"
+              >
+                Cancel
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </transition>
+  </transition>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 
 export default {
   name: 'SupprimerRecetteModale',
   props: ['idSelected'],
   data() {
     return {
+      idReceive: this.idSelected,
     };
   },
 
+  methods: {
+    ...mapActions(['deleteRecette']),
+
+    deleteRecetteConfirmation(id) {
+      console.log(id);
+      /*
+      this.deleteRecette(id).then(() => {
+        this.$router.push('recipes');
+      });
+      */
+    },
+  },
 };
 </script>
 

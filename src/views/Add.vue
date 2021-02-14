@@ -112,7 +112,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 import CookingStepModal from '../components/CookingStepModal.vue';
 // @ is an alias to /src
 
@@ -138,8 +138,6 @@ export default {
 
   methods: {
     ...mapActions(['addRecette', 'fetchIngredientsTemporaire', 'fetchCookingStepTemporaire']),
-
-    computed: mapGetters(['allIngredientsTemporaire', 'allCookingStepTemporaire']),
 
     created() {
       window.location.reload();
