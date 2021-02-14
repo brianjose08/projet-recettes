@@ -46,12 +46,8 @@ export default {
     ...mapActions(['deleteRecette']),
 
     deleteRecetteConfirmation() {
-      console.log(this.idReceive);
-      /*
-      this.deleteRecette(id).then(() => {
-        this.$router.push('recipes');
-      });
-      */
+      this.deleteRecette(this.idReceive);
+      this.$emit('close');
     },
   },
 };
