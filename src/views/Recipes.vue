@@ -30,7 +30,7 @@
               @click="showSupprimerRecetteModale = true"
                 >Supprimer
               </button>
-              <supprimer-recette-modale
+              <supprimer-recette-modale :idEnvoye="recette.id"
               v-if="showSupprimerRecetteModale"
               @close="showSupprimerRecetteModaleClose()">
               </supprimer-recette-modale>
