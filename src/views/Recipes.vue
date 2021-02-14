@@ -37,14 +37,13 @@
             <b>Calories: </b>{{ recette.calories }} calories <br />
             <b>List of ingredients:</b>
             <div
-              v-for="ingredient in recette.ingredients"
-              v-bind="ingredient"
-              :key="ingredient.idIngredient"
+              v-for="(ingredient, index) in recette.ingredients"
+              :key="index"
             >
               <div v-for="(category, index) in allIngredients" :key="index">
                 <div
-                  v-for="ingredientCategory in category"
-                  :key="ingredientCategory.idIngredient"
+                  v-for="(ingredientCategory, index) in category"
+                  :key="index"
                 >
                   <div
                     v-if="
