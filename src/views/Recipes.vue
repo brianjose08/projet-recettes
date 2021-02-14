@@ -27,14 +27,9 @@
               >
             </a>
               <button class="supprimer-recette"
-              @click="showSupprimerRecetteModale = true"
+              @click="selected(recette.id); showSupprimerRecetteModaleOpen();"
                 >Supprimer
               </button>
-              <supprimer-recette-modale :idEnvoye="recette.id"
-              v-if="showSupprimerRecetteModale"
-              @close="showSupprimerRecetteModaleClose()">
-              </supprimer-recette-modale>
-
           </div>
           <div class="ingredients-recette">
             <b>Price: </b>{{ recette.price }} $ <br />
@@ -77,6 +72,10 @@
         </div>
       </li>
     </ul>
+    <supprimer-recette-modale :idSelected="this.idSelected"
+     v-if="showSupprimerRecetteModale"
+     @close="showSupprimerRecetteModaleClose()">
+    </supprimer-recette-modale>
   </div>
 </div>
 </template>
@@ -90,6 +89,7 @@ export default {
   name: 'Recipes',
   data: () => ({
     showSupprimerRecetteModale: false,
+    idSelected: 0,
   }),
   components: {
     SupprimerRecetteModale,
@@ -100,7 +100,13 @@ export default {
     afficher(ingredient) {
       console.log(ingredient);
     },
-
+    selected(id) {
+      this.idSelected = id;
+      console.log(this.idSelected);
+    },
+    showSupprimerRecetteModaleOpen() {
+      this.showSupprimerRecetteModale = true;
+    },
     showSupprimerRecetteModaleClose() {
       this.showSupprimerRecetteModale = false;
     },

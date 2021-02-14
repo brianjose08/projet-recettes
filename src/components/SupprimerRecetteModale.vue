@@ -6,7 +6,7 @@
           <div class="col1">
             <p style="font-size: 25px">
             <div>
-            <p>Voulez vous vraiment supprimer? {{this.idEnvoye}}</p>
+            <p>Voulez vous vraiment supprimer? {{this.idSelected}}</p>
             </div>
             <div>
                 <button class="confirmeDelete">Yes</button>
@@ -23,7 +23,7 @@
 
 export default {
   name: 'SupprimerRecetteModale',
-  props: ['idEnvoye'],
+  props: ['idSelected'],
   data() {
     return {
     };
