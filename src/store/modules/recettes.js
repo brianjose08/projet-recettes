@@ -21,6 +21,10 @@ const actions = {
     await axios.delete(`http://localhost:3000/recettes/${id}`);
     commit('removeRecette', id);
   },
+  async updateRecette({ commit }, updRecette) {
+    const response = await axios.put(`http://localhost:3000/recettes/${updRecette.id}`, updRecette);
+    commit('updRecette', response.data);
+  },
 };
 
 const mutations = {
@@ -28,6 +32,12 @@ const mutations = {
   newRecette: (state, recette) => state.recettes.unshift(recette),
   removeRecette: (state, id) => {
     (state.recettes = state.recettes.filter((recette) => recette.id !== id));
+  },
+  updRecette: (state, updRecette) => {
+    const index = state.recettes.findIndex((recette) => recette.id === updRecette.id);
+    if (index !== -1) {
+      state.recette.splice(index, 1, updRecette);
+    }
   },
 };
 
