@@ -120,6 +120,12 @@ import IngredientModale from '../components/IngredientModal.vue';
 
 export default {
   name: 'Modify',
+  props: {
+    id: {
+      type: Number,
+      required: true,
+    },
+  },
   data: () => ({
     recette: {
       title: '',
@@ -137,12 +143,10 @@ export default {
   components: { IngredientModale, CookingStepModal },
 
   methods: {
-    ...mapActions(['addRecette', 'fetchIngredientsTemporaire', 'fetchCookingStepTemporaire']),
+    ...mapActions(['addRecette', 'fetchRecettes']),
 
     created() {
-      window.location.reload();
-      this.fetchIngredientsTemporaire();
-      this.fetchCookingStepTemporaire();
+      this.fetchRecette();
     },
 
     createRecette() {

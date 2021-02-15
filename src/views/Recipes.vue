@@ -1,82 +1,81 @@
 <template>
-<div>
-  <div class="recipePage">
-    <div class="search">
-      <input type="text" placeholder="Search Recipe..." />
-      <a>
-        <router-link to="/" class="search-recette"
-          >Search</router-link
-        >
-      </a>
-      <a href="/add" class="ajouter-recette">
-        Add new recipe
-      </a>
-    </div>
-    <ul v-for="recette in allRecettes" :key="recette.id">
-      <li class="item-recette">
-        <div class="gridview">
-          <div>
-            <h2>{{ recette.title }}</h2>
-            <img :src="recette.image" />
-            <a>
-              <router-link
-                to="/modify"
-                class="modifier-recette"
-                @click="afficher()"
-                >Modifier</router-link
-              >
-            </a>
-              <button class="supprimer-recette"
-              @click="selected(recette.id); showSupprimerRecetteModaleOpen();"
-                >Supprimer
+  <div>
+    <div class="recipePage">
+      <div class="search">
+        <input type="text" placeholder="Search Recipe..." />
+        <a>
+          <router-link to="/" class="search-recette">Search</router-link>
+        </a>
+        <a href="/add" class="ajouter-recette"> Add new recipe </a>
+      </div>
+      <ul v-for="recette in allRecettes" :key="recette.id">
+        <li class="item-recette">
+          <div class="gridview">
+            <div>
+              <h2>{{ recette.title }}</h2>
+              <img :src="recette.image" />
+              <button class="modifier-recette" @click="modifier(recette)">
+                Modifier
               </button>
-          </div>
-          <div class="ingredients-recette">
-            <b>Price: </b>{{ recette.price }} $ <br />
-            <b>Cooking time: </b>{{ recette.cookingTime }} min. <br />
-            <b>Calories: </b>{{ recette.calories }} calories <br />
-            <b>List of ingredients:</b>
-            <div
-              v-for="(ingredient, index) in recette.ingredients"
-              :key="index"
-            >
-              <div v-for="(category, index) in allIngredients" :key="index">
-                <div
-                  v-for="(ingredientCategory, index) in category"
-                  :key="index"
-                >
+
+              <button
+                class="supprimer-recette"
+                @click="
+                  selected(recette.id);
+                  showSupprimerRecetteModaleOpen();
+                "
+              >
+                Supprimer
+              </button>
+            </div>
+            <div class="ingredients-recette">
+              <b>Price: </b>{{ recette.price }} $ <br />
+              <b>Cooking time: </b>{{ recette.cookingTime }} min. <br />
+              <b>Calories: </b>{{ recette.calories }} calories <br />
+              <b>List of ingredients:</b>
+              <div
+                v-for="(ingredient, index) in recette.ingredients"
+                :key="index"
+              >
+                <div v-for="(category, index) in allIngredients" :key="index">
                   <div
-                    v-if="
-                      ingredient.idIngredient ===
-                      ingredientCategory.idIngredient
-                    "
+                    v-for="(ingredientCategory, index) in category"
+                    :key="index"
                   >
-                    -{{ ingredientCategory.name }} ({{ ingredient.unit }})
+                    <div
+                      v-if="
+                        ingredient.idIngredient ===
+                        ingredientCategory.idIngredient
+                      "
+                    >
+                      -{{ ingredientCategory.name }} ({{ ingredient.unit }})
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="etapes-recette">
-            <b>Steps: </b><br />
-            <div
-              v-for="etape in recette.steps"
-              v-bind="etape"
-              :key="etape.numberStep"
-            >
-              <b>{{ etape.numberStep }}</b
-              >- {{ etape.step }}
+            <div class="etapes-recette">
+              <b>Steps: </b><br />
+              <div
+                v-for="etape in recette.steps"
+                v-bind="etape"
+                :key="etape.numberStep"
+              >
+                <b>{{ etape.numberStep }}</b
+                >- {{ etape.step }}
+              </div>
             </div>
           </div>
-        </div>
-      </li>
-    </ul>
-    <supprimer-recette-modale :idSelected="this.idSelected"
-     v-if="showSupprimerRecetteModale"
-     @close="showSupprimerRecetteModaleClose()">
-    </supprimer-recette-modale>
+        </li>
+      </ul>
+      <supprimer-recette-modale
+        :idSelected="this.idSelected"
+        v-if="showSupprimerRecetteModale"
+        @close="showSupprimerRecetteModaleClose()"
+      >
+      </supprimer-recette-modale>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -108,6 +107,10 @@ export default {
     },
     showSupprimerRecetteModaleClose() {
       this.showSupprimerRecetteModale = false;
+    },
+
+    modifier(recette) {
+      this.$router.push({ name: 'Modify', params: { id: recette.id } });
     },
   },
 
@@ -220,7 +223,7 @@ ul li div img {
   height: auto;
   width: 100%;
   position: relative;
-  bottom:30px;
+  bottom: 30px;
 }
 
 ul li div h2 {
