@@ -112,9 +112,9 @@
 </template>
 
 <script>
+import axios from 'axios';
 import { mapActions } from 'vuex';
 import CookingStepModal from '../components/CookingStepModal.vue';
-// @ is an alias to /src
 
 import IngredientModale from '../components/IngredientModal.vue';
 
@@ -127,27 +127,24 @@ export default {
     },
   },
   data: () => ({
-    recette: {
-      title: '',
-      price: 0,
-      image: '',
-      cookingTime: 0,
-      calories: 0,
-      steps: [],
-      ingredients: [],
-    },
+    recette: null,
     previewImage: 'http://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png',
     showIngredientModal: false,
     showCookingStepModal: false,
   }),
   components: { IngredientModale, CookingStepModal },
 
+  async created() {
+    try {
+      this.recette = (await axios.get(`http://localhost:3000/recettes/${this.id}`)).data;
+      console.log(this.recette);
+    } catch (e) {
+      console.error(e);
+    }
+  },
+
   methods: {
     ...mapActions(['addRecette', 'fetchRecettes']),
-
-    created() {
-      this.fetchRecette();
-    },
 
     createRecette() {
       this.addRecette(this.recette).then(() => {
