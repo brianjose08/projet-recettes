@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="formAddRecipe" @submit.prevent="createRecette">
+    <form class="formAddRecipe" @submit.prevent="enregistrerRecette">
       <div class="contenu">
         <div class="row1-col1">
           <h1>Modify recipe</h1>
@@ -102,7 +102,7 @@
         <div class="row5-col2">
           <div>
             <a>
-              <button>Add Recipe</button>
+              <button>Enregistrer</button>
             </a>
           </div>
         </div>
@@ -137,19 +137,19 @@ export default {
   async created() {
     try {
       this.recette = (await axios.get(`http://localhost:3000/recettes/${this.id}`)).data;
-      console.log(this.recette);
+      this.fetchIngredientsTemporaire(this.recette.ingredients);
+      this.fetchCookingStepTemporaire(this.recette.steps);
     } catch (e) {
       console.error(e);
     }
   },
 
   methods: {
-    ...mapActions(['addRecette', 'fetchRecettes']),
+    ...mapActions(['updateRecette', 'fetchRecettes', 'fetchIngredientsTemporaire', 'fetchCookingStepTemporaire']),
 
-    createRecette() {
-      this.addRecette(this.recette).then(() => {
-        this.$router.push('recipes');
-      });
+    enregistrerRecette() {
+      this.updateRecette(this.recette);
+      this.$router.push('recipes');
     },
 
     showIngredientModalClose() {

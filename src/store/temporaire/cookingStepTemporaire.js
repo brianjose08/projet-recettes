@@ -3,8 +3,8 @@ const getters = {
 };
 
 const actions = {
-  fetchCookingStepTemporaire({ commit }) {
-    commit('setCookingStepTemp', []);
+  fetchCookingStepTemporaire({ commit }, data) {
+    commit('setCookingStepTemp', data);
   },
   addCookingStepTemporaire({ commit }, data) {
     commit('newCookingStepTemp', data);

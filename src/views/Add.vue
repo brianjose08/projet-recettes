@@ -133,6 +133,7 @@ export default {
     previewImage: 'http://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png',
     showIngredientModal: false,
     showCookingStepModal: false,
+    listeVide: [],
   }),
   components: { IngredientModale, CookingStepModal },
 
@@ -141,8 +142,8 @@ export default {
 
     created() {
       window.location.reload();
-      this.fetchIngredientsTemporaire();
-      this.fetchCookingStepTemporaire();
+      this.fetchIngredientsTemporaire(this.listeVide);
+      this.fetchCookingStepTemporaire(this.listeVide);
     },
 
     createRecette() {
