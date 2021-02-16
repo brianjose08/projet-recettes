@@ -2,13 +2,10 @@
   <div>
     <div class="recipePage">
       <div class="search">
-        <input type="text" placeholder="Search Recipe..." />
-        <a>
-          <router-link to="/" class="search-recette">Search</router-link>
-        </a>
+        <input type="text" v-model="search" @input="filtrer()" placeholder="Search Recipe..." />
         <a href="/add" class="ajouter-recette"> Add new recipe </a>
       </div>
-      <ul v-for="recette in allRecettes" :key="recette.id">
+      <ul v-for="recette in recetteFiltrer" :key="recette.id">
         <li class="item-recette">
           <div class="gridview">
             <div>
@@ -37,7 +34,7 @@
                 v-for="(ingredient, index) in recette.ingredients"
                 :key="index"
               >
-                <div v-for="(category, index) in allIngredients" :key="index">
+                <div v-for="(category, index) in getAllIngredients" :key="index">
                   <div
                     v-for="(ingredientCategory, index) in category"
                     :key="index"
@@ -80,7 +77,7 @@
 
 <script>
 // @ is an alias to /src
-import { mapGetters, mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 import SupprimerRecetteModale from '../components/SupprimerRecetteModale.vue';
 
 export default {
@@ -88,6 +85,8 @@ export default {
   data: () => ({
     showSupprimerRecetteModale: false,
     idSelected: 0,
+    search: '',
+    recetteFiltrer: [],
   }),
   components: {
     SupprimerRecetteModale,
@@ -102,6 +101,14 @@ export default {
       this.idSelected = id;
       console.log(this.idSelected);
     },
+    filtrer() {
+      this.recetteFiltrer = [];
+      this.getAllRecettes.forEach((recette) => {
+        if (recette.title.toLowerCase().includes(this.search.toLowerCase())) {
+          this.recetteFiltrer.push(recette);
+        }
+      });
+    },
     showSupprimerRecetteModaleOpen() {
       this.showSupprimerRecetteModale = true;
     },
@@ -114,11 +121,19 @@ export default {
     },
   },
 
-  computed: mapGetters(['allRecettes', 'allIngredients']),
+  computed: {
+    getAllRecettes() {
+      return this.$store.state.recettes.recettes;
+    },
+    getAllIngredients() {
+      return this.$store.state.ingredients.ingredients;
+    },
+  },
 
   created() {
     this.fetchRecettes();
     this.fetchIngredients();
+    this.filtrer();
   },
 
   mounted() {},
@@ -132,7 +147,7 @@ export default {
 }
 .search input {
   width: 60%;
-  height: 30px;
+  height: 28px;
   border-radius: 5px;
   font-size: 25px;
   color: black;
@@ -172,6 +187,7 @@ export default {
 .modifier-recette {
   text-align: center;
   text-decoration: none;
+  font-family: "Architects Daughter", cursive;
   color: rgb(255, 255, 255);
   margin-right: 2px;
   font-size: 15px;

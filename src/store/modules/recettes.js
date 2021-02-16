@@ -39,10 +39,14 @@ const mutations = {
       state.recette.splice(index, 1, updRecette);
     }
   },
+  filterRecette: (state) => {
+    (state.recetttesFilter = state.recettes);
+  },
 };
 
 const state = {
   recettes: [],
+  recetttesFilter: [],
 };
 
 export default {
