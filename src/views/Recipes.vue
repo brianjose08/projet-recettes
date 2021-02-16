@@ -92,8 +92,18 @@ export default {
     SupprimerRecetteModale,
   },
 
+  computed: {
+    getAllRecettes() {
+      return this.$store.state.recettes.recettes;
+    },
+    getAllIngredients() {
+      return this.$store.state.ingredients.ingredients;
+    },
+  },
+
   methods: {
     ...mapActions(['fetchRecettes', 'fetchIngredients']),
+
     afficher(ingredient) {
       console.log(ingredient);
     },
@@ -101,6 +111,7 @@ export default {
       this.idSelected = id;
       console.log(this.idSelected);
     },
+
     filtrer() {
       this.recetteFiltrer = [];
       this.getAllRecettes.forEach((recette) => {
@@ -109,6 +120,13 @@ export default {
         }
       });
     },
+
+    initialiserFiltre() {
+      this.getAllRecettes.forEach((recette) => {
+        this.recetteFiltrer.push(recette);
+      });
+    },
+
     showSupprimerRecetteModaleOpen() {
       this.showSupprimerRecetteModale = true;
     },
@@ -121,22 +139,15 @@ export default {
     },
   },
 
-  computed: {
-    getAllRecettes() {
-      return this.$store.state.recettes.recettes;
-    },
-    getAllIngredients() {
-      return this.$store.state.ingredients.ingredients;
-    },
+  async mounted() {
+    await this.fetchRecettes();
+    await this.fetchIngredients();
+    this.initialiserFiltre();
   },
 
   created() {
-    this.fetchRecettes();
-    this.fetchIngredients();
-    this.filtrer();
   },
 
-  mounted() {},
 };
 </script>
 <style lang="scss" scoped>
