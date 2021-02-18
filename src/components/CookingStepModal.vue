@@ -30,7 +30,7 @@
             >
               <div class="cookingStep">
                 <div>{{ cookingStep.numberStep }}-{{ cookingStep.step }}</div>
-                <button type="button" @click="removeCookingStep(index)">x</button>
+                <button type="button" @click="removeCookingStep(cookingStep.numberStep)">x</button>
               </div>
             </div>
           </div>
