@@ -87,6 +87,7 @@ export default {
       if (this.boolReceive) {
         this.addCookingStepTemporaire(data);
       }
+      this.step = '';
     },
     removeCookingStep(idStep) {
       this.$emit('removeStep', idStep);

@@ -34,10 +34,11 @@ const mutations = {
     (state.recettes = state.recettes.filter((recette) => recette.id !== id));
   },
   updRecette: (state, updRecette) => {
-    const index = state.recettes.findIndex((recette) => recette.id === updRecette.id);
-    if (index !== -1) {
+    state.recettes.findIndex((recette) => recette.id === updRecette.id);
+    /* if (index !== -1) {
       state.recette.splice(index, 1, updRecette);
     }
+    */
   },
 };
 
