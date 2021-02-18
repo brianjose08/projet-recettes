@@ -78,6 +78,7 @@
               +
             </button>
             <ingredient-modale
+            :boolAjouter="this.boolAjouter"
               v-if="showIngredientModal"
               @close="showIngredientModalClose()"
               @add="addIngredient"
@@ -139,6 +140,7 @@ export default {
     showIngredientModal: false,
     showCookingStepModal: false,
     listeVide: [],
+    boolAjouter: true,
   }),
   components: { IngredientModale, CookingStepModal },
 

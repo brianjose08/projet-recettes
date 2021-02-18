@@ -102,10 +102,12 @@ import { mapActions } from 'vuex';
 
 export default {
   name: 'IngredientModal',
+  props: ['boolAjouter'],
   data() {
     return {
       selected: '',
       unit: '',
+      boolReceive: this.boolAjouter,
     };
   },
   methods: {
@@ -129,11 +131,15 @@ export default {
 
       if (boolForEach === false) {
         this.$emit('add', data);
+        if (this.boolReceive) {
+          this.addIngredientTemporaire(data);
+        }
       }
     },
     removeIngredient(idParam) {
       console.log('remove');
       this.$emit('remove', idParam);
+      this.deleteIngredientTemporaire(idParam);
     },
   },
 
