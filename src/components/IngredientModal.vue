@@ -129,13 +129,11 @@ export default {
 
       if (boolForEach === false) {
         this.$emit('add', data);
-        this.addIngredientTemporaire(data);
       }
     },
     removeIngredient(idParam) {
       console.log('remove');
       this.$emit('remove', idParam);
-      this.deleteIngredientTemporaire(idParam);
     },
   },
 

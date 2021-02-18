@@ -27,7 +27,7 @@
           </div>
           <div class="col3">
             <div
-              v-for="(cookingStep, index) in allCookingStepTemporaire"
+              v-for="(cookingStep, index) in getAllCookingStepTemporaire"
               v-bind:key="index"
             >
               <div class="cookingStep">
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'CookingStepModal',
@@ -90,15 +90,18 @@ export default {
     addCookingStep(idStep) {
       const data = { numberStep: idStep, step: this.step };
       this.$emit('addStep', data);
-      this.addCookingStepTemporaire(data);
     },
     removeCookingStep(idStep) {
       console.log('remove');
       this.$emit('removeStep', idStep);
-      this.deleteCookingStepTemporaire(idStep);
     },
   },
-  computed: mapGetters(['allCookingStepTemporaire']),
+
+  computed: {
+    getAllCookingStepTemporaire() {
+      return this.$store.state.cookingStepTemporaire.cookingStepTemp;
+    },
+  },
 };
 </script>
 

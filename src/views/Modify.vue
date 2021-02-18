@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="formAddRecipe" @submit.prevent="enregistrerRecette">
+    <form class="formModifyRecipe" @submit.prevent="enregistrerRecette">
       <div class="contenu">
         <div class="row1-col1">
           <h1>Modify recipe</h1>
@@ -127,7 +127,15 @@ export default {
     },
   },
   data: () => ({
-    recette: null,
+    recette: {
+      title: '',
+      price: 0,
+      image: '',
+      cookingTime: 0,
+      calories: 0,
+      steps: [],
+      ingredients: [],
+    },
     previewImage: 'http://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png',
     showIngredientModal: false,
     showCookingStepModal: false,
@@ -201,7 +209,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.formAddRecipe {
+.formModifyRecipe {
   padding-top: 100px;
   display: flex;
   justify-content: center;
