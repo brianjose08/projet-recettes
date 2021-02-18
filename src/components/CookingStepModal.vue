@@ -15,11 +15,9 @@
               v-model="step"
               value="Cooking steps..."
             />
-            <button style="font-size:20px;"
-              @click="
-                addCookingStep(idStep);
-                addSuccess();
-              "
+            <button
+              style="font-size: 20px"
+              @click="addCookingStep()"
               type="button"
             >
               Ajouter
@@ -31,17 +29,8 @@
               v-bind:key="index"
             >
               <div class="cookingStep">
-                <div>
-                {{ cookingStep.numberStep }}-{{ cookingStep.step }}
-                </div>
-                <button
-                  @click="
-                    removeCookingStep(cookingStep.numberStep);
-                    removeSuccess();
-                  "
-                >
-                  x
-                </button>
+                <div>{{ cookingStep.numberStep }}-{{ cookingStep.step }}</div>
+                <button type="button" @click="removeCookingStep(index)">x</button>
               </div>
             </div>
           </div>
@@ -89,18 +78,25 @@ export default {
     afficher(cookingStep) {
       console.log(cookingStep);
     },
-    addCookingStep(idStep) {
-      const data = { numberStep: idStep, step: this.step };
+    addCookingStep() {
+      const data = {
+        numberStep: this.getAllCookingStepTemporaire.length + 1,
+        step: this.step,
+      };
       this.$emit('addStep', data);
       if (this.boolReceive) {
         this.addCookingStepTemporaire(data);
       }
     },
     removeCookingStep(idStep) {
-      console.log('remove');
       this.$emit('removeStep', idStep);
       if (this.boolReceive) {
         this.deleteCookingStepTemporaire(idStep);
+      }
+      for (let i = 0; i < this.getAllCookingStepTemporaire.length; i += 1) {
+        if (this.getAllCookingStepTemporaire[i].numberStep > idStep) {
+          this.getAllCookingStepTemporaire[i].numberStep -= 1;
+        }
       }
     },
   },
