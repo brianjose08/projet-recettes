@@ -69,6 +69,7 @@
         :idSelected="this.idSelected"
         v-if="showSupprimerRecetteModale"
         @close="showSupprimerRecetteModaleClose()"
+        @closeNReload="showSupprimerRecetteModaleClose(); reload()"
       >
       </supprimer-recette-modale>
     </div>
@@ -132,6 +133,8 @@ export default {
     },
     showSupprimerRecetteModaleClose() {
       this.showSupprimerRecetteModale = false;
+    },
+    reload() {
       window.location.reload();
     },
 

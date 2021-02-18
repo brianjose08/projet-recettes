@@ -11,7 +11,7 @@
             <div>
               <button
                 class="confirmeDelete"
-                @click="deleteRecetteConfirmation()"
+                @click="deleteRecetteConfirmation();"
               >
                 Yes
               </button>
@@ -47,7 +47,7 @@ export default {
 
     deleteRecetteConfirmation() {
       this.deleteRecette(this.idReceive);
-      this.$emit('close');
+      this.$emit('closeNReload');
     },
   },
 };
