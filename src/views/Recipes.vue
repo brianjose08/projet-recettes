@@ -132,6 +132,7 @@ export default {
     },
     showSupprimerRecetteModaleClose() {
       this.showSupprimerRecetteModale = false;
+      window.location.reload();
     },
 
     modifier(recette) {

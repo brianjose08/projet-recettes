@@ -18,7 +18,7 @@
             <div class="selectCategory">
               <select v-model="selected">
                 <option disabled value="">Choissisez une categorie</option>
-                <option v-for="(item, index) in allIngredients" :key="index">
+                <option v-for="(item, index) in getAllIngredients" :key="index">
                   {{ index }}
                 </option>
               </select>
@@ -27,12 +27,12 @@
             </div>
             <!--Ici c'est la liste d'ingredients selon la categorie-->
             <div class="listeIngredients">
-              <div v-for="(item, index) in allIngredients" :key="index">
+              <div v-for="(item, index) in getAllIngredients" :key="index">
                 <div v-if="index === selected">
                   <div
                     class="ingredientsFiltrer"
-                    v-for="ingredients in item"
-                    :key="ingredients.idIngredient"
+                    v-for="(ingredients, index) in item"
+                    :key="index"
                   >
                     <div>{{ ingredients.name }}</div>
                     <!-- <input v-model="unit" type="text" placeholder="Unit of mesure" /> -->
@@ -51,11 +51,11 @@
             <div class="listeIngredientsAjoutes">
               <!-- Un for ici pour chaque ingredient enregistré dans une liste maybe?-->
               <div
-                v-for="ingredientAjouter in allIngredientsTemporaire"
-                :key="ingredientAjouter.idIngredient"
+                v-for="(ingredientAjouter, index) in getAllIngredientsTemporaire"
+                :key="index"
               >
-                <div v-for="(item, index) in allIngredients" :key="index">
-                  <div v-for="ingredients in item" :key="ingredients.id">
+                <div v-for="(item, index) in getAllIngredients" :key="index">
+                  <div v-for="(ingredients, index) in item" :key="index">
                     <div
                       class="ingredientsAjoute"
                       v-if="
@@ -98,7 +98,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'IngredientModal',
@@ -119,8 +119,18 @@ export default {
     },
     addIngredient(idParam) {
       const data = { idIngredient: idParam, unit: this.unit };
-      this.$emit('add', data);
-      this.addIngredientTemporaire(data);
+      let boolForEach = false;
+
+      this.getAllIngredientsTemporaire.forEach((ingredientTemp) => {
+        if (ingredientTemp.idIngredient === idParam) {
+          boolForEach = true;
+        }
+      });
+
+      if (boolForEach === false) {
+        this.$emit('add', data);
+        this.addIngredientTemporaire(data);
+      }
     },
     removeIngredient(idParam) {
       console.log('remove');
@@ -128,7 +138,15 @@ export default {
       this.deleteIngredientTemporaire(idParam);
     },
   },
-  computed: mapGetters(['allIngredients', 'allIngredientsTemporaire']),
+
+  computed: {
+    getAllIngredients() {
+      return this.$store.state.ingredients.ingredients;
+    },
+    getAllIngredientsTemporaire() {
+      return this.$store.state.ingredientsTemporaire.ingredientsTemp;
+    },
+  },
 
   created() {
     this.fetchIngredients();

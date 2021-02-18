@@ -134,11 +134,11 @@ export default {
   }),
   components: { IngredientModale, CookingStepModal },
 
-  async created() {
+  async mounted() {
     try {
       this.recette = (await axios.get(`http://localhost:3000/recettes/${this.id}`)).data;
-      this.fetchIngredientsTemporaire(this.recette.ingredients);
-      this.fetchCookingStepTemporaire(this.recette.steps);
+      await this.fetchIngredientsTemporaire(this.recette.ingredients);
+      await this.fetchCookingStepTemporaire(this.recette.steps);
     } catch (e) {
       console.error(e);
     }

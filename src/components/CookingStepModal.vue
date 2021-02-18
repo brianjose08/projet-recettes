@@ -27,8 +27,8 @@
           </div>
           <div class="col3">
             <div
-              v-for="cookingStep in allCookingStepTemporaire"
-              v-bind:key="cookingStep.numberStep"
+              v-for="(cookingStep, index) in allCookingStepTemporaire"
+              v-bind:key="index"
             >
               <div class="cookingStep">
                 <div>
