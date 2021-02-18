@@ -17,6 +17,7 @@
               @change="uploadRecipePicture()"
               id="upload"
               value="Upload a picture of your recipe"
+              required
             />
           </div>
         </div>
@@ -29,6 +30,7 @@
               id="rTitle"
               placeholder="Your recipe's name"
               v-model="recette.title"
+              required
             />
           </div>
           <div>
@@ -39,6 +41,7 @@
               id="rCalories"
               placeholder="Calories"
               v-model="recette.calories"
+              required
             />
           </div>
           <div>
@@ -49,6 +52,7 @@
               id="rTime"
               placeholder="Time"
               v-model="recette.cookingTime"
+              required
             />minutes
           </div>
           <div>
@@ -59,6 +63,7 @@
               id="rPrice"
               placeholder="Price"
               v-model="recette.price"
+              required
             />$
           </div>
         </div>

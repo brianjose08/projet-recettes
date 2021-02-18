@@ -23,7 +23,7 @@
                 </option>
               </select>
               <br />
-              <input v-model="unit" type="text" placeholder="Unit of mesure" />
+              <input v-model="unit" type="text" placeholder="Unit of mesure" required/>
             </div>
             <!--Ici c'est la liste d'ingredients selon la categorie-->
             <div class="listeIngredients">
