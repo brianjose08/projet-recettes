@@ -65,10 +65,12 @@ import { mapActions } from 'vuex';
 
 export default {
   name: 'CookingStepModal',
+  props: ['boolAjouter'],
   data() {
     return {
       idStep: 1,
       step: '',
+      boolReceive: this.boolAjouter,
     };
   },
   methods: {
@@ -90,10 +92,16 @@ export default {
     addCookingStep(idStep) {
       const data = { numberStep: idStep, step: this.step };
       this.$emit('addStep', data);
+      if (this.boolReceive) {
+        this.addCookingStepTemporaire(data);
+      }
     },
     removeCookingStep(idStep) {
       console.log('remove');
       this.$emit('removeStep', idStep);
+      if (this.boolReceive) {
+        this.deleteCookingStepTemporaire(idStep);
+      }
     },
   },
 

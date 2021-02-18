@@ -139,7 +139,9 @@ export default {
     removeIngredient(idParam) {
       console.log('remove');
       this.$emit('remove', idParam);
-      this.deleteIngredientTemporaire(idParam);
+      if (this.boolReceive) {
+        this.deleteIngredientTemporaire(idParam);
+      }
     },
   },
 

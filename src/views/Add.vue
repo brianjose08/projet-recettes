@@ -7,11 +7,7 @@
         </div>
         <div class="row2-col2">
           <div>
-            <img
-              id="imgPreview"
-              :src="previewImage"
-              alt="Preview"
-            />
+            <img id="imgPreview" :src="previewImage" alt="Preview" />
             <input
               type="file"
               @change="uploadRecipePicture()"
@@ -78,7 +74,7 @@
               +
             </button>
             <ingredient-modale
-            :boolAjouter="this.boolAjouter"
+              :boolAjouter="this.boolAjouter"
               v-if="showIngredientModal"
               @close="showIngredientModalClose()"
               @add="addIngredient"
@@ -97,6 +93,7 @@
               +
             </button>
             <cooking-step-modal
+              :boolAjouter="this.boolAjouter"
               v-if="showCookingStepModal"
               @closeStep="showCookingStepModalClose()"
               @addStep="addCookingStep"
@@ -136,7 +133,8 @@ export default {
       steps: [],
       ingredients: [],
     },
-    previewImage: 'http://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png',
+    previewImage:
+      'http://flxtable.com/wp-content/plugins/pl-platform/engine/ui/images/image-preview.png',
     showIngredientModal: false,
     showCookingStepModal: false,
     listeVide: [],
@@ -145,7 +143,11 @@ export default {
   components: { IngredientModale, CookingStepModal },
 
   methods: {
-    ...mapActions(['addRecette', 'fetchIngredientsTemporaire', 'fetchCookingStepTemporaire']),
+    ...mapActions([
+      'addRecette',
+      'fetchIngredientsTemporaire',
+      'fetchCookingStepTemporaire',
+    ]),
 
     created() {
       window.location.reload();
@@ -294,13 +296,12 @@ label {
   height: auto;
 }
 
-input[type='file']{
+input[type="file"] {
   grid-column: 2;
   grid-row: 2;
   color: transparent;
   margin-top: 20px;
   margin-left: 100px;
-
 }
 
 //premiere colonne, quatrieme rangee
