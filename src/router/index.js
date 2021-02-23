@@ -14,10 +14,7 @@ const routes = [
   {
     path: '/recipes',
     name: 'Recipes',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Recipes.vue'),
+    component: () => import('../views/Recipes.vue'),
     meta: {
       requiresAuth: true,
     },
@@ -25,10 +22,7 @@ const routes = [
   {
     path: '/personalspace',
     name: 'PersonalSpace',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/PersonalSpace.vue'),
+    component: () => import('../views/PersonalSpace.vue'),
     meta: {
       requiresAuth: true,
     },
@@ -37,26 +31,17 @@ const routes = [
   {
     path: '/signup',
     name: 'SignUp',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/SignUp.vue'),
+    component: () => import('../views/SignUp.vue'),
   },
   {
     path: '/login',
     name: 'Login',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue'),
+    component: () => import('../views/Login.vue'),
   },
   {
     path: '/add',
     name: 'Ajouter',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Add.vue'),
+    component: () => import('../views/Add.vue'),
     meta: {
       requiresAuth: true,
     },
@@ -65,10 +50,23 @@ const routes = [
     path: '/modify',
     name: 'Modify',
     props: (route) => ({ id: Number(route.params.id) }),
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Modify.vue'),
+    component: () => import('../views/Modify.vue'),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/favorites',
+    name: 'Favorites',
+    component: () => import('../views/Favorites.vue'),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/calendar',
+    name: 'Calendar',
+    component: () => import('../views/Calendar.vue'),
     meta: {
       requiresAuth: true,
     },

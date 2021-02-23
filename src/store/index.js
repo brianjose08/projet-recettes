@@ -12,7 +12,7 @@ export default new Vuex.Store({
   state: {
     status: '',
     token: localStorage.getItem('token') || '',
-    user: {},
+    currentUser: null,
   },
   getters: {
     isLoggedIn: (state) => !!state.token,
@@ -22,10 +22,12 @@ export default new Vuex.Store({
     auth_request(state) {
       state.status = 'loading';
     },
-    auth_success(state, token, user) {
+    auth_success(state, token) {
       state.status = 'success';
       state.token = token;
-      state.user = user;
+    },
+    auth_setCurrentUser(state, user) {
+      state.currentUser = user;
     },
     auth_error(state) {
       state.status = 'error';
@@ -45,11 +47,12 @@ export default new Vuex.Store({
             for (let i = 0; i < resp.data.length; i += 1) {
               /* eslint-disable max-len */
               if (resp.data[i].username === user.username && resp.data[i].password === user.password) {
-                const token = resp.data;
-                const user = resp.data;
+                const token = resp.data[i];
                 localStorage.setItem('token', token);
+                localStorage.setItem('userGet', JSON.stringify(resp.data[i]));
                 axios.defaults.headers.common.Authorization = token;
-                commit('auth_success', token, user);
+                commit('auth_success', token);
+                commit('auth_setCurrentUser', resp.data[i].id);
                 resolve(resp);
                 i = resp.data.length;
               }
@@ -58,6 +61,7 @@ export default new Vuex.Store({
           .catch((err) => {
             commit('auth_error');
             localStorage.removeItem('token');
+            localStorage.removeItem('userGet');
             reject(err);
           });
       });
@@ -74,10 +78,12 @@ export default new Vuex.Store({
       return new Promise((resolve) => {
         commit('logout');
         localStorage.removeItem('token');
+        localStorage.removeItem('userGet');
         delete axios.defaults.headers.common.Authorization;
         resolve();
       });
     },
+
   },
   modules: {
     recettes,

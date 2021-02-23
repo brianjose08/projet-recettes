@@ -35,8 +35,7 @@ export default {
         password: this.password,
       };
       this.$store.dispatch('login', data)
-        .then(() => window.location.reload(),
-          this.$router.push('/'))
+        .then(() => this.$router.push('/'))
         .catch((err) => console.log(err));
     },
   },
