@@ -86,7 +86,8 @@ form {
 // Login Page
 .loginPage {
   font-size: 200%;
-  padding-top: 150px;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 // Title Info (Username, Password)
