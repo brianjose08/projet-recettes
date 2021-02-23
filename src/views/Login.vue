@@ -29,6 +29,7 @@ export default {
     };
   },
   methods: {
+    // Method to Log in
     login() {
       const data = {
         username: this.username,
@@ -48,16 +49,20 @@ form  {
   color: white;
 }
 
+// Login Page
 .loginPage {
   font-size: 200%;
   padding-top: 260px;
 }
-#loginInformation {
-  font-size: 100%;
-}
 
+// Title Info (Username, Password)
 #titleInformation {
   padding-right: 13%;
+}
+
+// Login Info
+#loginInformation {
+  font-size: 100%;
 }
 
 button {

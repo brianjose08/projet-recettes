@@ -2,10 +2,10 @@
   <div>
     <form class="formModifyRecipe" @submit.prevent="enregistrerRecette">
       <div class="contenu">
-        <div class="row1-col1">
+        <div class="title-col">
           <h1>Modify recipe</h1>
         </div>
-        <div class="row2-col2">
+        <div class="imageUpload-col">
           <div>
             <img
               id="imgPreview"
@@ -20,33 +20,33 @@
             />
           </div>
         </div>
-        <div class="row2-col1">
+        <div class="recipeGeneralInformation-col">
           <div>
-            <label for="rTitle">Recipe Title</label>
+            <label for="recipeTitle">Recipe Title</label>
             <br />
             <input
               type="text"
-              id="rTitle"
+              id="recipeTitle"
               placeholder="Your recipe's name"
               v-model="recette.title"
             />
           </div>
           <div>
-            <label for="rCalories">Calories</label>
+            <label for="recipeCalories">Calories</label>
             <br />
             <input
               type="number"
-              id="rCalories"
+              id="recipeCalories"
               placeholder="Calories"
               v-model="recette.calories"
             />
           </div>
           <div>
-            <label for="rTime">Time</label>
+            <label for="recipeTime">Time</label>
             <br />
             <input
               type="number"
-              id="rTime"
+              id="recipeTime"
               placeholder="Time"
               v-model="recette.cookingTime"
             />minutes
@@ -56,13 +56,13 @@
             <br />
             <input
               type="number"
-              id="rPrice"
+              id="recipePrice"
               placeholder="Price"
               v-model="recette.price"
             />$
           </div>
         </div>
-        <div class="row3-col1">
+        <div class="ingredient-col">
           <div>
             <h2>Ingredients</h2>
             <button
@@ -80,7 +80,7 @@
             ></ingredient-modale>
           </div>
         </div>
-        <div class="row4-col1">
+        <div class="cookingStep-col">
           <div>
             <h2>Steps</h2>
             <button
@@ -99,7 +99,7 @@
             </cooking-step-modal>
           </div>
         </div>
-        <div class="row5-col2">
+        <div class="btnEnregistrer-col">
           <div>
             <a>
               <button>Enregistrer</button>
@@ -155,11 +155,13 @@ export default {
   methods: {
     ...mapActions(['updateRecette', 'fetchRecettes', 'fetchIngredientsTemporaire', 'fetchCookingStepTemporaire']),
 
+    // Method to update Recipe
     enregistrerRecette() {
       this.updateRecette(this.recette);
       this.$router.push('recipes');
     },
 
+    // Methods to Close Modal
     showIngredientModalClose() {
       this.showIngredientModal = false;
     },
@@ -167,6 +169,7 @@ export default {
       this.showCookingStepModal = false;
     },
 
+    // Methods to Add/Remove Ingredients/CookingSteps
     addIngredient(data) {
       this.recette.ingredients.push(data);
       console.log(this.recette.ingredients);
@@ -191,7 +194,7 @@ export default {
       }
       console.log(this.recette.steps);
     },
-
+    // Methods to upload Picture
     uploadRecipePicture() {
       this.recette.image = null;
       const uploadInput = document.getElementById('upload');
@@ -234,16 +237,16 @@ label {
   float: left;
 }
 
-// premiere colonne, premiere rangee
-.row1-col1 {
+//First-Col / First-Row (Title)
+.title-col {
   grid-column: 1/3;
   grid-row: 1/2;
   text-decoration: underline;
   font-size: 30px;
 }
 
-//premiere colonne, troisieme rangee
-.row2-col1 {
+//First-Col / Third-Row (Title, Calories, Time, Price)
+.recipeGeneralInformation-col {
   width: 98%;
   grid-column: 1/2;
   grid-row: 2;
@@ -253,59 +256,52 @@ label {
   border-style: solid;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
-}
-
-.row2-col1 div {
+  div {
   display: block;
   float: left;
   padding-left: 25px;
+    input {
+    margin-right: 30px;
+    height: 25px;
+    width: 100px;
+    }
+  }
+  #recipeTitle {
+    height: 23px;
+    width: 500px;
+    min-width: auto;
+  }
 }
 
-.row2-col1 div input {
-  margin-right: 30px;
-  height: 25px;
-  width: 100px;
-}
-
-#rTitle {
-  height: 23px;
-  width: 500px;
-  min-width: auto;
-}
-
-//deuxieme colonne, deuxieme rangee (image et upload)
-.row2-col2 {
+//Second-Col / Second-Row (Image/Upload)
+.imageUpload-col {
   padding-top: 25px;
   grid-column: 2;
   grid-row: 2/5;
   border-style: solid;
   border-radius: 20px;
-}
-
-.row2-col2 div {
+  div {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
+    img {
+    grid-column: 2;
+    grid-row: 1;
+    width: 300px;
+    height: auto;
+    }
+    input[type="file"] {
+    grid-column: 2;
+    grid-row: 2;
+    color: transparent;
+    margin-top: 20px;
+    margin-left: 100px;
+    }
+  }
 }
 
-.row2-col2 div img {
-  grid-column: 2;
-  grid-row: 1;
-  width: 300px;
-  height: auto;
-}
-
-input[type='file']{
-  grid-column: 2;
-  grid-row: 2;
-  color: transparent;
-  margin-top: 20px;
-  margin-left: 100px;
-
-}
-
-//premiere colonne, quatrieme rangee
-.row3-col1 {
+//First-Col / Fourth-Row (IngredientModal)
+.ingredient-col {
   width: 98%;
   grid-column: 1;
   grid-row: 3;
@@ -313,15 +309,12 @@ input[type='file']{
   font-size: 18px;
   border-style: solid;
   border-top: none;
-}
-
-.row3-col1 div {
+  div {
   display: block;
   float: left;
   padding: 0px 0px 20px 25px;
-}
-
-#addIngredient {
+  }
+  #addIngredient {
   display: block;
   padding: 10px 15px 10px 15px;
   border-radius: 100%;
@@ -333,14 +326,14 @@ input[type='file']{
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  }
+  #addIngredient:hover {
+    background-color: rgb(255, 196, 0);
+  }
 }
 
-#addIngredient:hover {
-  background-color: rgb(255, 196, 0);
-}
-
-//premiere colonne, cinquieme rangee
-.row4-col1 {
+//First-Col / Fifth-Row (CookingStepModal)
+.cookingStep-col {
   width: 98%;
   grid-column: 1/2;
   grid-row: 4;
@@ -350,15 +343,12 @@ input[type='file']{
   border-top: none;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-}
-
-.row4-col1 div {
+  div {
   display: block;
   float: left;
   padding: 0px 0px 20px 25px;
-}
-
-#addStep {
+  }
+  #addStep {
   display: block;
   padding: 10px 15px 10px 15px;
   border-radius: 100%;
@@ -370,35 +360,35 @@ input[type='file']{
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  }
+  #addStep:hover {
+    background-color: rgb(255, 196, 0);
+  }
 }
 
-#addStep:hover {
-  background-color: rgb(255, 196, 0);
-}
-
-//bouton add recipe
-.row5-col2 {
+//Button Enregistrer
+.btnEnregistrer-col {
   grid-column: 1/3;
   grid-row: 5;
   display: flex;
   justify-content: center;
   padding-top: 10px;
-}
-
-.row5-col2 div button {
-  padding: 20px;
-  font-size: 200%;
-  font-family: "Architects Daughter", cursive;
-  background-color: rgb(0, 0, 0);
-  color: white;
-  border-radius: 15px;
-  cursor: pointer;
-  -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-
-.row5-col2 div button:hover {
-  background-color: rgb(255, 196, 0);
+  div {
+    button {
+    padding: 20px;
+    font-size: 200%;
+    font-family: "Architects Daughter", cursive;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    }
+    button:hover {
+      background-color: rgb(255, 196, 0);
+    }
+  }
 }
 </style>

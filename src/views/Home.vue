@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="gridview">
-      <div class="generalInfo">
+      <div class="generalInfoGrid">
         <h1>What To Eat?</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
@@ -12,7 +12,7 @@
           est.
         </p>
       </div>
-      <div class="about">
+      <div class="aboutUsGrid">
         <h1>About Us</h1>
         <p>
           Étudiant en fin de session, <br />
@@ -24,7 +24,7 @@
           @Collège de Maisonneuve <br />
         </p>
       </div>
-      <div class="slidder">
+      <div class="slidderGrid">
         <img src="./../assets/CookingPicture.jpg" />
         <p>Enjoy your cooking !</p>
       </div>
@@ -42,6 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 
+// GridView
 .gridview {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -51,45 +52,48 @@ export default {
   justify-content: stretch;
   align-content: stretch;
   padding: 5%;
-}
-
-.gridview > div {
+  div {
   background: #eee;
-}
-
-.gridview > div:nth-child(odd) {
+  }
+  div:nth-child(odd) {
   background: #ddd;
+  }
 }
 
-.generalInfo {
+// Left Block
+.generalInfoGrid {
   grid-column: 1/3;
   grid-row: 1/3;
   padding: 10%;
-}
-.generalInfo > h1 {
+  h1 {
   color: black;
   font-size: 800%;
   text-align: center;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.856);
-}
-
-.generalInfo > p {
+  }
+  p {
   font-size: 240%;
+  }
 }
 
-.about > h1 {
+// Top-Right Block
+.aboutUsGrid {
+  h1 {
   color: black;
   font-size: 400%;
   padding-left: 7.5%;
-}
-
-.about > p {
+  }
+  p {
   font-size: 180%;
+  }
 }
 
-.slidder > p {
+// Bottom-Right Block
+.slidderGrid {
+  p {
   font-size: 240%;
+  }
 }
 
 p {

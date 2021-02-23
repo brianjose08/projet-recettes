@@ -62,6 +62,7 @@ export default {
     };
   },
   methods: {
+    // Method to Sign Up
     register() {
       if (this.password === this.password_confirmation) {
         const data = {
@@ -82,20 +83,25 @@ form {
   color: white;
 }
 
+// Login Page
 .loginPage {
   font-size: 200%;
   padding-top: 150px;
 }
+
+// Title Info (Username, Password)
 #loginInformation {
   font-size: 100%;
 }
 
+// Title Info (Username, Password, Email)
 #titleInformation {
   padding-right: 13%;
 }
 #emailInfo {
   padding-right: 17%;
 }
+
 button {
   font-size: 100%;
   font-family: "Architects Daughter", cursive;
