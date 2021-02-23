@@ -212,6 +212,7 @@ export default {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  cursor: pointer;
 }
 .modifier-recette:hover {
   color: rgb(255, 255, 255);
@@ -230,6 +231,7 @@ export default {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  cursor:pointer
 }
 .supprimer-recette:hover {
   color: rgb(255, 255, 255);

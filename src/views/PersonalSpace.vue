@@ -1,8 +1,19 @@
 <template>
   <div>
-      <div class="contenu">
-          <h1>PERSONAL SPACE EN CONSTRUCTION</h1>
+    <div class="contenu">
+      <div id="conteneur-boutons">
+        <div>
+          <div id="boutons">
+            <a href="/favorites">Favorites</a>
+          </div>
+        </div>
+        <div>
+          <div id="boutons">
+            <a href="/calendar">Calendar</a>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
 </template>
 
@@ -11,12 +22,46 @@
 
 export default {
   name: 'PersonalSpace',
-  components: {
-  },
+  components: {},
 };
 </script>
 <style lang="scss" scoped>
-.contenu{
-  padding-top: 100px;
+.contenu {
+  padding-top: 110px;
+  padding-bottom: 25px;
+  display: inline-block;
+  justify-content: center;
+
+  #conteneur-boutons {
+    padding: 122px;
+    background-color: rgba(231, 231, 231, 0.911);
+    border-radius: 10%;
+  }
+}
+
+#boutons {
+  background-color: black;
+  color: white;
+  border-radius: 22px;
+  font-size: 75px;
+  padding: 10px;
+  margin: 50px;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  cursor:pointer;
+
+  a:link {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: white;
+  }
+}
+
+#boutons:hover {
+  background-color: rgb(255, 174, 0);
 }
 </style>
