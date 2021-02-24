@@ -16,10 +16,23 @@
             <div>
               <h2>{{ recette.title }}</h2>
               <img :src="recette.image" />
+              <div v-for="favoriteRecipe in user.recettes" :key="favoriteRecipe.id">
+                <button id="removeFavoriteRecipe"
+                v-if="recette.id === favoriteRecipe.id"
+                @click="selected(recette.id)"
+                >
+                  Remove from favorite
+                </button>
+                <button id="addFavoriteRecipe"
+                v-else
+                @click="selected(recette.id)"
+                >
+                  Add to favorite
+                </button>
+              </div>
               <button id="modifyRecipe" @click="modifier(recette)">
                 Modifier
               </button>
-
               <button
                 id="deleteRecipe"
                 @click="
@@ -95,6 +108,7 @@ import SupprimerRecetteModale from '../components/SupprimerRecetteModale.vue';
 export default {
   name: 'Recipes',
   data: () => ({
+    user: JSON.parse(localStorage.getItem('userGet')),
     showSupprimerRecetteModale: false,
     idSelected: 0,
     search: '',
@@ -196,6 +210,22 @@ button {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
   cursor: pointer;
+}
+
+// Buttons Favorite Recipe
+#addFavoriteRecipe {
+  margin-right: 4px;
+  background-color: rgb(49, 255, 238);
+  &:hover {
+    background-color: rgb(255, 196, 0);
+  }
+}
+#removeFavoriteRecipe {
+  margin-right: 4px;
+  background-color: rgb(255, 47, 238);
+  &:hover {
+    background-color: rgb(255, 196, 0);
+  }
 }
 
 // Button Add New Recipe

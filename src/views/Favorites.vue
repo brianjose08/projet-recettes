@@ -11,12 +11,12 @@
             <div>
               <h2>{{ recette.title }}</h2>
               <img :src="recette.image" />
-              <button class="modifyRecipe" @click="modifier(recette)">
+              <button id="modifyRecipe" @click="modifier(recette)">
                 Modifier
               </button>
 
               <button
-                class="deleteRecipe"
+                id="deleteRecipe"
                 @click="
                   selected(recette.id);
                   showSupprimerRecetteModaleOpen();
@@ -168,74 +168,58 @@ export default {
   display: block;
   justify-content: center;
   input {
-  width: 60%;
-  height: 28px;
-  border-radius: 5px;
-  font-size: 25px;
-  color: black;
-  background-color: rgba(255, 253, 253, 0.61);
+    width: 60%;
+    height: 28px;
+    border-radius: 5px;
+    font-size: 25px;
+    color: black;
+    background-color: rgba(255, 253, 253, 0.61);
   }
 }
 
-// Button Add New Recipe
-.addRecipe {
-  text-align: center;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-size: 15px;
-  margin-left: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: rgb(0, 195, 255);
-  -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-.addRecipe:hover {
-  color: rgb(255, 255, 255);
-  background-color: rgb(255, 196, 0);
-}
-
-// Button Modify Recipe
-.modifyRecipe {
+// Attributs for all buttons
+button {
   text-align: center;
   text-decoration: none;
   font-size: 15px;
   font-family: "Architects Daughter", cursive;
-  color: rgb(255, 255, 255);
-  margin-right: 2px;
   padding: 10px;
   border-radius: 5px;
-  background-color: rgb(19, 163, 0);
+  color: rgb(255, 255, 255);
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
   cursor: pointer;
 }
-.modifyRecipe:hover {
-  color: rgb(255, 255, 255);
-  background-color: rgb(255, 196, 0);
+
+// Button Add New Recipe
+#addRecipe {
+  margin-left: 10px;
+  background-color: rgb(31, 139, 182);
+  a {
+    color: white;
+  }
+  &:hover {
+    background-color: rgb(255, 196, 0);
+  }
+}
+
+// Button Modify Recipe
+#modifyRecipe {
+  margin-right: 2px;
+  background-color: rgb(19, 163, 0);
+  &:hover {
+    background-color: rgb(255, 196, 0);
+  }
 }
 
 // Button Delete Recipe
-.deleteRecipe {
-  text-align: center;
-  text-decoration: none;
-  font-family: "Architects Daughter", cursive;
-  font-size: 15px;
-  color: rgb(255, 255, 255);
+#deleteRecipe {
   margin-left: 2px;
-  padding: 10px;
-  border-radius: 5px;
   background-color: rgb(199, 0, 0);
-  -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-  cursor:pointer
-}
-.deleteRecipe:hover {
-  color: rgb(255, 255, 255);
-  background-color: rgb(255, 196, 0);
+  &:hover {
+    background-color: rgb(255, 196, 0);
+  }
 }
 
 // List of Recipes
@@ -250,25 +234,25 @@ ul li {
   background-color: rgba(255, 253, 253, 0.61);
   div {
     img {
-    border-style: solid;
-    border-color: black;
-    border-top: none;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    height: auto;
-    width: 100%;
-    position: relative;
-    bottom: 30px;
+      border-style: solid;
+      border-color: black;
+      border-top: none;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      height: auto;
+      width: 100%;
+      position: relative;
+      bottom: 30px;
     }
     h2 {
-    border-style: solid;
-    border-color: black;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    font-size: 20px;
-    position: relative;
-    bottom: 15px;
-    width: 100%;
+      border-style: solid;
+      border-color: black;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      font-size: 20px;
+      position: relative;
+      bottom: 15px;
+      width: 100%;
     }
   }
 }
@@ -283,8 +267,8 @@ ul li {
   align-content: stretch;
 }
 
-//First-Line / Second-Row (General information of the recipe)
-.generalInfo-col {
+//CSS for GeneralInfo & CookingStep
+@mixin listingGrid {
   text-align: left;
   font-size: 22px;
   overflow-y: scroll;
@@ -296,17 +280,16 @@ ul li {
   height: 205px;
 }
 
+//First-Line / Second-Row (General information of the recipe)
+.generalInfo-col {
+  @include listingGrid;
+  padding: 10px;
+}
+
 //First-Line / Third-Row (Cooking Step for the recipe)
 .cookingStep-col {
-  text-align: left;
-  font-size: 22px;
-  overflow-y: scroll;
+  @include listingGrid;
   margin-right: 20px;
   padding: 10px;
-  border-style: solid;
-  border-color: black;
-  border-radius: 10px;
-  width: auto;
-  height: 205px;
 }
 </style>
