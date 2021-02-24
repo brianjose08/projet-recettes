@@ -1,22 +1,22 @@
 <template>
   <div>
     <div class="recipePage">
-      <div class="search">
+      <div class="search-col">
         <input type="text" v-model="search" @input="filtrer()" placeholder="Search Recipe..." />
-        <a href="/add" class="ajouter-recette"> Add new recipe </a>
+        <a href="/add" class="addRecipe"> Add new recipe </a>
       </div>
       <ul v-for="recette in recetteFiltrer" :key="recette.id">
-        <li class="item-recette">
+        <li class="item-recipe">
           <div class="gridview">
             <div>
               <h2>{{ recette.title }}</h2>
               <img :src="recette.image" />
-              <button class="modifier-recette" @click="modifier(recette)">
+              <button class="modifyRecipe" @click="modifier(recette)">
                 Modifier
               </button>
 
               <button
-                class="supprimer-recette"
+                class="deleteRecipe"
                 @click="
                   selected(recette.id);
                   showSupprimerRecetteModaleOpen();
@@ -25,7 +25,7 @@
                 Supprimer
               </button>
             </div>
-            <div class="ingredients-recette">
+            <div class="generalInfo-col">
               <b>Price: </b>{{ recette.price }} $ <br />
               <b>Cooking time: </b>{{ recette.cookingTime }} min. <br />
               <b>Calories: </b>{{ recette.calories }} calories <br />
@@ -51,7 +51,7 @@
                 </div>
               </div>
             </div>
-            <div class="etapes-recette">
+            <div class="cookingStep-col">
               <b>Steps: </b><br />
               <div
                 v-for="etape in recette.steps"
@@ -93,6 +93,7 @@ export default {
     SupprimerRecetteModale,
   },
 
+  // Methods to retrieve recipes/ingredients information
   computed: {
     getAllRecettes() {
       return this.$store.state.recettes.recettes;
@@ -105,14 +106,13 @@ export default {
   methods: {
     ...mapActions(['fetchRecettes', 'fetchIngredients']),
 
-    afficher(ingredient) {
-      console.log(ingredient);
-    },
+    // Method to know which id was selected
     selected(id) {
       this.idSelected = id;
       console.log(this.idSelected);
     },
 
+    // Method to filter for the SearchBar
     filtrer() {
       this.recetteFiltrer = [];
       this.getAllRecettes.forEach((recette) => {
@@ -121,23 +121,27 @@ export default {
         }
       });
     },
-
+    // Method to preset the filter to empty
     initialiserFiltre() {
       this.getAllRecettes.forEach((recette) => {
         this.recetteFiltrer.push(recette);
       });
     },
 
+    // Methods to Open/Close Modal
     showSupprimerRecetteModaleOpen() {
       this.showSupprimerRecetteModale = true;
     },
     showSupprimerRecetteModaleClose() {
       this.showSupprimerRecetteModale = false;
     },
+
+    // Method to Refresh Page
     reload() {
       window.location.reload();
     },
 
+    // Method to send Data to Modifiy.vue
     modifier(recette) {
       this.$router.push({ name: 'Modify', params: { id: recette.id } });
     },
@@ -155,39 +159,29 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.search {
+
+//Search Section
+.search-col {
   padding-top: 110px;
   display: block;
   justify-content: center;
-}
-.search input {
+  input {
   width: 60%;
   height: 28px;
   border-radius: 5px;
   font-size: 25px;
   color: black;
   background-color: rgba(255, 253, 253, 0.61);
+  }
 }
 
-.search-recette {
-  margin-left: 10px;
+// Button Add New Recipe
+.addRecipe {
   text-align: center;
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: rgb(0, 0, 0);
-  -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-.ajouter-recette {
   margin-left: 10px;
-  text-align: center;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-size: 15px;
   padding: 10px;
   border-radius: 5px;
   background-color: rgb(0, 195, 255);
@@ -195,17 +189,19 @@ export default {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
-.ajouter-recette:hover {
+.addRecipe:hover {
   color: rgb(255, 255, 255);
   background-color: rgb(255, 196, 0);
 }
-.modifier-recette {
+
+// Button Modify Recipe
+.modifyRecipe {
   text-align: center;
   text-decoration: none;
+  font-size: 15px;
   font-family: "Architects Daughter", cursive;
   color: rgb(255, 255, 255);
   margin-right: 2px;
-  font-size: 15px;
   padding: 10px;
   border-radius: 5px;
   background-color: rgb(19, 163, 0);
@@ -214,29 +210,33 @@ export default {
   transition: all 0.2s linear;
   cursor: pointer;
 }
-.modifier-recette:hover {
+.modifyRecipe:hover {
   color: rgb(255, 255, 255);
   background-color: rgb(255, 196, 0);
 }
-.supprimer-recette {
+
+// Button Delete Recipe
+.deleteRecipe {
   text-align: center;
   text-decoration: none;
+  font-family: "Architects Daughter", cursive;
+  font-size: 15px;
   color: rgb(255, 255, 255);
   margin-left: 2px;
-  font-size: 15px;
   padding: 10px;
   border-radius: 5px;
   background-color: rgb(199, 0, 0);
-  font-family: "Architects Daughter", cursive;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
   cursor:pointer
 }
-.supprimer-recette:hover {
+.deleteRecipe:hover {
   color: rgb(255, 255, 255);
   background-color: rgb(255, 196, 0);
 }
+
+// List of Recipes
 ul li {
   color: black;
   display: grid;
@@ -246,29 +246,32 @@ ul li {
   padding: 20px 0px 20px 20px;
   margin-right: 30px;
   background-color: rgba(255, 253, 253, 0.61);
-}
-ul li div img {
-  border-style: solid;
-  border-color: black;
-  border-top: none;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  height: auto;
-  width: 100%;
-  position: relative;
-  bottom: 30px;
+  div {
+    img {
+    border-style: solid;
+    border-color: black;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: auto;
+    width: 100%;
+    position: relative;
+    bottom: 30px;
+    }
+    h2 {
+    border-style: solid;
+    border-color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 20px;
+    position: relative;
+    bottom: 15px;
+    width: 100%;
+    }
+  }
 }
 
-ul li div h2 {
-  border-style: solid;
-  border-color: black;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  font-size: 20px;
-  position: relative;
-  bottom: 15px;
-  width: 100%;
-}
+//Grid for each recipe
 .gridview {
   display: grid;
   grid-template-columns: 1fr 2fr 3fr;
@@ -277,7 +280,9 @@ ul li div h2 {
   justify-content: stretch;
   align-content: stretch;
 }
-.ingredients-recette {
+
+//First-Line / Second-Row (General information of the recipe)
+.generalInfo-col {
   text-align: left;
   font-size: 22px;
   overflow-y: scroll;
@@ -288,7 +293,9 @@ ul li div h2 {
   width: auto;
   height: 205px;
 }
-.etapes-recette {
+
+//First-Line / Third-Row (Cooking Step for the recipe)
+.cookingStep-col {
   text-align: left;
   font-size: 22px;
   overflow-y: scroll;

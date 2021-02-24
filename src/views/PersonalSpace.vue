@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="contenu">
-      <div id="conteneur-boutons">
+      <div class="pagePersonalSpace">
         <div>
-          <div id="boutons">
+          <div class="viewInfo">
             <a href="/favorites">Favorites</a>
           </div>
         </div>
         <div>
-          <div id="boutons">
+          <div class="viewInfo">
             <a href="/calendar">Calendar</a>
           </div>
         </div>
@@ -31,15 +31,15 @@ export default {
   padding-bottom: 25px;
   display: inline-block;
   justify-content: center;
-
-  #conteneur-boutons {
-    padding: 122px;
-    background-color: rgba(231, 231, 231, 0.911);
-    border-radius: 10%;
-  }
 }
 
-#boutons {
+.pagePersonalSpace {
+  padding: 122px;
+  background-color: rgba(231, 231, 231, 0.911);
+  border-radius: 10%;
+}
+
+.viewInfo {
   background-color: black;
   color: white;
   border-radius: 22px;
@@ -61,7 +61,7 @@ export default {
   }
 }
 
-#boutons:hover {
+.viewInfo:hover {
   background-color: rgb(255, 174, 0);
 }
 </style>
