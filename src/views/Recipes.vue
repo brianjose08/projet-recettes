@@ -16,19 +16,20 @@
             <div>
               <h2>{{ recette.title }}</h2>
               <img :src="recette.image" />
-              <div v-for="favoriteRecipe in user.recettes" :key="favoriteRecipe.id">
-                <button id="removeFavoriteRecipe"
-                v-if="recette.id === favoriteRecipe.id"
-                @click="selected(recette.id)"
-                >
-                  Remove from favorite
-                </button>
-                <button id="addFavoriteRecipe"
-                v-else
-                @click="selected(recette.id)"
-                >
-                  Add to favorite
-                </button>
+              <div>
+                <div v-if="user.recettes.includes(recette.id)">
+                  <button
+                    id="removeFavoriteRecipe"
+                    @click="selected(recette.id)"
+                  >
+                    Remove from favorite
+                  </button>
+                </div>
+                <div v-else>
+                  <button id="addFavoriteRecipe" @click="selected(recette.id)">
+                    Add to favorite
+                  </button>
+                </div>
               </div>
               <button id="modifyRecipe" @click="modifier(recette)">
                 Modifier
