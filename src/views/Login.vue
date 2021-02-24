@@ -1,13 +1,13 @@
 <template>
   <form class="loginPage" @submit.prevent="login">
     <h1>Login</h1>
-    <div id="titleInformation">Username</div>
-    <input id="loginInformation" required v-model="username"
+    <div class="titleInformation">Username</div>
+    <input class="loginInformation" required v-model="username"
     type="text" placeholder="Enter your username" />
     <br />
     <br />
-    <div id="titleInformation">Password</div>
-    <input id="loginInformation" required v-model="password"
+    <div class="titleInformation">Password</div>
+    <input class="loginInformation" required v-model="password"
     type="password" placeholder="Enter your password" />
     <br />
     <br />
@@ -56,12 +56,12 @@ form  {
 }
 
 // Title Info (Username, Password)
-#titleInformation {
+.titleInformation {
   padding-right: 13%;
 }
 
 // Login Info
-#loginInformation {
+.loginInformation {
   font-size: 100%;
 }
 

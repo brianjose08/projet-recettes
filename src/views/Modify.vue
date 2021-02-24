@@ -322,13 +322,13 @@ label {
   background-color: black;
   color: white;
   font-size: 20px;
-  cursor: pointer;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  }
-  #addIngredient:hover {
-    background-color: rgb(255, 196, 0);
+  cursor: pointer;
+      &:hover {
+      background-color: rgb(255, 196, 0);
+      }
   }
 }
 
@@ -353,16 +353,16 @@ label {
   padding: 10px 15px 10px 15px;
   border-radius: 100%;
   border-style: none;
-  background-color: black;
-  color: white;
   font-size: 20px;
-  cursor: pointer;
+  color: white;
+  background-color: black;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  }
-  #addStep:hover {
-    background-color: rgb(255, 196, 0);
+  cursor: pointer;
+    &:hover {
+      background-color: rgb(255, 196, 0);
+    }
   }
 }
 
@@ -378,16 +378,16 @@ label {
     padding: 20px;
     font-size: 200%;
     font-family: "Architects Daughter", cursive;
-    background-color: rgb(0, 0, 0);
     color: white;
+    background-color: rgb(0, 0, 0);
     border-radius: 15px;
-    cursor: pointer;
     -webkit-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
-    }
-    button:hover {
+    cursor: pointer;
+      &:hover {
       background-color: rgb(255, 196, 0);
+      }
     }
   }
 }

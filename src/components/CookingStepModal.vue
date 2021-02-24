@@ -68,6 +68,8 @@ export default {
       'addCookingStepTemporaire',
       'deleteCookingStepTemporaire',
     ]),
+
+    // Method to increase/decrease cooking step number
     addSuccess() {
       this.idStep += 1;
       this.step = '';
@@ -75,9 +77,8 @@ export default {
     removeSuccess() {
       this.idStep -= 1;
     },
-    afficher(cookingStep) {
-      console.log(cookingStep);
-    },
+
+    // Methods to add/remove cooking step
     addCookingStep() {
       const data = {
         numberStep: this.getAllCookingStepTemporaire.length + 1,

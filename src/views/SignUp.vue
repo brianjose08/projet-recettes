@@ -2,7 +2,7 @@
   <div>
     <form class="loginPage" @submit.prevent="register">
       <h1>Sign Up</h1>
-      <div id="titleInformation">Username</div>
+      <div class="titleInformation">Username</div>
       <input
         id="loginInformation"
         type="text"
@@ -13,7 +13,7 @@
       />
       <br />
       <br />
-      <div id="emailInfo">Email</div>
+      <div class="titleInformation">Email</div>
       <input
         id="loginInformation"
         type="email"
@@ -23,7 +23,7 @@
       />
       <br />
       <br />
-      <div id="titleInformation">Password</div>
+      <div class="titleInformation">Password</div>
       <input
         id="loginInformation"
         type="password"
@@ -33,7 +33,7 @@
       />
       <br />
       <br />
-      <div id="password-confirmation">Confirm Password</div>
+      <div class="titleInformation">Confirm Password</div>
       <input
         id="loginInformation"
         type="password"
@@ -90,15 +90,11 @@ form {
   padding-bottom: 50px;
 }
 
-// Title Info (Username, Password)
+// Title Info (Username, Password, Email)
 #loginInformation {
   font-size: 100%;
 }
 
-// Title Info (Username, Password, Email)
-#titleInformation {
-  padding-right: 13%;
-}
 #emailInfo {
   padding-right: 17%;
 }

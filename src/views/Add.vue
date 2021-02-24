@@ -2,7 +2,7 @@
   <div>
     <form class="formAddRecipe" @submit.prevent="createRecette">
       <div class="contenu">
-        <div class="title-col">
+        <div id="title-col">
           <h1>New recipe</h1>
         </div>
         <div class="imageUpload-col">
@@ -237,7 +237,7 @@ export default {
 }
 
 //First-Col / First-Row (Title)
-.title-col {
+#title-col {
   grid-column: 1/3;
   grid-row: 1/2;
   text-decoration: underline;
@@ -318,16 +318,16 @@ export default {
   padding: 10px 15px 10px 15px;
   border-radius: 100%;
   border-style: none;
-  background-color: black;
-  color: white;
   font-size: 20px;
-  cursor: pointer;
+  color: white;
+  background-color: black;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  }
-  #addIngredient:hover {
+  cursor: pointer;
+    &:hover {
     background-color: rgb(255, 196, 0);
+    }
   }
 }
 
@@ -359,9 +359,9 @@ export default {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  }
-  #addStep:hover {
+    &:hover {
     background-color: rgb(255, 196, 0);
+    }
   }
 }
 
@@ -376,16 +376,16 @@ export default {
   padding: 20px;
   font-size: 200%;
   font-family: "Architects Daughter", cursive;
-  background-color: rgb(0, 0, 0);
   color: white;
+  background-color: rgb(0, 0, 0);
   border-radius: 15px;
-  cursor: pointer;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  }
-  div button:hover {
+  cursor: pointer;
+    &:hover {
     background-color: rgb(255, 196, 0);
+    }
   }
 }
 </style>
