@@ -6,7 +6,12 @@
       "password": "123",
       "email": "email@hotmail.com",
       "recettes": [
-        {}
+        {
+          "id": 1
+        },
+        {
+          "id": 8
+        }
       ]
     },
     {
