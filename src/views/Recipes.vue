@@ -138,6 +138,7 @@ export default {
       'fetchIngredients',
       'addFavoriteRecette',
       'deleteFavoriteRecette',
+      'updateFavorisRecette',
     ]),
 
     // Method to know which id was selected
@@ -148,9 +149,8 @@ export default {
 
     // Methods to Add/Remove Favorite
     addFavorite(idRecette) {
-      console.log('add');
-      this.addFavoriteRecette(this.user.id, idRecette);
-      console.log(idRecette);
+      this.user.recettes.push(idRecette);
+      this.updateFavorisRecette(this.user);
     },
     removeFavorite(idRecette) {
       console.log('remove');
