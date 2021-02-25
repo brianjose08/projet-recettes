@@ -1,84 +1,100 @@
 <template>
-        <div class="recipePage">
-      <div class="search-col">
-        <input type="text" v-model="search" @input="filtrer()" placeholder="Search Recipe..." />
-      </div>
-      <div v-for="recette in recetteFiltrer" :key="recette.id">
+  <div class="recipePage">
+    <div class="search-col">
+      <input
+        type="text"
+        v-model="search"
+        @input="filtrer()"
+        placeholder="Search Recipe..."
+      />
+    </div>
+    <div v-for="recette in recetteFiltrer" :key="recette.id">
       <div v-for="recetteFavoris in user.recettes" :key="recetteFavoris.id">
-      <ul v-if="recette.id === recetteFavoris.id">
-        <li class="item-recipe">
-          <div class="gridview">
-            <div>
-              <h2>{{ recette.title }}</h2>
-              <img :src="recette.image" />
-              <button id="modifyRecipe" @click="modifier(recette)">
-                Modifier
-              </button>
+        <ul v-if="recette.id === recetteFavoris">
+          <li class="item-recipe">
+            <div class="gridview">
+              <div>
+                <h2>{{ recette.title }}</h2>
+                <img :src="recette.image" />
+                  <button
+                    id="removeFavoriteRecipe"
+                    @click="selected(recette.id)"
+                  >
+                    Remove from favorite
+                  </button>
+                <button id="modifyRecipe" @click="modifier(recette)">
+                  Modifier
+                </button>
 
-              <button
-                id="deleteRecipe"
-                @click="
-                  selected(recette.id);
-                  showSupprimerRecetteModaleOpen();
-                "
-              >
-                Supprimer
-              </button>
-            </div>
-            <div class="generalInfo-col">
-              <b>Price: </b>{{ recette.price }} $ <br />
-              <b>Cooking time: </b>{{ recette.cookingTime }} min. <br />
-              <b>Calories: </b>{{ recette.calories }} calories <br />
-              <b>List of ingredients:</b>
-              <div
-                v-for="(ingredient, index) in recette.ingredients"
-                :key="index"
-              >
-                <div v-for="(category, index) in getAllIngredients" :key="index">
+                <button
+                  id="deleteRecipe"
+                  @click="
+                    selected(recette.id);
+                    showSupprimerRecetteModaleOpen();
+                  "
+                >
+                  Supprimer
+                </button>
+              </div>
+              <div class="generalInfo-col">
+                <b>Price: </b>{{ recette.price }} $ <br />
+                <b>Cooking time: </b>{{ recette.cookingTime }} min. <br />
+                <b>Calories: </b>{{ recette.calories }} calories <br />
+                <b>List of ingredients:</b>
+                <div
+                  v-for="(ingredient, index) in recette.ingredients"
+                  :key="index"
+                >
                   <div
-                    v-for="(ingredientCategory, index) in category"
+                    v-for="(category, index) in getAllIngredients"
                     :key="index"
                   >
                     <div
-                      v-if="
-                        ingredient.idIngredient ===
-                        ingredientCategory.idIngredient
-                      "
+                      v-for="(ingredientCategory, index) in category"
+                      :key="index"
                     >
-                      -{{ ingredientCategory.name }} ({{ ingredient.unit }})
+                      <div
+                        v-if="
+                          ingredient.idIngredient ===
+                          ingredientCategory.idIngredient
+                        "
+                      >
+                        -{{ ingredientCategory.name }} ({{ ingredient.unit }})
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="cookingStep-col">
-              <b>Steps: </b><br />
-              <div
-                v-for="etape in recette.steps"
-                v-bind="etape"
-                :key="etape.numberStep"
-              >
-                <b>{{ etape.numberStep }}</b
-                >- {{ etape.step }}
+              <div class="cookingStep-col">
+                <b>Steps: </b><br />
+                <div
+                  v-for="etape in recette.steps"
+                  v-bind="etape"
+                  :key="etape.numberStep"
+                >
+                  <b>{{ etape.numberStep }}</b
+                  >- {{ etape.step }}
+                </div>
               </div>
             </div>
-          </div>
-        </li>
-      </ul>
-        </div>
+          </li>
+        </ul>
       </div>
-      <supprimer-recette-modale
-        :idSelected="this.idSelected"
-        v-if="showSupprimerRecetteModale"
-        @close="showSupprimerRecetteModaleClose()"
-        @closeNReload="showSupprimerRecetteModaleClose(); reload()"
-      >
-      </supprimer-recette-modale>
     </div>
+    <supprimer-recette-modale
+      :idSelected="this.idSelected"
+      v-if="showSupprimerRecetteModale"
+      @close="showSupprimerRecetteModaleClose()"
+      @closeNReload="
+        showSupprimerRecetteModaleClose();
+        reload();
+      "
+    >
+    </supprimer-recette-modale>
+  </div>
 </template>
 
 <script>
-
 import { mapActions } from 'vuex';
 import SupprimerRecetteModale from '../components/SupprimerRecetteModale.vue';
 
@@ -156,12 +172,10 @@ export default {
     await this.fetchIngredients();
     this.initialiserFiltre();
   },
-
 };
 </script>
 
 <style lang="scss" scoped>
-
 //Search Section
 .search-col {
   padding-top: 110px;
@@ -217,6 +231,14 @@ button {
 #deleteRecipe {
   margin-left: 2px;
   background-color: rgb(199, 0, 0);
+  &:hover {
+    background-color: rgb(255, 196, 0);
+  }
+}
+
+#removeFavoriteRecipe {
+  margin-right: 4px;
+  background-color: rgb(255, 47, 238);
   &:hover {
     background-color: rgb(255, 196, 0);
   }
