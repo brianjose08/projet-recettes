@@ -149,7 +149,7 @@ export default {
     // Methods to Add/Remove Favorite
     addFavorite(idRecette) {
       console.log('add');
-      this.addFavoriteRecette(idRecette);
+      this.addFavoriteRecette(this.user.id, idRecette);
       console.log(idRecette);
     },
     removeFavorite(idRecette) {
