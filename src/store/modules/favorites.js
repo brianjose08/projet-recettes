@@ -38,11 +38,9 @@ const mutations = {
     (state.listFavoritesRecettes = state.listFavoritesRecettes
       .filter((recette) => recette.id !== favoriteRecetteId));
   },
-
   updUtilisateur: (state, updUtilisateur) => {
     state.listFavoritesRecettes.findIndex((utilisateur) => utilisateur.id === updUtilisateur.id);
   },
-
 };
 
 const state = {
