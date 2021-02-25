@@ -142,10 +142,11 @@ export default {
     removeFavorite(idRecette) {
       const index = this.user.recettes.indexOf(idRecette);
       if (index > -1) {
+        localStorage.removeItem('userGet');
         this.recetteFiltrer.splice(index, 1);
         this.user.recettes.splice(index, 1);
+        localStorage.setItem('userGet', JSON.stringify(this.user));
         this.updateFavorisRecette(this.user);
-        this.reload();
       }
     },
 
