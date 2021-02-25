@@ -9,69 +9,87 @@
       />
     </div>
     <div v-for="recette in recetteFiltrer" :key="recette.id">
-        <ul>
-          <li class="item-recipe">
-            <div class="gridview">
+      <ul>
+        <li class="item-recipe">
+          <div class="gridview">
+            <div>
+              <h2>{{ recette.title }}</h2>
+              <img :src="recette.image" />
               <div>
-                <h2>{{ recette.title }}</h2>
-                <img :src="recette.image" />
-                <button id="modifyRecipe" @click="modifier(recette)">
-                  Modifier
-                </button>
-
-                <button
-                  id="deleteRecipe"
-                  @click="
-                    selected(recette.id);
-                    showSupprimerRecetteModaleOpen();
-                  "
-                >
-                  Supprimer
-                </button>
+                <div v-if="user.recettes.includes(recette.id)">
+                  <button
+                    id="removeFavoriteRecipe"
+                    @click="removeFavorite(recette.id)"
+                  >
+                    Remove from favorite
+                  </button>
+                </div>
+                <div v-else>
+                  <button
+                    id="addFavoriteRecipe"
+                    @click="addFavorite(recette.id)"
+                  >
+                    Add to favorite
+                  </button>
+                </div>
               </div>
-              <div class="generalInfo-col">
-                <b>Price: </b>{{ recette.price }} $ <br />
-                <b>Cooking time: </b>{{ recette.cookingTime }} min. <br />
-                <b>Calories: </b>{{ recette.calories }} calories <br />
-                <b>List of ingredients:</b>
+              <button id="modifyRecipe" @click="modifier(recette)">
+                Modifier
+              </button>
+
+              <button
+                id="deleteRecipe"
+                @click="
+                  selected(recette.id);
+                  showSupprimerRecetteModaleOpen();
+                "
+              >
+                Supprimer
+              </button>
+            </div>
+            <div class="generalInfo-col">
+              <b>Price: </b>{{ recette.price }} $ <br />
+              <b>Cooking time: </b>{{ recette.cookingTime }} min. <br />
+              <b>Calories: </b>{{ recette.calories }} calories <br />
+              <b>List of ingredients:</b>
+              <div
+                v-for="(ingredient, index) in recette.ingredients"
+                :key="index"
+              >
                 <div
-                  v-for="(ingredient, index) in recette.ingredients"
+                  v-for="(category, index) in getAllIngredients"
                   :key="index"
                 >
                   <div
-                    v-for="(category, index) in getAllIngredients"
+                    v-for="(ingredientCategory, index) in category"
                     :key="index"
                   >
                     <div
-                      v-for="(ingredientCategory, index) in category"
-                      :key="index"
+                      v-if="
+                        ingredient.idIngredient ===
+                        ingredientCategory.idIngredient
+                      "
                     >
-                      <div
-                        v-if="
-                          ingredient.idIngredient ===
-                          ingredientCategory.idIngredient
-                        "
-                      >
-                        -{{ ingredientCategory.name }} ({{ ingredient.unit }})
-                      </div>
+                      -{{ ingredientCategory.name }} ({{ ingredient.unit }})
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="cookingStep-col">
-                <b>Steps: </b><br />
-                <div
-                  v-for="etape in recette.steps"
-                  v-bind="etape"
-                  :key="etape.numberStep"
-                >
-                  <b>{{ etape.numberStep }}</b
-                  >- {{ etape.step }}
-                </div>
+            </div>
+            <div class="cookingStep-col">
+              <b>Steps: </b><br />
+              <div
+                v-for="etape in recette.steps"
+                v-bind="etape"
+                :key="etape.numberStep"
+              >
+                <b>{{ etape.numberStep }}</b
+                >- {{ etape.step }}
               </div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </li>
+      </ul>
     </div>
     <supprimer-recette-modale
       :idSelected="this.idSelected"
@@ -207,6 +225,23 @@ button {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
   cursor: pointer;
+}
+
+// Buttons Favorite Recipe
+#addFavoriteRecipe {
+  margin-right: 4px;
+  background-color: rgb(49, 255, 238);
+  &:hover {
+    background-color: rgb(255, 196, 0);
+  }
+}
+
+#removeFavoriteRecipe {
+  margin-right: 4px;
+  background-color: rgb(255, 47, 238);
+  &:hover {
+    background-color: rgb(255, 196, 0);
+  }
 }
 
 // Button Add New Recipe

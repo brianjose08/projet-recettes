@@ -149,13 +149,17 @@ export default {
 
     // Methods to Add/Remove Favorite
     addFavorite(idRecette) {
+      localStorage.removeItem('userGet');
       this.user.recettes.push(idRecette);
+      localStorage.setItem('userGet', JSON.stringify(this.user));
       this.updateFavorisRecette(this.user);
     },
     removeFavorite(idRecette) {
       const index = this.user.recettes.indexOf(idRecette);
       if (index > -1) {
+        localStorage.removeItem('userGet');
         this.user.recettes.splice(index, 1);
+        localStorage.setItem('userGet', JSON.stringify(this.user));
         this.updateFavorisRecette(this.user);
       }
     },
