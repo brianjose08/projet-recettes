@@ -5,6 +5,7 @@ import recettes from './modules/recettes';
 import ingredients from './modules/ingredients';
 import ingredientsTemporaire from './temporaire/ingredientsTemporaire';
 import cookingStepTemporaire from './temporaire/cookingStepTemporaire';
+import favorites from './modules/favorites';
 
 Vue.use(Vuex);
 
@@ -90,5 +91,6 @@ export default new Vuex.Store({
     ingredients,
     ingredientsTemporaire,
     cookingStepTemporaire,
+    favorites,
   },
 });

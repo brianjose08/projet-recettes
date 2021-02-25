@@ -20,13 +20,16 @@
                 <div v-if="user.recettes.includes(recette.id)">
                   <button
                     id="removeFavoriteRecipe"
-                    @click="selected(recette.id)"
+                    @click="removeFavorite(recette.id)"
                   >
                     Remove from favorite
                   </button>
                 </div>
                 <div v-else>
-                  <button id="addFavoriteRecipe" @click="selected(recette.id)">
+                  <button
+                    id="addFavoriteRecipe"
+                    @click="addFavorite(recette.id)"
+                  >
                     Add to favorite
                   </button>
                 </div>
@@ -130,12 +133,29 @@ export default {
   },
 
   methods: {
-    ...mapActions(['fetchRecettes', 'fetchIngredients']),
+    ...mapActions([
+      'fetchRecettes',
+      'fetchIngredients',
+      'addFavoriteRecette',
+      'deleteFavoriteRecette',
+    ]),
 
     // Method to know which id was selected
     selected(id) {
       this.idSelected = id;
       console.log(this.idSelected);
+    },
+
+    // Methods to Add/Remove Favorite
+    addFavorite(idRecette) {
+      console.log('add');
+      this.addFavoriteRecette(idRecette);
+      console.log(idRecette);
+    },
+    removeFavorite(idRecette) {
+      console.log('remove');
+      // this.deleteFavoriteRecette(idRecette);
+      console.log(idRecette);
     },
 
     // Method to filter for the SearchBar

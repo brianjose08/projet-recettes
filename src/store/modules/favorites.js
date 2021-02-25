@@ -15,10 +15,10 @@ const actions = {
 };
 
 const mutations = {
-  setFavoritesRecettes: (state, favoritesRecettes) => 
-  { (state.listFavoritesRecettes = favoritesRecettes); },
-  newFavoriteRecette: (state, favoriteRecette) => 
-  state.listFavoritesRecettes.unshift(favoriteRecette),
+  // eslint-disable-next-line max-len
+  setFavoritesRecettes: (state, favoritesRecettes) => { (state.listFavoritesRecettes = favoritesRecettes); },
+  // eslint-disable-next-line max-len
+  newFavoriteRecette: (state, favoriteRecette) => state.listFavoritesRecettes.unshift(favoriteRecette),
   removeFavoriteRecette: (state, favoriteRecetteId) => {
     (state.listFavoritesRecettes = state.listFavoritesRecettes
       .filter((recette) => recette.id !== favoriteRecetteId));
