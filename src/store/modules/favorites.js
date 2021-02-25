@@ -15,8 +15,10 @@ const actions = {
 };
 
 const mutations = {
-  setFavoritesRecettes: (state, favoritesRecettes) => { (state.listFavoritesRecettes = favoritesRecettes); },
-  newFavoriteRecette: (state, favoriteRecette) => state.listFavoritesRecettes.unshift(favoriteRecette),
+  setFavoritesRecettes: (state, favoritesRecettes) => 
+  { (state.listFavoritesRecettes = favoritesRecettes); },
+  newFavoriteRecette: (state, favoriteRecette) => 
+  state.listFavoritesRecettes.unshift(favoriteRecette),
   removeFavoriteRecette: (state, favoriteRecetteId) => {
     (state.listFavoritesRecettes = state.listFavoritesRecettes
       .filter((recette) => recette.id !== favoriteRecetteId));
