@@ -23,9 +23,9 @@ const actions = {
     );
     commit('removeFavoriteRecette', favoriteRecetteId);
   },
-  async updateFavorisRecette(updUtilisateur) {
-    await axios.put(`http://localhost:3000/utilisateurs/${updUtilisateur.id}`, updUtilisateur);
-    // commit('updUtilisateur', response.data);
+  async updateFavorisRecette({ commit }, updUtilisateur) {
+    const response = await axios.put(`http://localhost:3000/utilisateurs/${updUtilisateur.id}`, updUtilisateur);
+    commit('updUtilisateur', response.data);
   },
 };
 
@@ -38,11 +38,11 @@ const mutations = {
     (state.listFavoritesRecettes = state.listFavoritesRecettes
       .filter((recette) => recette.id !== favoriteRecetteId));
   },
-  /*
+
   updUtilisateur: (state, updUtilisateur) => {
     state.listFavoritesRecettes.findIndex((utilisateur) => utilisateur.id === updUtilisateur.id);
   },
-  */
+
 };
 
 const state = {

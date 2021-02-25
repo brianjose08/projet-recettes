@@ -153,9 +153,11 @@ export default {
       this.updateFavorisRecette(this.user);
     },
     removeFavorite(idRecette) {
-      console.log('remove');
-      // this.deleteFavoriteRecette(idRecette);
-      console.log(idRecette);
+      const index = this.user.recettes.indexOf(idRecette);
+      if (index > -1) {
+        this.user.recettes.splice(index, 1);
+        this.updateFavorisRecette(this.user);
+      }
     },
 
     // Method to filter for the SearchBar
