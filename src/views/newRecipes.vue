@@ -19,28 +19,36 @@
           >
             <h2>{{ recette.title }}</h2>
             <img
+              id="recipeImg"
               :src="recette.image"
               @click="
                 selected(recette.id);
                 showRecipeDetailsModaleOpen();
               "
             />
-            <div>
-              <div v-if="user.recettes.includes(recette.id)">
-                <button
-                  id="removeFavoriteRecipe"
-                  @click="removeFavorite(recette.id)"
-                >
-                  Remove from favorite
-                </button>
-              </div>
-              <div v-else>
-                <button id="addFavoriteRecipe" @click="addFavorite(recette.id)">
-                  Add to favorite
-                </button>
-              </div>
-            </div>
-            <button id="modifyRecipe" @click="modifier(recette)">Modify</button>
+            <button
+              id="removeFavoriteRecipe"
+              v-if="user.recettes.includes(recette.id)"
+              @click="removeFavorite(recette.id)"
+            >
+              <img
+                id="iconImg"
+                v-bind:src="require('./../assets/Minus_Logo.png')"
+              />
+            </button>
+            <button id="addFavoriteRecipe" @click="addFavorite(recette.id)"
+            v-if="!(user.recettes.includes(recette.id))">
+              <img
+                id="iconImg"
+                v-bind:src="require('./../assets/Plus_Logo.png')"
+              />
+            </button>
+            <button id="modifyRecipe" @click="modifier(recette)">
+              <img
+                id="iconImg"
+                v-bind:src="require('./../assets/Edit_Logo.png')"
+              />
+            </button>
             <button
               id="deleteRecipe"
               @click="
@@ -48,7 +56,10 @@
                 showSupprimerRecetteModaleOpen();
               "
             >
-              Delete
+              <img
+                id="iconImg"
+                v-bind:src="require('./../assets/Delete_Logo.png')"
+              />
             </button>
           </li>
         </ul>
@@ -212,57 +223,54 @@ button {
   font-size: 15px;
   font-family: "Architects Daughter", cursive;
   padding: 10px;
-  border-radius: 5px;
-  color: rgb(255, 255, 255);
+  width: 130px;
+  background-color: rgba(145, 145, 145, 0.01);
+  border: none;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
   cursor: pointer;
+  #iconImg {
+    height: 60px;
+    width: 60px;
+  }
 }
 
-// Buttons Favorite Recipe
+// Buttons Add/Remove Favorite Recipe
 #addFavoriteRecipe {
-  margin-right: 4px;
-  background-color: rgb(49, 255, 238);
   &:hover {
-    background-color: rgb(255, 196, 0);
+    background-color: rgba(58, 58, 58, 0.3);
   }
 }
 #removeFavoriteRecipe {
-  margin-right: 4px;
-  background-color: rgb(255, 47, 238);
   &:hover {
-    background-color: rgb(255, 196, 0);
+    background-color: rgba(58, 58, 58, 0.3);
   }
 }
 
 // Button Add New Recipe
 #addRecipe {
   margin-left: 10px;
-  background-color: rgb(31, 139, 182);
+  background-color: rgb(15, 111, 255);
   a {
     color: white;
   }
   &:hover {
-    background-color: rgb(255, 196, 0);
+    background-color: rgb(255, 203, 30);
   }
 }
 
 // Button Modify Recipe
 #modifyRecipe {
-  margin-right: 2px;
-  background-color: rgb(19, 163, 0);
   &:hover {
-    background-color: rgb(255, 196, 0);
+    background-color: rgba(58, 58, 58, 0.3);
   }
 }
 
 // Button Delete Recipe
 #deleteRecipe {
-  margin-left: 2px;
-  background-color: rgb(199, 0, 0);
   &:hover {
-    background-color: rgb(255, 196, 0);
+    background-color: rgba(58, 58, 58, 0.3);
   }
 }
 
@@ -274,7 +282,7 @@ button {
   ul {
     display: grid;
     margin: auto;
-    width: 86%;
+    width: 85%;
     grid-template-columns: repeat(auto-fit, minmax(455px, 1fr));
     grid-gap: 1rem;
   }
@@ -285,17 +293,17 @@ button {
     border-style: double;
     border-color: black;
     border-radius: 3pc;
-    padding: 25px;
-    background-color: rgba(255, 241, 218, 0.897);
+    background-color: rgba(145, 145, 145, 0.3);
   }
   h2 {
     border-style: solid;
     border-radius: 1pc;
+    background-color: rgb(255, 240, 206);
   }
-  img {
+  #recipeImg {
     width: 100%;
-    max-width: 556px;
-    max-height: 370px;
+    max-width: 450px;
+    max-height: 300px;
     border-radius: 2pc;
     border-style: solid;
   }
