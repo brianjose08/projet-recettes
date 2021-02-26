@@ -30,6 +30,7 @@
                 showRecipeDetailsModaleOpen();
               "
             />
+            <div>
             <button
               id="removeFavoriteRecipe"
               v-if="user.recettes.includes(recette.id)"
@@ -68,6 +69,7 @@
                 v-bind:src="require('./../assets/Delete_Logo.png')"
               />
             </button>
+            </div>
           </li>
         </ul>
       </div>
