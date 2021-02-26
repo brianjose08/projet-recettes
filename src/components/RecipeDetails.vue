@@ -6,6 +6,14 @@
           <div class="recipe-details">
             <ul v-for="recette in getAllRecettes" :key="recette.id">
               <li v-if="recette.id === idRecette">
+                                <button
+                  class="cancelDelete"
+                  type="button"
+                  @click="$emit('close')"
+                >
+                  <img id="iconImg" v-bind:src="require('./../assets/Close_Modal_Logo.png')"
+          />
+                </button>
                 <div>
                   <h2>{{ recette.title }}</h2>
                   <img :src="recette.image" />
@@ -50,13 +58,6 @@
                   >- {{ etape.step }}
                 </div>
                 </div>
-                <button
-                  class="cancelDelete"
-                  type="button"
-                  @click="$emit('close')"
-                >
-                  Cancel
-                </button>
               </li>
             </ul>
           </div>
@@ -101,6 +102,7 @@ export default {
 <style lang="scss" scoped>
 // Details about the recipe
 .recipe-details {
+  margin-bottom: 15px;
   ul {
     display: grid;
     margin: auto;
@@ -126,7 +128,17 @@ export default {
   }
 
   button {
-    margin-top: 20px;
+    justify-self: left;
+    text-align: center;
+    margin-bottom: 10px;
+    border-style: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+
+    img {
+      border-style: none;
+      width: 50px;
+    }
   }
 
   p{
@@ -137,7 +149,7 @@ export default {
     border-style: solid;
     border-radius: 1pc;
     margin: auto;
-    width: 50%;
+    width: 70%;
     padding: 10px;
     font-size: 20px;
     text-align: left;
@@ -146,7 +158,7 @@ export default {
     border-style: solid;
     border-radius: 1pc;
     margin: auto;
-    width: 50%;
+    width: 80%;
     padding: 20px;
     font-size: 20px;
     text-align: left;
@@ -167,9 +179,11 @@ export default {
 
 .modal-container {
   max-height: calc(100vh - 210px);
+  display: inline-block;
   overflow-y: auto;
   margin: 50px;
-  padding: 20px;
+  padding: 10px;
+  width: 70%;
   background-color: #fff;
   border-style: solid;
   border-radius: 20px;
