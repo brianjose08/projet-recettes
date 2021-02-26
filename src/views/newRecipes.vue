@@ -244,6 +244,10 @@ button {
   }
 }
 
+button:focus {
+    outline: none;
+}
+
 // Buttons Add/Remove Favorite Recipe
 #addFavoriteRecipe {
   &:hover {

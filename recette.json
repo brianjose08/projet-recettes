@@ -5,7 +5,10 @@
       "username": "brian",
       "password": "123",
       "email": "email@hotmail.com",
-      "recettes": []
+      "recettes": [
+        3,
+        1
+      ]
     },
     {
       "username": "Franco",
