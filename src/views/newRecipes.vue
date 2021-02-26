@@ -213,6 +213,7 @@ export default {
 //Search Section
 .search-col {
   padding-top: 80px;
+  margin-bottom: 20px;
   display: block;
   justify-content: center;
   input {
@@ -262,17 +263,21 @@ button:focus {
 
 // Button Add New Recipe
 #addRecipe {
-  margin: 10px 0px 20px 10px;
-  width: 70px;
-  padding: 0;
+  margin-left: 20px;
   border-style: solid;
   border-radius: 20px;
+  width: 70px;
   background-color: rgb(255, 240, 206);
   a {
-    color: white;
+    color: white;;
   }
   &:hover {
     background-color: rgb(255, 203, 30);
+  }
+
+  img{
+    width: 40px;
+    height: 30px
   }
 }
 
