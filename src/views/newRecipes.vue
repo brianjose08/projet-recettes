@@ -26,41 +26,46 @@
                 showRecipeDetailsModaleOpen();
               "
             />
-            <button
-              id="removeFavoriteRecipe"
-              v-if="user.recettes.includes(recette.id)"
-              @click="removeFavorite(recette.id)"
-            >
-              <img
-                id="iconImg"
-                v-bind:src="require('./../assets/Minus_Logo.png')"
-              />
-            </button>
-            <button id="addFavoriteRecipe" @click="addFavorite(recette.id)"
-            v-if="!(user.recettes.includes(recette.id))">
-              <img
-                id="iconImg"
-                v-bind:src="require('./../assets/Plus_Logo.png')"
-              />
-            </button>
-            <button id="modifyRecipe" @click="modifier(recette)">
-              <img
-                id="iconImg"
-                v-bind:src="require('./../assets/Edit_Logo.png')"
-              />
-            </button>
-            <button
-              id="deleteRecipe"
-              @click="
-                selected(recette.id);
-                showSupprimerRecetteModaleOpen();
-              "
-            >
-              <img
-                id="iconImg"
-                v-bind:src="require('./../assets/Delete_Logo.png')"
-              />
-            </button>
+            <div>
+              <button
+                id="removeFavoriteRecipe"
+                v-if="user.recettes.includes(recette.id)"
+                @click="removeFavorite(recette.id)"
+              >
+                <img
+                  id="iconImg"
+                  v-bind:src="require('./../assets/Minus_Logo.png')"
+                />
+              </button>
+              <button
+                id="addFavoriteRecipe"
+                @click="addFavorite(recette.id)"
+                v-if="!user.recettes.includes(recette.id)"
+              >
+                <img
+                  id="iconImg"
+                  v-bind:src="require('./../assets/Plus_Logo.png')"
+                />
+              </button>
+              <button id="modifyRecipe" @click="modifier(recette)">
+                <img
+                  id="iconImg"
+                  v-bind:src="require('./../assets/Edit_Logo.png')"
+                />
+              </button>
+              <button
+                id="deleteRecipe"
+                @click="
+                  selected(recette.id);
+                  showSupprimerRecetteModaleOpen();
+                "
+              >
+                <img
+                  id="iconImg"
+                  v-bind:src="require('./../assets/Delete_Logo.png')"
+                />
+              </button>
+            </div>
           </li>
         </ul>
       </div>
