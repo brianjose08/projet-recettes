@@ -6,8 +6,9 @@
       "password": "123",
       "email": "email@hotmail.com",
       "recettes": [
-        3,
-        1
+        1,
+        6,
+        8
       ]
     },
     {
@@ -15,7 +16,11 @@
       "email": "franco@gmail.com",
       "password": "1234",
       "recettes": [
-        {}
+        {},
+        1,
+        2,
+        6,
+        8
       ],
       "id": 2
     }

@@ -5,7 +5,7 @@
         <router-link to="/">Home</router-link>
       </a>
         <a>
-          <router-link to="/newrecipes">Recipes</router-link>
+          <router-link to="/recipes">Recipes</router-link>
         </a>
       <a>
         <router-link to="/personalspace">Personal Space</router-link>

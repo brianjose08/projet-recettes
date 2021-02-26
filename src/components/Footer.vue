@@ -55,9 +55,11 @@ export default {
 
 <style scoped>
 #footer {
+  margin-top: 100px;
   display: inline-flex;
   justify-content: center;
   width: 100%;
+  height: 210px;
   background: #1f1e1ef5;
   font-family: "Architects Daughter", cursive;
 }

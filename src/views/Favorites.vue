@@ -1,30 +1,46 @@
 <template>
-  <div class="recipePage">
-    <div class="search-col">
-      <input
-        type="text"
-        v-model="search"
-        @input="filtrer()"
-        placeholder="Search Recipe..."
-      />
-    </div>
-    <div v-for="recette in recetteFiltrer" :key="recette.id">
-      <ul>
-        <li class="item-recipe">
-          <div class="gridview">
+  <div>
+    <div class="recipePage">
+      <div class="search-col">
+        <input
+          type="text"
+          v-model="search"
+          @input="filtrer()"
+          placeholder="Search Recipe..."
+        />
+      </div>
+      <div class="list-recipes">
+        <ul>
+          <li
+            class="item-recipe"
+            v-for="recette in recetteFiltrer"
+            :key="recette.id"
+          >
+            <h2>{{ recette.title }}</h2>
+            <img
+              id="recipeImg"
+              :src="recette.image"
+              @click="
+                selected(recette.id);
+                showRecipeDetailsModaleOpen();
+              "
+            />
             <div>
-              <h2>{{ recette.title }}</h2>
-              <img :src="recette.image" />
               <button
                 id="removeFavoriteRecipe"
                 @click="removeFavorite(recette.id)"
               >
-                Remove from favorite
+                <img
+                  id="iconImg"
+                  v-bind:src="require('./../assets/Minus_Logo.png')"
+                />
               </button>
               <button id="modifyRecipe" @click="modifier(recette)">
-                Modifier
+                <img
+                  id="iconImg"
+                  v-bind:src="require('./../assets/Edit_Logo.png')"
+                />
               </button>
-
               <button
                 id="deleteRecipe"
                 @click="
@@ -32,69 +48,40 @@
                   showSupprimerRecetteModaleOpen();
                 "
               >
-                Supprimer
+                <img
+                  id="iconImg"
+                  v-bind:src="require('./../assets/Delete_Logo.png')"
+                />
               </button>
             </div>
-            <div class="generalInfo-col">
-              <b>Price: </b>{{ recette.price }} $ <br />
-              <b>Cooking time: </b>{{ recette.cookingTime }} min. <br />
-              <b>Calories: </b>{{ recette.calories }} calories <br />
-              <b>List of ingredients:</b>
-              <div
-                v-for="(ingredient, index) in recette.ingredients"
-                :key="index"
-              >
-                <div
-                  v-for="(category, index) in getAllIngredients"
-                  :key="index"
-                >
-                  <div
-                    v-for="(ingredientCategory, index) in category"
-                    :key="index"
-                  >
-                    <div
-                      v-if="
-                        ingredient.idIngredient ===
-                        ingredientCategory.idIngredient
-                      "
-                    >
-                      -{{ ingredientCategory.name }} ({{ ingredient.unit }})
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="cookingStep-col">
-              <b>Steps: </b><br />
-              <div
-                v-for="etape in recette.steps"
-                v-bind="etape"
-                :key="etape.numberStep"
-              >
-                <b>{{ etape.numberStep }}</b
-                >- {{ etape.step }}
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
+      <supprimer-recette-modale
+        :idSelected="this.idSelected"
+        v-if="showSupprimerRecetteModale"
+        @close="showSupprimerRecetteModaleClose()"
+        @closeNReload="
+          showSupprimerRecetteModaleClose();
+          removeRecipe();
+        "
+      >
+      </supprimer-recette-modale>
+
+      <recipe-details
+        :idSelected="this.idSelected"
+        v-if="showRecipeDetailsModal"
+        @close="showRecipeDetailsModaleClose()"
+      >
+      </recipe-details>
     </div>
-    <supprimer-recette-modale
-      :idSelected="this.idSelected"
-      v-if="showSupprimerRecetteModale"
-      @close="showSupprimerRecetteModaleClose()"
-      @closeNReload="
-        showSupprimerRecetteModaleClose();
-        reload();
-      "
-    >
-    </supprimer-recette-modale>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
 import SupprimerRecetteModale from '../components/SupprimerRecetteModale.vue';
+import RecipeDetails from '../components/RecipeDetails.vue';
 
 export default {
   name: 'Favorites',
@@ -102,6 +89,7 @@ export default {
     return {
       user: JSON.parse(localStorage.getItem('userGet')),
       showSupprimerRecetteModale: false,
+      showRecipeDetailsModal: false,
       idSelected: 0,
       search: '',
       recetteFiltrer: [],
@@ -109,6 +97,7 @@ export default {
   },
   components: {
     SupprimerRecetteModale,
+    RecipeDetails,
   },
 
   // Methods to retrieve recipes/ingredients information
@@ -160,10 +149,15 @@ export default {
     // Method to filter for the SearchBar
     filtrer() {
       this.recetteFiltrer = [];
-      this.getAllRecettes.forEach((recette) => {
-        if (recette.title.toLowerCase().includes(this.search.toLowerCase())) {
-          this.recetteFiltrer.push(recette);
-        }
+      this.getAllFavoriteRecettes.forEach((idRecetteFavoris) => {
+        this.getAllRecettes.forEach((recette) => {
+          if (
+            recette.id === idRecetteFavoris
+            && recette.title.toLowerCase().includes(this.search.toLowerCase())
+          ) {
+            this.recetteFiltrer.push(recette);
+          }
+        });
       });
     },
     // Method to preset the filter to empty
@@ -184,9 +178,21 @@ export default {
       this.showSupprimerRecetteModale = false;
     },
 
-    // Method to Refresh Page
-    reload() {
-      window.location.reload();
+    showRecipeDetailsModaleOpen() {
+      this.showRecipeDetailsModal = true;
+    },
+    showRecipeDetailsModaleClose() {
+      this.showRecipeDetailsModal = false;
+    },
+
+    // Method to remove recipes after pressing the delete button
+    removeRecipe() {
+      this.recetteFiltrer.forEach((recette) => {
+        if (recette.id === this.idSelected) {
+          const index = this.recetteFiltrer.indexOf(recette);
+          this.recetteFiltrer.splice(index, 1);
+        }
+      });
     },
 
     // Method to send Data to Modifiy.vue
@@ -207,12 +213,13 @@ export default {
 <style lang="scss" scoped>
 //Search Section
 .search-col {
-  padding-top: 110px;
+  padding-top: 80px;
+  margin-bottom: 20px;
   display: block;
   justify-content: center;
   input {
     width: 60%;
-    height: 28px;
+    height: 38px;
     border-radius: 5px;
     font-size: 25px;
     color: black;
@@ -225,123 +232,110 @@ button {
   text-align: center;
   text-decoration: none;
   font-size: 15px;
-  font-family: "Architects Daughter", cursive;
   padding: 10px;
-  border-radius: 5px;
-  color: rgb(255, 255, 255);
+  width: 130px;
+  background-color: rgba(145, 145, 145, 0.01);
+  border: none;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
   cursor: pointer;
-}
-
-// Button Remove favorite recipe
-#removeFavoriteRecipe {
-  margin-right: 4px;
-  background-color: rgb(255, 47, 238);
-  &:hover {
-    background-color: rgb(255, 196, 0);
+  #iconImg {
+    height: 60px;
+    width: 60px;
   }
 }
 
-// Button Add new recipe
+button:focus {
+  outline: none;
+}
+
+// Buttons Add/Remove Favorite Recipe
+#addFavoriteRecipe {
+  &:hover {
+    background-color: rgba(58, 58, 58, 0.3);
+  }
+}
+#removeFavoriteRecipe {
+  &:hover {
+    background-color: rgba(58, 58, 58, 0.3);
+  }
+}
+
+// Button Add New Recipe
 #addRecipe {
-  margin-left: 10px;
-  background-color: rgb(31, 139, 182);
+  margin-left: 20px;
+  border-style: solid;
+  border-radius: 20px;
+  width: 70px;
+  background-color: rgb(255, 240, 206);
   a {
     color: white;
   }
   &:hover {
-    background-color: rgb(255, 196, 0);
+    background-color: rgb(255, 203, 30);
+  }
+
+  img {
+    width: 40px;
+    height: 30px;
   }
 }
 
-// Button Modify recipe
+// Button Modify Recipe
 #modifyRecipe {
-  margin-right: 2px;
-  background-color: rgb(19, 163, 0);
   &:hover {
-    background-color: rgb(255, 196, 0);
+    background-color: rgba(58, 58, 58, 0.3);
   }
 }
 
-// Button Delete recipe
+// Button Delete Recipe
 #deleteRecipe {
-  margin-left: 2px;
-  background-color: rgb(199, 0, 0);
   &:hover {
-    background-color: rgb(255, 196, 0);
+    background-color: rgba(58, 58, 58, 0.3);
   }
 }
 
-// List of recipes
-ul li {
-  color: black;
-  display: grid;
-  border-style: double;
-  border-color: black;
-  border-radius: 3pc;
-  padding: 20px 0px 20px 20px;
-  margin-right: 30px;
-  background-color: rgba(255, 253, 253, 0.61);
-  div {
-    img {
-      border-style: solid;
-      border-color: black;
-      border-top: none;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      height: auto;
-      width: 100%;
-      position: relative;
-      bottom: 30px;
-    }
-    h2 {
-      border-style: solid;
-      border-color: black;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      font-size: 20px;
-      position: relative;
-      bottom: 15px;
-      width: 100%;
-    }
+// List of Recipes
+
+.list-recipes {
+  padding-right: 50px;
+  padding-bottom: 25px;
+  ul {
+    display: grid;
+    margin: auto;
+    width: 85%;
+    grid-template-columns: repeat(auto-fit, minmax(455px, 1fr));
+    grid-gap: 1rem;
   }
-}
 
-//Grid for each recipe
-.gridview {
-  display: grid;
-  grid-template-columns: 1fr 2fr 3fr;
-  grid-auto-rows: minmax(100px, auto);
-  grid-gap: 1em;
-  justify-content: stretch;
-  align-content: stretch;
-}
-
-//CSS for GeneralInfo & CookingStep
-@mixin listingGrid {
-  text-align: left;
-  font-size: 22px;
-  overflow-y: scroll;
-  padding: 10px;
-  border-style: solid;
-  border-color: black;
-  border-radius: 10px;
-  width: auto;
-  height: 205px;
-}
-
-//First-Line / Second-Row (General information of the recipe)
-.generalInfo-col {
-  @include listingGrid;
-  padding: 10px;
-}
-
-//First-Line / Third-Row (Cooking Step for the recipe)
-.cookingStep-col {
-  @include listingGrid;
-  margin-right: 20px;
-  padding: 10px;
+  li {
+    display: block;
+    color: black;
+    border-style: double;
+    border-color: black;
+    border-radius: 3pc;
+    background-color: rgba(145, 145, 145, 0.3);
+    padding-bottom: 10px;
+  }
+  h2 {
+    border-style: solid;
+    border-radius: 1pc;
+    background-color: rgb(255, 240, 206);
+  }
+  #recipeImg {
+    width: 100%;
+    max-width: 450px;
+    max-height: 300px;
+    border-radius: 2pc;
+    border-style: solid;
+      -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  }
+  #recipeImg:hover {
+    cursor: pointer;
+    filter: brightness(50%);
+  }
 }
 </style>

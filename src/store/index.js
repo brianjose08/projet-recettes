@@ -63,6 +63,7 @@ export default new Vuex.Store({
             commit('auth_error');
             localStorage.removeItem('token');
             localStorage.removeItem('userGet');
+            localStorage.removeItem('recent-image');
             reject(err);
           });
       });
