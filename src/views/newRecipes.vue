@@ -8,7 +8,11 @@
           @input="filtrer()"
           placeholder="Search Recipe..."
         />
-        <button id="addRecipe"><a href="/add">Add new recipe</a></button>
+        <button id="addRecipe">
+          <a href="/add">
+            <img id="iconImg" v-bind:src="require('./../assets/Add_Logo.png')"
+          /></a>
+        </button>
       </div>
       <div class="list-recipes">
         <ul>
@@ -26,46 +30,44 @@
                 showRecipeDetailsModaleOpen();
               "
             />
-            <div>
-              <button
-                id="removeFavoriteRecipe"
-                v-if="user.recettes.includes(recette.id)"
-                @click="removeFavorite(recette.id)"
-              >
-                <img
-                  id="iconImg"
-                  v-bind:src="require('./../assets/Minus_Logo.png')"
-                />
-              </button>
-              <button
-                id="addFavoriteRecipe"
-                @click="addFavorite(recette.id)"
-                v-if="!user.recettes.includes(recette.id)"
-              >
-                <img
-                  id="iconImg"
-                  v-bind:src="require('./../assets/Plus_Logo.png')"
-                />
-              </button>
-              <button id="modifyRecipe" @click="modifier(recette)">
-                <img
-                  id="iconImg"
-                  v-bind:src="require('./../assets/Edit_Logo.png')"
-                />
-              </button>
-              <button
-                id="deleteRecipe"
-                @click="
-                  selected(recette.id);
-                  showSupprimerRecetteModaleOpen();
-                "
-              >
-                <img
-                  id="iconImg"
-                  v-bind:src="require('./../assets/Delete_Logo.png')"
-                />
-              </button>
-            </div>
+            <button
+              id="removeFavoriteRecipe"
+              v-if="user.recettes.includes(recette.id)"
+              @click="removeFavorite(recette.id)"
+            >
+              <img
+                id="iconImg"
+                v-bind:src="require('./../assets/Minus_Logo.png')"
+              />
+            </button>
+            <button
+              id="addFavoriteRecipe"
+              @click="addFavorite(recette.id)"
+              v-if="!user.recettes.includes(recette.id)"
+            >
+              <img
+                id="iconImg"
+                v-bind:src="require('./../assets/Plus_Logo.png')"
+              />
+            </button>
+            <button id="modifyRecipe" @click="modifier(recette)">
+              <img
+                id="iconImg"
+                v-bind:src="require('./../assets/Edit_Logo.png')"
+              />
+            </button>
+            <button
+              id="deleteRecipe"
+              @click="
+                selected(recette.id);
+                showSupprimerRecetteModaleOpen();
+              "
+            >
+              <img
+                id="iconImg"
+                v-bind:src="require('./../assets/Delete_Logo.png')"
+              />
+            </button>
           </li>
         </ul>
       </div>
@@ -208,12 +210,12 @@ export default {
 <style lang="scss" scoped>
 //Search Section
 .search-col {
-  padding-top: 110px;
+  padding-top: 80px;
   display: block;
   justify-content: center;
   input {
     width: 60%;
-    height: 28px;
+    height: 38px;
     border-radius: 5px;
     font-size: 25px;
     color: black;
@@ -226,7 +228,6 @@ button {
   text-align: center;
   text-decoration: none;
   font-size: 15px;
-  font-family: "Architects Daughter", cursive;
   padding: 10px;
   width: 130px;
   background-color: rgba(145, 145, 145, 0.01);
@@ -255,8 +256,12 @@ button {
 
 // Button Add New Recipe
 #addRecipe {
-  margin-left: 10px;
-  background-color: rgb(15, 111, 255);
+  margin: 10px 0px 20px 10px;
+  width: 70px;
+  padding: 0;
+  border-style: solid;
+  border-radius: 20px;
+  background-color: rgb(255, 240, 206);
   a {
     color: white;
   }
@@ -299,6 +304,7 @@ button {
     border-color: black;
     border-radius: 3pc;
     background-color: rgba(145, 145, 145, 0.3);
+    padding-bottom: 10px;
   }
   h2 {
     border-style: solid;

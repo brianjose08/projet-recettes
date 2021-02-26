@@ -213,7 +213,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .formModifyRecipe {
-  padding-top: 100px;
+  padding: 100px 0px 50px 0px;
   display: flex;
   justify-content: center;
 }
