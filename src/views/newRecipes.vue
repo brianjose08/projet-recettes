@@ -12,9 +12,19 @@
       </div>
       <div class="list-recipes">
         <ul>
-          <li class="item-recipe" v-for="recette in recetteFiltrer" :key="recette.id">
+          <li
+            class="item-recipe"
+            v-for="recette in recetteFiltrer"
+            :key="recette.id"
+          >
             <h2>{{ recette.title }}</h2>
-            <img :src="recette.image" />
+            <img
+              :src="recette.image"
+              @click="
+                selected(recette.id);
+                showRecipeDetailsModaleOpen();
+              "
+            />
             <div>
               <div v-if="user.recettes.includes(recette.id)">
                 <button
@@ -30,9 +40,7 @@
                 </button>
               </div>
             </div>
-            <button id="modifyRecipe" @click="modifier(recette)">
-              Modify
-            </button>
+            <button id="modifyRecipe" @click="modifier(recette)">Modify</button>
             <button
               id="deleteRecipe"
               @click="
@@ -55,6 +63,13 @@
         "
       >
       </supprimer-recette-modale>
+
+      <recipe-details
+        :idSelected="this.idSelected"
+        v-if="showRecipeDetailsModal"
+        @close="showRecipeDetailsModaleClose()"
+      >
+      </recipe-details>
     </div>
   </div>
 </template>
@@ -63,18 +78,21 @@
 // @ is an alias to /src
 import { mapActions } from 'vuex';
 import SupprimerRecetteModale from '../components/SupprimerRecetteModale.vue';
+import RecipeDetails from '../components/RecipeDetails.vue';
 
 export default {
   name: 'Recipes',
   data: () => ({
     user: JSON.parse(localStorage.getItem('userGet')),
     showSupprimerRecetteModale: false,
+    showRecipeDetailsModal: false,
     idSelected: 0,
     search: '',
     recetteFiltrer: [],
   }),
   components: {
     SupprimerRecetteModale,
+    RecipeDetails,
   },
 
   // Methods to retrieve recipes/ingredients information
@@ -142,6 +160,13 @@ export default {
     },
     showSupprimerRecetteModaleClose() {
       this.showSupprimerRecetteModale = false;
+    },
+
+    showRecipeDetailsModaleOpen() {
+      this.showRecipeDetailsModal = true;
+    },
+    showRecipeDetailsModaleClose() {
+      this.showRecipeDetailsModal = false;
     },
 
     // Method to Refresh Page
@@ -244,14 +269,18 @@ button {
 // List of Recipes
 
 .list-recipes {
-
-ul{
+  padding-right: 50px;
+  padding-bottom: 25px;
+  ul {
     display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(455px, 1fr));
-  grid-gap: 1rem;
-}
+    margin: auto;
+    width: 86%;
+    grid-template-columns: repeat(auto-fit, minmax(455px, 1fr));
+    grid-gap: 1rem;
+  }
 
   li {
+    display: block;
     color: black;
     border-style: double;
     border-color: black;
@@ -259,17 +288,16 @@ ul{
     padding: 25px;
     background-color: rgba(255, 241, 218, 0.897);
   }
-  h2{
-      border-style: solid;
-      border-radius: 1pc;
+  h2 {
+    border-style: solid;
+    border-radius: 1pc;
   }
-  img{
-      width: 100%;
-      max-width: 556px;
-      max-height: 370px;
-      border-radius: 2pc;
-      border-style: solid;
+  img {
+    width: 100%;
+    max-width: 556px;
+    max-height: 370px;
+    border-radius: 2pc;
+    border-style: solid;
   }
 }
-
 </style>
