@@ -113,9 +113,12 @@ export default {
 
   h2 {
     border-style: solid;
+    border-color: black;
     border-radius: 2pc;
     max-width: 700px;
     margin: auto;
+    background-color: black;
+    color: white;
   }
 
   img {
@@ -153,6 +156,7 @@ export default {
     padding: 10px;
     font-size: 20px;
     text-align: left;
+    background-color: white;
   }
   .recipe-steps{
     border-style: solid;
@@ -162,6 +166,7 @@ export default {
     padding: 20px;
     font-size: 20px;
     text-align: left;
+    background-color: white;
   }
 }
 

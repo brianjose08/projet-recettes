@@ -38,7 +38,7 @@
             >
               <img
                 id="iconImg"
-                v-bind:src="require('./../assets/Minus_Logo.png')"
+                v-bind:src="require('./../assets/Favorite_Filled_Logo.png')"
               />
             </button>
             <button
@@ -48,7 +48,7 @@
             >
               <img
                 id="iconImg"
-                v-bind:src="require('./../assets/Plus_Logo.png')"
+                v-bind:src="require('./../assets/Favorite_Blank_Logo.png')"
               />
             </button>
             <button id="modifyRecipe" @click="modifier(recette)">
@@ -319,13 +319,13 @@ button:focus {
     border-style: double;
     border-color: black;
     border-radius: 3pc;
-    background-color: rgba(145, 145, 145, 0.3);
+    background-color: rgba(248, 255, 250, 0.712);
     padding-bottom: 10px;
   }
   h2 {
     border-style: solid;
     border-radius: 1pc;
-    background-color: rgb(255, 240, 206);
+    background-color: rgb(255, 236, 200);
   }
   #recipeImg {
     width: 100%;
