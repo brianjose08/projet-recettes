@@ -72,7 +72,7 @@ form {
   display: inline-block;
   font-size: 200%;
   padding-top: 100px;
-  padding-bottom: 45px;
+  padding-bottom: 55px;
 
   .informations {
     background-color: rgba(26, 26, 26, 0.952);
