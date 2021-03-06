@@ -45,6 +45,7 @@ export default new Vuex.Store({
         commit('auth_request');
         axios({ url: 'http://localhost:3000/utilisateurs', method: 'GET' })
           .then((resp) => {
+            let boolErreur = true;
             for (let i = 0; i < resp.data.length; i += 1) {
               /* eslint-disable max-len */
               if (resp.data[i].username === user.username && resp.data[i].password === user.password) {
@@ -54,9 +55,13 @@ export default new Vuex.Store({
                 axios.defaults.headers.common.Authorization = token;
                 commit('auth_success', token);
                 commit('auth_setCurrentUser', resp.data[i].id);
+                boolErreur = false;
                 resolve(resp);
                 i = resp.data.length;
               }
+            }
+            if (boolErreur) {
+              throw new Error('Invalid Username or Password');
             }
           })
           .catch((err) => {

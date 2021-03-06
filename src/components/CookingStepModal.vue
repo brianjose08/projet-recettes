@@ -13,7 +13,7 @@
               id="cookingStepDescription"
               type="text"
               v-model="step"
-              value="Cooking steps..."
+              placeholder="Cooking steps..."
             />
             <button
               style="font-size: 20px"
@@ -29,8 +29,15 @@
               v-bind:key="index"
             >
               <div class="cookingStep">
-                <div>{{ cookingStep.numberStep }}-{{ cookingStep.step }}</div>
-                <button type="button" @click="removeCookingStep(cookingStep.numberStep)">x</button>
+                <div>
+                  <button
+                    type="button"
+                    @click="removeCookingStep(cookingStep.numberStep)"
+                  >
+                    x
+                  </button>
+                  <b> {{ cookingStep.numberStep }} - </b> {{ cookingStep.step }}
+                </div>
               </div>
             </div>
           </div>
@@ -180,30 +187,22 @@ export default {
 }
 
 .cookingStep {
-  display: grid;
-  grid-template-columns: 0fr 0fr;
-  grid-template-rows: 0fr;
   font-size: 25px;
   text-align: left;
-  width: 400px;
 }
 .cookingStep > div {
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: left;
+  display: block;
 }
 
-.cookingStep > button {
-  grid-column: 3;
-  grid-row: 1;
-  justify-self: right;
-  font-size: 25px;
+.cookingStep > div > button {
+  font-size: 20px;
+  height: 30px;
   width: 30px;
-  height: 60px;
+  margin: 0px 2px;
   background-color: rgb(255, 9, 9);
   color: white;
   border-style: none;
-  border-radius: 15px;
+  border-radius: 20px;
   cursor: pointer;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;

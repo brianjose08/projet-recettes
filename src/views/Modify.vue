@@ -196,17 +196,17 @@ export default {
     },
     // Methods to upload Picture
     uploadRecipePicture() {
-      this.recette.image = null;
       const uploadInput = document.getElementById('upload');
       const reader = new FileReader();
       reader.addEventListener('load', () => {
         console.log(reader);
         localStorage.setItem('recent-image', reader.result);
         this.previewImage = reader.result;
+        this.recette.image = reader.result;
       });
       reader.readAsDataURL(uploadInput.files[0]);
-      const recentImageDataUrl = localStorage.getItem('recent-image');
-      this.recette.image = recentImageDataUrl;
+      // this.recette.image = recentImageDataUrl;
+      localStorage.removeItem('recent-image');
     },
   },
 };
