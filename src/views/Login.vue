@@ -71,7 +71,8 @@ form {
 .loginPage {
   display: inline-block;
   font-size: 200%;
-  padding-top: 86px;
+  padding-top: 100px;
+  padding-bottom: 45px;
 
   .informations {
     background-color: rgba(26, 26, 26, 0.952);
