@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class="ingredient-col">
-          <div>
+          <div class="ingredient-col-div">
             <h2>Ingredients</h2>
             <button
               type="button"
@@ -308,10 +308,10 @@ export default {
   font-size: 18px;
   border-style: solid;
   border-top: none;
-  div {
+  .ingredient-col-div {
   display: block;
   float: left;
-  padding: 0px 0px 20px 25px;
+  margin: 0px 0px 20px 25px;
   }
   #addIngredient {
   display: block;
