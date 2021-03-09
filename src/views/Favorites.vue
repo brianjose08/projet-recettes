@@ -144,6 +144,8 @@ export default {
           this.recetteFiltrer.splice(index, 1);
         }
       });
+
+      this.fetchFavoritesRecettes(this.user.id);
     },
 
     // Method to filter for the SearchBar
