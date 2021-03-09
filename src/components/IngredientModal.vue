@@ -397,7 +397,7 @@ export default {
 @media screen and (max-width: 922px) {
 
 .modal-container {
-  max-height: 500px;
+  max-height: 800px;
   width:85%;
 }
 
