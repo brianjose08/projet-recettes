@@ -13,14 +13,14 @@
                 class="confirmeDelete"
                 @click="deleteRecetteConfirmation();"
               >
-                Yes
+                Oui
               </button>
               <button
                 class="cancelDelete"
                 type="button"
                 @click="$emit('close')"
               >
-                Cancel
+                Non
               </button>
             </div>
           </div>
@@ -61,21 +61,19 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.801);
   display: table;
   transition: opacity 0.3s ease;
 }
 
 .modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+  display: inline-flex
 }
 
 .modal-container {
-  width: 900px;
-  margin-top: 100px;
-  margin-left: 450px;
-  padding: 20px 30px;
+  width: 400px;
+  padding: 20px;
+  margin-top: 300px;
   background-color: #fff;
   border-style: solid;
   border-radius: 20px;
