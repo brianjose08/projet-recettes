@@ -322,8 +322,8 @@ export default {
       justify-self: center;
       text-align: center;
       font-size: 20px;
-      width: 30%;
-      margin-left: 40%;
+      width: 35%;
+      margin-left: 35%;
     }
 
     button {
@@ -398,7 +398,7 @@ export default {
 
 .modal-container {
   max-height: 800px;
-  width:85%;
+  width:95%;
 }
 
   .ingredients-details {

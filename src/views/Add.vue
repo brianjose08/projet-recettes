@@ -20,7 +20,7 @@
         <div class="recipeGeneralInformation-col">
           <div>
             <label for="recipeTitle">Recipe Title</label>
-            <br>
+            <br />
             <input
               type="text"
               id="recipeTitle"
@@ -30,39 +30,43 @@
             />
           </div>
           <div class="informations-extras">
-          <div>
-            <label for="recipeCalories">Calories</label>
-            <br>
-            <input
-              type="number"
-              id="recipeCalories"
-              placeholder="Calories"
-              v-model="recette.calories"
-              required
-            /> cal
-          </div>
-          <div>
-            <label for="recipeTime">Time</label>
-            <br>
-            <input
-              type="number"
-              id="recipeTime"
-              placeholder="Time"
-              v-model="recette.cookingTime"
-              required
-            /> min
-          </div>
-          <div>
-            <label for="recipePrice">Price</label>
-             <br>
-            <input
-              type="number"
-              id="recipePrice"
-              placeholder="Price"
-              v-model="recette.price"
-              required
-            /> $
-          </div>
+            <div>
+              <label for="recipeCalories">Calories</label>
+              <br />
+              <input
+                type="number"
+                id="recipeCalories"
+                placeholder="Calories"
+                v-model="recette.calories"
+                required
+              />
+              cal
+            </div>
+            <div>
+              <label for="recipeTime">Time</label>
+              <br />
+              <input
+                type="number"
+                id="recipeTime"
+                placeholder="Time"
+                v-model="recette.cookingTime"
+                required
+              />
+              min
+            </div>
+            <div>
+              <label for="recipePrice">Price</label>
+              <br />
+              <input
+                type="number"
+                step="0.01"
+                id="recipePrice"
+                placeholder="Price"
+                v-model="recette.price"
+                required
+              />
+              $
+            </div>
           </div>
         </div>
         <div class="ingredient-col">
@@ -251,8 +255,8 @@ export default {
   div {
     margin-top: 10px;
     input {
-    padding: 5px 0px;
-    text-align: center;
+      padding: 5px 0px;
+      text-align: center;
     }
   }
   #recipeTitle {
@@ -260,7 +264,7 @@ export default {
   }
 
   .informations-extras {
-    display:grid;
+    display: grid;
     grid-template-columns: 0.5fr 0.5fr 0.5fr;
 
     input {
@@ -277,21 +281,21 @@ export default {
   border-style: solid;
   border-radius: 20px;
   div {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     img {
-    grid-column: 2;
-    grid-row: 1;
-    width: 350px;
-    height: auto;
+      grid-column: 2;
+      grid-row: 1;
+      width: 350px;
+      height: auto;
     }
     input[type="file"] {
-    grid-column: 2;
-    grid-row: 2;
-    color: transparent;
-    margin-top: 20px;
-    margin-left: 130px;
+      grid-column: 2;
+      grid-row: 2;
+      color: transparent;
+      margin-top: 20px;
+      margin-left: 130px;
     }
   }
 }
@@ -305,19 +309,19 @@ export default {
   border-style: solid;
   border-top: none;
   #addIngredient {
-  padding: 15px 20px 15px 20px;
-  margin-bottom: 20px;
-  border-radius: 100%;
-  border-style: none;
-  font-size: 20px;
-  color: white;
-  background-color: black;
-  -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-  cursor: pointer;
+    padding: 15px 20px 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 100%;
+    border-style: none;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    cursor: pointer;
     &:hover {
-    background-color: rgb(255, 196, 0);
+      background-color: rgb(255, 196, 0);
     }
   }
 }
@@ -335,19 +339,19 @@ export default {
   border-bottom-right-radius: 20px;
 
   #addStep {
-  padding: 15px 20px 15px 20px;
-  margin-bottom: 20px;
-  border-radius: 100%;
-  border-style: none;
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
+    padding: 15px 20px 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 100%;
+    border-style: none;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
     &:hover {
-    background-color: rgb(255, 196, 0);
+      background-color: rgb(255, 196, 0);
     }
   }
 }
@@ -360,72 +364,71 @@ export default {
   justify-content: center;
   padding-top: 10px;
   div button {
-  padding: 20px;
-  font-size: 200%;
-  font-family: "Architects Daughter", cursive;
-  color: white;
-  background-color: rgb(0, 0, 0);
-  border-radius: 15px;
-  -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-  cursor: pointer;
+    padding: 20px;
+    font-size: 200%;
+    font-family: "Architects Daughter", cursive;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border-radius: 15px;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    cursor: pointer;
     &:hover {
-    background-color: rgb(255, 196, 0);
+      background-color: rgb(255, 196, 0);
     }
   }
 }
 
 @media screen and (max-width: 922px) {
+  .contenu {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.89);
+    padding: 0px 40px 40px 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 
-.contenu {
-  width: 80%;
-  background-color: rgba(255, 255, 255, 0.89);
-  padding: 0px 40px 40px 40px;
-  display: grid;
-  grid-template-columns: 1fr;
-}
+  .ingredient-col {
+    grid-column: 1;
+    grid-row: 3;
+  }
 
-.ingredient-col {
-  grid-column: 1;
-  grid-row: 3;
-}
+  //First-Col / Fifth-Row (CookingStepModal)
+  .cookingStep-col {
+    grid-column: 1;
+    grid-row: 4;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
 
-//First-Col / Fifth-Row (CookingStepModal)
-.cookingStep-col {
-  grid-column: 1;
-  grid-row: 4;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-}
+  .imageUpload-col {
+    width: 98%;
+    grid-column: 1;
+    grid-row: 6;
+    border-top-style: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 
-.imageUpload-col {
-  width: 98%;
-  grid-column: 1;
-  grid-row: 6;
-  border-top-style: none;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+    div {
+      img {
+        grid-column: 2;
+        grid-row: 1;
+        width: 350px;
+        height: auto;
+      }
 
-  div {
-    img {
-    grid-column: 2;
-    grid-row: 1;
-    width: 350px;
-    height: auto;
-    }
-
-    input {
-      margin-bottom: 30px;
+      input {
+        margin-bottom: 30px;
+      }
     }
   }
-}
 
-.addButton-col {
-  grid-column: 1;
-  grid-row: 7;
-}
+  .addButton-col {
+    grid-column: 1;
+    grid-row: 7;
+  }
 }
 </style>
