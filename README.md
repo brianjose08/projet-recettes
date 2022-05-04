@@ -1,24 +1,29 @@
 # projet-recette
 
-## Project setup
+## Step 1
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Step 2
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+npm install -g json-server
 ```
 
-### Lints and fixes files
+## Step 3
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Step 4
+```
+json-server recette.json
+```
+
+## Step 5
+```
+Open a new terminal and enter the following:
+
+npm run serve
+```
